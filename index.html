@@ -2356,7 +2356,7 @@ section.simpleSteps .sub{
 .baPairLink{cursor:pointer;position:relative;transition:transform .15s,box-shadow .15s;}
 .baPairLink:hover,.baPairLink:active{transform:translateY(-2px);box-shadow:0 12px 28px rgba(18,52,86,.14);border-color:#b9d0e6;}
 .baPairLink::after{content:"자세히 보기 →";position:absolute;bottom:10px;right:14px;background:rgba(8,105,232,.92);color:#fff;font-size:12px;font-weight:700;padding:5px 10px;border-radius:8px;z-index:3;box-shadow:0 3px 8px rgba(0,0,0,.2);}
-.baDetailBtn{display:block;margin:12px auto 20px;padding:13px 16px;background:#05a63b;color:#fff;text-align:center;font-size:16px;font-weight:700;border-radius:14px;cursor:pointer;letter-spacing:-.4px;width:calc(100% - 24px);transition:background .15s;}
+.baDetailBtn{display:block;margin:4px auto 20px;padding:13px 16px;background:#05a63b;color:#fff;text-align:center;font-size:16px;font-weight:700;border-radius:14px;cursor:pointer;letter-spacing:-.4px;width:calc(100% - 24px);transition:background .15s;}
 .baDetailBtn:active{background:#048a30;}
 .baItem{position:relative;margin:0;border-radius:14px;overflow:hidden;aspect-ratio:1/1;background:#eef2f6;}
 .baItem img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -2495,6 +2495,11 @@ body.subOpen{overflow:hidden}
 #subPage3 .closing .sign{margin-top:20px;font-size:12px;font-weight:800;letter-spacing:4px;color:#b08d4d;text-transform:uppercase}
 #subPage3 .foot{padding:24px 0 40px;text-align:center;background:#f4f2ed}
 #subPage3 .foot a{display:inline-flex;align-items:center;gap:9px;padding:15px 32px;border-radius:13px;background:#152744;color:#fff;text-decoration:none;font-size:15px;font-weight:700;letter-spacing:-.2px}
+.subBottomNav{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;padding:0 9px 32px;margin-top:48px;}
+.subBottomNav a,#subPage .subBottomNav a{text-decoration:none;color:#fff!important;height:55px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:1000;font-size:15px;box-shadow:0 4px 14px rgba(0,0,0,.18);text-shadow:0 1px 2px rgba(0,0,0,.15);}
+.subBottomNav .sbTel{background:linear-gradient(135deg,#0869e8,#0554c0);}
+.subBottomNav .sbKakao{background:linear-gradient(135deg,#f7c600,#e8b400);color:#111!important;border:1.5px solid #d9a800;text-shadow:none;}
+.subBottomNav .sbBlog{background:linear-gradient(135deg,#05a63b,#048a30);}
 #subPage.open{display:block}
 body.subOpen{overflow:hidden}
 #subPage{
@@ -2988,11 +2993,14 @@ document.addEventListener('DOMContentLoaded', function(){
     <div class="foot">
       <a href="javascript:void(0)" onclick="closeNotice()"><span>‹</span> 메인으로 돌아가기</a>
     </div>
-
   </div>
 </main>
 
-
+  <div class="subBottomNav">
+    <a class="sbTel" href="tel:01050687232">전화 상담</a>
+    <a class="sbKakao" href="https://open.kakao.com/o/sbIjoyCi">카카오톡 상담</a>
+    <a class="sbBlog" href="https://m.blog.naver.com/carglass_" target="_blank">네이버 블로그</a>
+  </div>
 </div>
 
 <div id="subPage2" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:10000;background:#f4f2ed;color:#1a2436;overflow-y:auto;-webkit-overflow-scrolling:touch;font-family:-apple-system,BlinkMacSystemFont,'Noto Sans KR',sans-serif;line-height:1.62;">
@@ -3049,6 +3057,11 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="foot">
     <a href="javascript:void(0)" onclick="closeNotice2()"><span>‹</span> 메인으로 돌아가기</a>
   </div>
+  <div class="subBottomNav">
+    <a class="sbTel" href="tel:01050687232">전화 상담</a>
+    <a class="sbKakao" href="https://open.kakao.com/o/sbIjoyCi">카카오톡 상담</a>
+    <a class="sbBlog" href="https://m.blog.naver.com/carglass_" target="_blank">네이버 블로그</a>
+  </div>
 </div>
 
 
@@ -3104,6 +3117,11 @@ document.addEventListener('DOMContentLoaded', function(){
   </main>
   <div class="foot">
     <a href="javascript:void(0)" onclick="closeNotice3()"><span>&lsaquo;</span> 메인으로 돌아가기</a>
+  </div>
+  <div class="subBottomNav">
+    <a class="sbTel" href="tel:01050687232">전화 상담</a>
+    <a class="sbKakao" href="https://open.kakao.com/o/sbIjoyCi">카카오톡 상담</a>
+    <a class="sbBlog" href="https://m.blog.naver.com/carglass_" target="_blank">네이버 블로그</a>
   </div>
 </div>
 
