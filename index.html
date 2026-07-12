@@ -11,7 +11,8 @@
 :root{--navy:#061a33;--blue:#0869e8;--green:#05a63b;--red:#e50012;--gold:#ffd84a;--light:#f5f8fc}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-html,body{overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
 @media (orientation:landscape){
   #subPage .wrap,#subPage2 .wrap,#subPage3 .wrap,#subPage4 .wrap,#subPage5 .wrap,
   #subPage6 .wrap,#subPage7 .wrap,#subPage8 .wrap,#subPage9 .wrap,#subPage10 .wrap{max-width:100%!important;}
@@ -4427,6 +4428,7 @@ function closeNotice(){
   var s=document.getElementById('subPage');
   s.classList.remove('open'); s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
+  requestAnimationFrame(function(){_qScrollTo();});
 }
 function openNotice2(){
   var s=document.getElementById('subPage2');
@@ -4505,6 +4507,7 @@ function closeNotice7(){
   if(!s) return;
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
+  requestAnimationFrame(function(){_qScrollTo();});
 }
 function openNotice8(){
   var s=document.getElementById('subPage8');
@@ -4518,6 +4521,7 @@ function closeNotice8(){
   if(!s) return;
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
+  requestAnimationFrame(function(){_qScrollTo();});
 }
 function openNotice9(){
   var s=document.getElementById('subPage9');
@@ -4531,6 +4535,7 @@ function closeNotice9(){
   if(!s) return;
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
+  requestAnimationFrame(function(){_qScrollTo();});
 }
 function openNotice10(){
   var s=document.getElementById('subPage10');
@@ -4544,8 +4549,15 @@ function closeNotice10(){
   if(!s) return;
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
+  requestAnimationFrame(function(){_qScrollTo();});
 }
 
+
+function _qScrollTo(){
+  var el=document.querySelector('.welcomeWrap'), top=0, cur=el;
+  while(cur){top+=cur.offsetTop;cur=cur.offsetParent;}
+  window.scrollTo({top:Math.max(0,top-10),behavior:'instant'});
+}
 var __openFns={'1':openNotice,'2':openNotice2,'3':openNotice3,'4':openNotice4,'5':openNotice5,'6':openNotice6,'7':openNotice7,'8':openNotice8,'9':openNotice9,'10':openNotice10};
 var __closeFns={'1':closeNotice,'2':closeNotice2,'3':closeNotice3,'4':closeNotice4,'5':closeNotice5,'6':closeNotice6,'7':closeNotice7,'8':closeNotice8,'9':closeNotice9,'10':closeNotice10};
 function __bindNoticeTriggers(){
