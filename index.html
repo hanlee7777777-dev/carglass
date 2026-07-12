@@ -4454,6 +4454,7 @@ function closeNotice(){
   var s=document.getElementById('subPage');
   s.classList.remove('open'); s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
+  if(location.hash==='#open'){_ignoreHash=true;history.back();}
   requestAnimationFrame(function(){_qScrollTo();});
 }
 function openNotice2(){
@@ -4539,6 +4540,7 @@ function closeNotice7(){
   if(!s) return;
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
+  if(location.hash==='#open'){_ignoreHash=true;history.back();}
   requestAnimationFrame(function(){_qScrollTo();});
 }
 function openNotice8(){
@@ -4554,6 +4556,7 @@ function closeNotice8(){
   if(!s) return;
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
+  if(location.hash==='#open'){_ignoreHash=true;history.back();}
   requestAnimationFrame(function(){_qScrollTo();});
 }
 function openNotice9(){
@@ -4569,6 +4572,7 @@ function closeNotice9(){
   if(!s) return;
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
+  if(location.hash==='#open'){_ignoreHash=true;history.back();}
   requestAnimationFrame(function(){_qScrollTo();});
 }
 function openNotice10(){
@@ -4584,6 +4588,7 @@ function closeNotice10(){
   if(!s) return;
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
+  if(location.hash==='#open'){_ignoreHash=true;history.back();}
   requestAnimationFrame(function(){_qScrollTo();});
 }
 
@@ -4637,7 +4642,9 @@ document.addEventListener('selectstart', function(e){
   e.preventDefault();
 });
 // 하드웨어 백버튼: hash 변화로 서브페이지 닫기
+var _ignoreHash=false;
 window.addEventListener('hashchange', function(){
+  if(_ignoreHash){_ignoreHash=false;return;}
   if(!location.hash || location.hash==='#'){
     var ids=['subPage','subPage2','subPage3','subPage4','subPage5',
              'subPage6','subPage7','subPage8','subPage9','subPage10'];
