@@ -4452,10 +4452,10 @@ function openNotice(){
 }
 function closeNotice(){
   var s=document.getElementById('subPage');
+  _qScrollTo(); // 먼저 스크롤
   s.classList.remove('open'); s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
   if(location.hash==='#open'){_ignoreHash=true;history.back();}
-  requestAnimationFrame(function(){_qScrollTo();});
 }
 function openNotice2(){
   var s=document.getElementById('subPage2');
@@ -4538,10 +4538,10 @@ function openNotice7(){
 function closeNotice7(){
   var s=document.getElementById('subPage7');
   if(!s) return;
+  _qScrollTo(); // 먼저 스크롤
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
   if(location.hash==='#open'){_ignoreHash=true;history.back();}
-  requestAnimationFrame(function(){_qScrollTo();});
 }
 function openNotice8(){
   var s=document.getElementById('subPage8');
@@ -4554,10 +4554,10 @@ function openNotice8(){
 function closeNotice8(){
   var s=document.getElementById('subPage8');
   if(!s) return;
+  _qScrollTo(); // 먼저 스크롤
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
   if(location.hash==='#open'){_ignoreHash=true;history.back();}
-  requestAnimationFrame(function(){_qScrollTo();});
 }
 function openNotice9(){
   var s=document.getElementById('subPage9');
@@ -4570,10 +4570,10 @@ function openNotice9(){
 function closeNotice9(){
   var s=document.getElementById('subPage9');
   if(!s) return;
+  _qScrollTo(); // 먼저 스크롤
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
   if(location.hash==='#open'){_ignoreHash=true;history.back();}
-  requestAnimationFrame(function(){_qScrollTo();});
 }
 function openNotice10(){
   var s=document.getElementById('subPage10');
@@ -4586,10 +4586,10 @@ function openNotice10(){
 function closeNotice10(){
   var s=document.getElementById('subPage10');
   if(!s) return;
+  _qScrollTo(); // 먼저 스크롤
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
   if(location.hash==='#open'){_ignoreHash=true;history.back();}
-  requestAnimationFrame(function(){_qScrollTo();});
 }
 
 
@@ -4646,6 +4646,7 @@ var _ignoreHash=false;
 window.addEventListener('hashchange', function(){
   if(_ignoreHash){_ignoreHash=false;return;}
   if(!location.hash || location.hash==='#'){
+    _qScrollTo(); // 먼저 스크롤 (서브페이지가 덮고 있는 동안)
     var ids=['subPage','subPage2','subPage3','subPage4','subPage5',
              'subPage6','subPage7','subPage8','subPage9','subPage10'];
     for(var i=0;i<ids.length;i++){
@@ -4653,8 +4654,8 @@ window.addEventListener('hashchange', function(){
       if(!el) continue;
       var isOpen=el.classList.contains('open')||getComputedStyle(el).display==='block';
       if(isOpen){
-        if(ids[i]==='subPage') closeNotice();
-        else{ var n=ids[i].replace('subPage',''); if(window['closeNotice'+n])window['closeNotice'+n](); }
+        if(ids[i]==='subPage'){ el.classList.remove('open'); el.setAttribute('aria-hidden','true'); document.body.classList.remove('subOpen'); }
+        else{ el.style.display='none'; el.setAttribute('aria-hidden','true'); document.body.classList.remove('subOpen'); }
         return;
       }
     }
