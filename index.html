@@ -2472,7 +2472,7 @@ section.simpleSteps .sub{
 .subFoot3 .sKakao{background:#ffdf00!important;color:#111!important;animation:bKakaoGlow 1.6s ease-in-out infinite!important;transform:none!important;}
 .subFoot3 .sBlog{background:#05a63b!important;color:#fff!important;animation:bBlogGlow 1.6s ease-in-out infinite!important;transform:none!important;}
 @media(max-width:370px){.subFoot3 a{font-size:16px!important;}}
-#subPage,#subPage2,#subPage3,#subPage4,#subPage5,#subPage6,#subPage7,#subPage8,#subPage9,#subPage10,#subPage11{padding-bottom:calc(84px + env(safe-area-inset-bottom))!important;}
+#subPage,#subPage2,#subPage3,#subPage4,#subPage5,#subPage6,#subPage7,#subPage8,#subPage9,#subPage10,#subPage11,#subPage12{padding-bottom:calc(84px + env(safe-area-inset-bottom))!important;}
 #subPage.open{display:block}
 body.subOpen{overflow:hidden}
 #subPage{
@@ -3203,6 +3203,104 @@ body.subOpen{overflow:hidden}
 #subPage11 .hero h1{font-size:25px}
 #subPage11 .hero{padding:38px 0 34px}
 #subPage11 .rate .num{font-size:40px}
+#subPage12{
+  --sub-paper:#f4f2ed;
+  --sub-card:#ffffff;
+  --sub-ink:#1a2436;
+  --sub-ink-2:#5a6577;
+  --sub-line:#e6e1d7;
+  --sub-navy:#152744;
+  --sub-gold:#b08d4d;
+  --sub-gold-line:#c9a862;
+  --sub-gold-bg:#f5efe2;
+  --sub-warn:#a4562f;
+  --sub-warn-bg:#f7ece5;
+}
+#subPage12 .wrap{max-width:600px;margin:0 auto;padding:0 22px}
+#subPage12 a{color:inherit}
+#subPage12 .nav{position:sticky;top:0;z-index:30;background:rgba(246,244,240,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--sub-line)}
+#subPage12 .nav .wrap{display:flex;align-items:center;height:56px}
+#subPage12 .back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--sub-ink-2);font-size:17px;font-weight:600}
+#subPage12 .back:hover{color:var(--sub-ink)}
+#subPage12 .back .arw{font-size:20px;line-height:1}
+#subPage12 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:52px 0 48px}
+#subPage12 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,98,.55),transparent)}
+#subPage12 .hero::before{content:"";position:absolute;top:-45%;right:-25%;width:80%;height:190%;background:radial-gradient(closest-side,rgba(201,168,98,.20),transparent);opacity:.9}
+#subPage12 .hero .wrap{position:relative}
+#subPage12 .hero .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:3px;color:var(--sub-gold-line);text-transform:uppercase;margin-bottom:20px}
+#subPage12 .hero .eyebrow::before{content:"";width:22px;height:1px;background:var(--sub-gold-line)}
+#subPage12 .hero h1{margin:0 0 16px;font-size:30px;line-height:1.34;font-weight:800;letter-spacing:-1px}
+#subPage12 .hero .sub{margin:0;color:#c3d0e2;font-size:17px;font-weight:400;max-width:92%}
+#subPage12 main{padding:8px 0 40px}
+#subPage12 .sect{margin-top:44px}
+#subPage12 .sect-h{display:flex;align-items:baseline;gap:12px;margin:0 0 18px;padding:0 2px}
+#subPage12 .sect-h .idx{font-size:12px;font-weight:800;letter-spacing:1.5px;color:var(--sub-gold);font-variant-numeric:tabular-nums;padding:2px 0}
+#subPage12 .sect-h .t{font-size:15px;font-weight:700;letter-spacing:.3px;color:var(--sub-ink-2)}
+#subPage12 .sect-h .rule{flex:1;height:1px;background:var(--sub-line);align-self:center}
+#subPage12 .item{background:var(--sub-card);border:1px solid var(--sub-line);border-radius:16px;padding:24px 24px;margin-bottom:12px;position:relative;transition:box-shadow .3s ease,transform .3s ease;box-shadow:0 1px 2px rgba(21,39,68,.03)}
+#subPage12 .item:hover{box-shadow:0 14px 40px rgba(21,39,68,.10);transform:translateY(-2px)}
+#subPage12 .item .num{font-size:12px;font-weight:800;color:var(--sub-gold);letter-spacing:2px;font-variant-numeric:tabular-nums;display:block;margin-bottom:11px}
+#subPage12 .item h2{margin:0 0 8px;font-size:20px;line-height:1.4;font-weight:650;letter-spacing:-.5px}
+#subPage12 .item p{margin:0;color:var(--sub-ink-2);font-size:16.5px;font-weight:400}
+#subPage12 .qaList{margin:14px 0 0;padding:0;list-style:none;}
+#subPage12 .qaList li{position:relative;padding:9px 0 9px 22px;font-size:16px;color:var(--sub-ink-2);border-top:1px solid var(--sub-line);}
+#subPage12 .qaList li:first-child{border-top:0;}
+#subPage12 .qaList li::before{content:"•";position:absolute;left:4px;color:var(--sub-gold);font-weight:800;}
+#subPage12 .item.caution{border-color:#eeddd3;padding-left:26px}
+#subPage12 .item.caution::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:3px;border-radius:2px;background:linear-gradient(180deg,#c47a4f,#a4562f)}
+#subPage12 .item.caution .cap{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;letter-spacing:.8px;color:var(--sub-warn);text-transform:uppercase;margin-bottom:9px}
+#subPage12 .item.caution .cap .dot{width:5px;height:5px;border-radius:50%;background:var(--sub-warn)}
+#subPage12 .item .noTag{display:inline-block;margin-top:12px;padding:6px 14px;border-radius:999px;background:var(--sub-warn-bg);color:var(--sub-warn);font-size:13.5px;font-weight:800}
+#subPage12 .rate{margin-top:12px;background:linear-gradient(160deg,#0f2038,#1d3a5c);border-radius:18px;padding:40px 28px;text-align:center;color:#fff;position:relative;overflow:hidden;box-shadow:0 16px 40px rgba(15,32,56,.18)}
+#subPage12 .rate::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 0,rgba(201,168,98,.16),transparent 60%)}
+#subPage12 .rate .r-in{position:relative}
+#subPage12 .rate .num{font-size:48px;font-weight:900;letter-spacing:-2px;line-height:1;background:linear-gradient(180deg,#f0d59a,#c9a862);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px}
+#subPage12 .rate h2{margin:0 0 10px;font-size:20px;font-weight:650;letter-spacing:-.4px}
+#subPage12 .rate p{margin:0 auto;max-width:88%;color:#bccbe0;font-size:16px;font-weight:400}
+#subPage12 .free{display:flex;align-items:center;gap:16px;margin-top:12px;background:var(--sub-card);border:1px solid var(--sub-line);border-radius:16px;padding:22px 24px;box-shadow:0 1px 2px rgba(21,39,68,.03)}
+#subPage12 .free .ic{flex:none;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--sub-gold-bg);border:1px solid #ecdcbb;font-size:22px}
+#subPage12 .free b{display:block;font-size:18.5px;font-weight:750;letter-spacing:-.4px}
+#subPage12 .free span{color:var(--sub-ink-2);font-size:15.5px;font-weight:400}
+#subPage12 .closing{margin-top:38px;padding:38px 30px;border-radius:18px;text-align:center;background:linear-gradient(180deg,#fdfcf9,#f5f1e8);border:1px solid var(--sub-line);box-shadow:0 1px 2px rgba(21,39,68,.03)}
+#subPage12 .closing .q-mark{font-size:38px;color:var(--sub-gold-line);line-height:.4;font-family:Georgia,serif}
+#subPage12 .closing .q{margin:16px 0 12px;font-size:20px;font-weight:500;letter-spacing:-.5px;line-height:1.5}
+#subPage12 .closing p{margin:0 auto;max-width:92%;color:var(--sub-ink-2);font-size:16px;font-weight:400}
+#subPage12 .closing .sign{margin-top:22px;font-size:12px;font-weight:800;letter-spacing:4px;color:var(--sub-gold);text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+#subPage12 .foot{margin-top:34px;text-align:center}
+#subPage12 .foot a{display:inline-flex;align-items:center;gap:9px;padding:15px 32px;border-radius:13px;background:var(--sub-navy);color:#fff;text-decoration:none;font-size:15px;font-weight:700;letter-spacing:-.2px;transition:background .25s,box-shadow .25s;box-shadow:0 8px 22px rgba(21,39,68,.18)}
+#subPage12 .foot a:hover{background:#0d1c33;box-shadow:0 12px 28px rgba(21,39,68,.26)}
+#subPage12 .rate{
+  background:var(--sub-card)!important;border:1px solid var(--sub-line)!important;
+  color:var(--sub-ink)!important;box-shadow:0 1px 2px rgba(21,39,68,.03)!important;
+  padding:32px 26px!important;
+}
+#subPage12 .rate::after{display:none!important}
+#subPage12 .rate{text-align:left!important}
+#subPage12 .rate h2{font-weight:650!important}
+#subPage12 .rate p{margin-left:0!important;margin-right:0!important;max-width:none!important}
+#subPage12 .rate h2{color:var(--sub-ink)!important}
+#subPage12 .rate p{color:var(--sub-ink-2)!important}
+#subPage12 .rate .num{
+  background:none!important;-webkit-text-fill-color:initial!important;
+  color:var(--sub-gold)!important;font-size:42px!important;
+}
+#subPage12 .free{
+  background:linear-gradient(135deg,#fdf6e2 0%,#f6dfa3 100%)!important;
+  border:2px solid #d9b96a!important;border-radius:20px!important;padding:24px 24px!important;
+  box-shadow:0 6px 16px rgba(180,140,50,.18)!important;position:relative;overflow:hidden;
+}
+#subPage12 .free::after{
+  content:none!important;
+}
+#subPage12 .free .ic{
+  background:rgba(255,255,255,.55)!important;border:1px solid #d9b96a!important;
+  position:relative;z-index:1;
+}
+#subPage12 .free b{color:#4a3216!important;position:relative;z-index:1}
+#subPage12 .free span{color:#4a3216!important;position:relative;z-index:1}
+#subPage12 .hero h1{font-size:25px}
+#subPage12 .hero{padding:38px 0 34px}
+#subPage12 .rate .num{font-size:40px}
 
 #subPage10{
   --sub-paper:#f4f2ed;
@@ -3488,6 +3586,7 @@ body.subOpen{overflow:hidden}
       <button type="button" class="qBtn" data-open="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
       <button type="button" class="qBtn" data-open="1"><span class="qLine1">돌빵 발생 시</span><span class="qLine2">꼭 알아야 할 주의사항</span></button>
       <button type="button" class="qBtn" data-open="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
+      <button type="button" class="qBtn" data-open="12"><span class="qLine1">수리문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
     </div>
   </div>
   <div class="baHeadBox"><span class="qMark">“</span><p class="baSub">실제 고객 차량의 돌빵·크랙 복원 현장입니다.</p><h2>복원 전 · 후를 직접 확인하세요.</h2></div>
@@ -4619,6 +4718,69 @@ document.addEventListener('DOMContentLoaded', function(){
   </div>
 </div>
 
+<div id="subPage12" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:10000;background:#f4f2ed;color:#1a2436;overflow-y:auto;-webkit-overflow-scrolling:touch;">
+<nav class="nav">
+  <div class="wrap"><a class="back" href="javascript:void(0)" data-close="12"><span class="arw">‹</span> 메인으로 돌아가기</a></div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">How To Contact</span>
+    <h1>수리문의 방법</h1>
+    <p class="sub">전화 한 통, 사진 한 장이면 끝납니다.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section class="sect">
+      <div class="sect-h"><span class="idx">01</span><span class="t">사진 한 장이면 상담이 시작됩니다</span><span class="rule"></span></div>
+      <div class="item">
+        <h2>사진 한 장이면 상담이 시작됩니다</h2>
+        <p>손상 부위를 선명하게 촬영해 보내주세요. 위치와 크기에 따라 복원 가능 여부를 안내해 드립니다.</p>
+      </div>
+    </section>
+
+    <section class="sect">
+      <div class="sect-h"><span class="idx">02</span><span class="t">간편 접수 3단계</span><span class="rule"></span></div>
+      <div class="item">
+        <span class="num">STEP 1</span>
+        <h2>📷 파손 부위 사진 전송</h2>
+        <p>깨진 유리 부위를 차 안에서 한 장, 외부에서 한 장 최대한 잘 보이도록 촛점 맞춰 찍은 사진을 문자로 보내주세요.</p>
+      </div>
+      <div class="item">
+        <span class="num">STEP 2</span>
+        <h2>💬 실시간 견적 상담</h2>
+        <p>보내주신 사진을 확인하여 전화 또는 문자·카카오톡으로 정확한 수리 비용과 소요 시간을 안내해 드립니다.</p>
+      </div>
+      <div class="item">
+        <span class="num">STEP 3</span>
+        <h2>🚘 즉시 출장 및 시공</h2>
+        <p>원하시는 시간과 장소(자택·회사 등)로 직접 방문드려 수리해 드립니다.</p>
+      </div>
+    </section>
+
+    <div class="closing">
+      <div class="q-mark">"</div>
+      <p class="q">복원 가능 여부와 예상 비용을 빠르게 안내해 드립니다.</p>
+      <p>상담은 돈이 들지 않습니다<br>24시간 언제든 부담 없이 연락 주세요.</p>
+      <div class="sign">Carglass</div>
+    </div>
+
+    <div class="foot">
+      <a href="javascript:void(0)" data-close="12"><span>‹</span> 메인으로 돌아가기</a>
+    </div>
+
+  </div>
+</main>
+  <div class="foot subFoot3">
+    <a class="sTel" href="tel:01050687232">전화 상담</a>
+    <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
+    <a class="sBlog" href="https://m.blog.naver.com/carglass_/222107218351" target="_blank">네이버 블로그</a>
+  </div>
+</div>
+
 <script>
 function openNotice(){
   var s=document.getElementById('subPage');
@@ -4784,6 +4946,22 @@ function closeNotice11(){
   document.body.classList.remove('subOpen');
   if(location.hash==='#open'){_ignoreHash=true;history.back();}
 }
+function openNotice12(){
+  var s=document.getElementById('subPage12');
+  if(!s) return;
+  s.style.display='block'; s.setAttribute('aria-hidden','false');
+  document.body.classList.add('subOpen');
+  s.scrollTop=0; window.scrollTo(0,0);
+  if(location.hash!=='#open')location.hash='open';
+}
+function closeNotice12(){
+  var s=document.getElementById('subPage12');
+  if(!s) return;
+  _qScrollTo(); // 먼저 스크롤
+  s.style.display='none'; s.setAttribute('aria-hidden','true');
+  document.body.classList.remove('subOpen');
+  if(location.hash==='#open'){_ignoreHash=true;history.back();}
+}
 
 
 function _qScrollTo(){
@@ -4791,8 +4969,8 @@ function _qScrollTo(){
   while(cur){top+=cur.offsetTop;cur=cur.offsetParent;}
   window.scrollTo({top:Math.max(0,top-10),behavior:'instant'});
 }
-var __openFns={'1':openNotice,'2':openNotice2,'3':openNotice3,'4':openNotice4,'5':openNotice5,'6':openNotice6,'7':openNotice7,'8':openNotice8,'9':openNotice9,'10':openNotice10,'11':openNotice11};
-var __closeFns={'1':closeNotice,'2':closeNotice2,'3':closeNotice3,'4':closeNotice4,'5':closeNotice5,'6':closeNotice6,'7':closeNotice7,'8':closeNotice8,'9':closeNotice9,'10':closeNotice10,'11':closeNotice11};
+var __openFns={'1':openNotice,'2':openNotice2,'3':openNotice3,'4':openNotice4,'5':openNotice5,'6':openNotice6,'7':openNotice7,'8':openNotice8,'9':openNotice9,'10':openNotice10,'11':openNotice11,'12':openNotice12};
+var __closeFns={'1':closeNotice,'2':closeNotice2,'3':closeNotice3,'4':closeNotice4,'5':closeNotice5,'6':closeNotice6,'7':closeNotice7,'8':closeNotice8,'9':closeNotice9,'10':closeNotice10,'11':closeNotice11,'12':closeNotice12};
 function __bindNoticeTriggers(){
   document.querySelectorAll('[data-open]').forEach(function(el){
     if(el.__bound) return; el.__bound=true;
@@ -4825,7 +5003,7 @@ window.addEventListener('hashchange', function(){
   if(!location.hash || location.hash==='#'){
     _qScrollTo(); // 먼저 스크롤 (서브페이지가 덮고 있는 동안)
     var ids=['subPage','subPage2','subPage3','subPage4','subPage5',
-             'subPage6','subPage7','subPage8','subPage9','subPage10','subPage11'];
+             'subPage6','subPage7','subPage8','subPage9','subPage10','subPage11','subPage12'];
     for(var i=0;i<ids.length;i++){
       var el=document.getElementById(ids[i]);
       if(!el) continue;
