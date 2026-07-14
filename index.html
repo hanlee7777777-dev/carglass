@@ -12,6 +12,21 @@
 <style>
 :root{--navy:#061a33;--blue:#0869e8;--green:#05a63b;--red:#e50012;--gold:#ffd84a;--light:#f5f8fc}
 *{box-sizing:border-box}
+html,body{
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none;
+}
+img{
+  -webkit-user-drag:none;user-drag:none;
+  -webkit-user-select:none;user-select:none;
+  pointer-events:none;
+}
+a,button,.qBtn,.baPairLink,.baPairBtn,.noticeTextLink,.subBackBtn,.back,input,textarea{
+  -webkit-touch-callout:default;
+}
+a img,button img,.baItem img,.equip-photo img{
+  pointer-events:auto;
+}
 html{scroll-behavior:smooth}
 html{scroll-behavior:smooth}
 html,body{overflow-x:hidden}
@@ -5524,7 +5539,19 @@ if(document.readyState==='loading'){
   __bindNoticeTriggers();
 }
 
-// 이미지 무단 저장 방지
+// 이미지 무단 저장 및 텍스트 복사 방지
+document.addEventListener('contextmenu', function(e){
+  e.preventDefault();
+});
+document.addEventListener('dragstart', function(e){
+  if(e.target.tagName === 'IMG') e.preventDefault();
+});
+document.addEventListener('copy', function(e){
+  e.preventDefault();
+});
+document.addEventListener('selectstart', function(e){
+  if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') e.preventDefault();
+});
 // 하드웨어 백버튼: hash 변화로 서브페이지 닫기
 var _ignoreHash=false;
 window.addEventListener('hashchange', function(){
