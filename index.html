@@ -959,7 +959,7 @@ background:linear-gradient(135deg,#184f8d,#2f73c0)!important;
 }
 .quick h2{
   margin:0 0 18px!important;
-  font-size:34px!important;
+  font-size:32px!important;
   line-height:1.16!important;
   letter-spacing:-1.8px!important;
   color:#071f3a!important;
@@ -968,7 +968,7 @@ background:linear-gradient(135deg,#184f8d,#2f73c0)!important;
 .quick p{
   margin:0 0 22px!important;
   color:#526476!important;
-  font-size:16px!important;
+  font-size:15px!important;
   line-height:1.65!important;
   font-weight:850!important;
 }
@@ -2390,12 +2390,19 @@ section.simpleSteps .sub{
 .qBoxSub .qBtn.qBtnGold .qLine1,.qBoxSub .qBtn.qBtnGold .qLine2{animation:none!important;color:#4a3216!important;}
 .qBoxSub .qBtn.qBtnBlue{border:2px solid #7fb1e6!important;background:linear-gradient(135deg,#eaf3fd 0%,#bcdafc 100%)!important;box-shadow:0 6px 16px rgba(30,100,180,.18)!important;}
 .qBoxSub .qBtn.qBtnGold{border:2px solid #d9b96a!important;background:linear-gradient(135deg,#fdf6e2 0%,#f6dfa3 100%)!important;box-shadow:0 6px 16px rgba(180,140,50,.18)!important;}
-.welcomeWrap{margin:28px 4px 4px;}
-.welcomeQMark{display:block;font-size:48px;font-weight:800;color:#123456;line-height:1;margin-bottom:-8px;font-family:Georgia,serif;}
-.welcomeText{margin:0;font-size:20px;font-weight:500;color:#7a8898;letter-spacing:-.3px;line-height:1.5;}
+.welcomeWrap{margin:28px 4px 4px;padding:11px 20px 10px;position:relative;text-align:center;}
+.welcomeWrap::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:44px;height:1px;background:linear-gradient(90deg,transparent,#c9a862,transparent);}
+.welcomeQMark{display:block;font-size:35px;font-weight:800;color:#b08d4d;line-height:1;margin-bottom:2px;font-family:Georgia,serif;opacity:.85;}
+.welcomeBrand{display:block;font-size:16px;font-weight:800;letter-spacing:4px;color:#b08d4d;margin-bottom:8px;text-transform:uppercase;}
+.welcomeText{margin:0;font-size:20px;font-weight:600;color:#3d4758;letter-spacing:-.3px;line-height:1.5;}
 .baHeadBox{margin:0 4px 20px;padding:8px 4px 0;background:transparent;border:0;text-align:left;box-shadow:none;position:relative;}
-.baHeadBox .qMark{display:block;font-size:56px;font-weight:800;color:#4a3216;line-height:1;margin:14px 0 -14px;font-family:Georgia,serif;}
-.baHeadBox h2{margin:6px 0 0;color:#586577;font-size:24px;font-weight:700;text-align:left;letter-spacing:-.5px;line-height:1.35;}
+.qHeadBox{margin-bottom:14px;}
+.qHeadBox:not(.qHeadBoxMain) h2{font-size:18px!important;}
+.qHeadBox:not(.qHeadBoxMain) .qMark{font-size:47px!important;}
+.qHeadBox .qMark,.qHeadBox h2,.qHeadBox .baSub{text-align:left!important;}
+.qHeadBoxMain .qMark,.qHeadBoxMain h2,.qHeadBoxMain .baSub{text-align:left!important;}
+.baHeadBox .qMark{display:block;font-size:52px;font-weight:800;color:#4a3216;line-height:1;margin:14px 0 -14px;font-family:Georgia,serif;}
+.baHeadBox h2{margin:6px 0 0;color:#586577;font-size:20px;font-weight:700;text-align:left;letter-spacing:-.5px;line-height:1.35;}
 .baHeadBox .baSub{margin:0;color:#7c8798;text-align:left;font-size:15px;font-weight:400;letter-spacing:-.2px;line-height:1.5;}
 .qTag{display:inline-block;font-size:15px;font-weight:800;letter-spacing:1px;color:#7A9FC4;background:#fff;padding:5px 12px;border-radius:20px;}
 .qTitle{margin:10px 0 14px;font-size:16px;font-weight:700;color:#1a2436;letter-spacing:-.3px;}
@@ -3632,9 +3639,11 @@ body.subOpen{overflow:hidden}
 <section class="baGallery reveal" aria-label="복원 전후 사례">
   <div class="welcomeWrap">
     <span class="welcomeQMark">“</span>
-    <p class="welcomeText">카글라스 자동차유리복원에 오신 것을 환영합니다.</p>
+    <span class="welcomeBrand">CARGLASS</span>
+    <p class="welcomeText">자동차유리복원에 오신 것을<br>환영합니다.</p>
   </div>
   <div class="qBox">
+    <div class="baHeadBox qHeadBox qHeadBoxMain"><span class="qMark">“</span><p class="baSub">궁금한 항목을 눌러보세요</p><h2>유리복원 궁금증, 여기서 다 풀립니다.</h2></div>
     <span class="qTag">QUESTION</span>
     <div class="qBtnRow">
       <button type="button" class="qBtn qBtnGold" data-open="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
@@ -3924,6 +3933,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
 
     <div class="qBox qBoxSub">
+      <div class="baHeadBox qHeadBox"><span class="qMark">“</span><p class="baSub">궁금한 항목을 눌러보세요</p><h2>유리복원 궁금증, 여기서 다 풀립니다.</h2></div>
       <span class="qTag">QUESTION</span>
       <div class="qBtnRow">
       <button type="button" class="qBtn qBtnGold" data-jump="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
@@ -4457,6 +4467,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
 
     <div class="qBox qBoxSub">
+      <div class="baHeadBox qHeadBox"><span class="qMark">“</span><p class="baSub">궁금한 항목을 눌러보세요</p><h2>유리복원 궁금증, 여기서 다 풀립니다.</h2></div>
       <span class="qTag">QUESTION</span>
       <div class="qBtnRow">
       <button type="button" class="qBtn qBtnGold" data-jump="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
@@ -4574,6 +4585,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
 
     <div class="qBox qBoxSub">
+      <div class="baHeadBox qHeadBox"><span class="qMark">“</span><p class="baSub">궁금한 항목을 눌러보세요</p><h2>유리복원 궁금증, 여기서 다 풀립니다.</h2></div>
       <span class="qTag">QUESTION</span>
       <div class="qBtnRow">
       <button type="button" class="qBtn qBtnGold" data-jump="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
@@ -4687,6 +4699,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
 
     <div class="qBox qBoxSub">
+      <div class="baHeadBox qHeadBox"><span class="qMark">“</span><p class="baSub">궁금한 항목을 눌러보세요</p><h2>유리복원 궁금증, 여기서 다 풀립니다.</h2></div>
       <span class="qTag">QUESTION</span>
       <div class="qBtnRow">
       <button type="button" class="qBtn qBtnGold" data-jump="10"><span class="qLine1">카글라스 자동차유리복원</span><span class="qLine2">어떻게 평생보증이 가능할까?</span></button>
@@ -4812,6 +4825,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
 
     <div class="qBox qBoxSub">
+      <div class="baHeadBox qHeadBox"><span class="qMark">“</span><p class="baSub">궁금한 항목을 눌러보세요</p><h2>유리복원 궁금증, 여기서 다 풀립니다.</h2></div>
       <span class="qTag">QUESTION</span>
       <div class="qBtnRow">
       <button type="button" class="qBtn qBtnGold" data-jump="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
@@ -4915,6 +4929,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
 
     <div class="qBox qBoxSub">
+      <div class="baHeadBox qHeadBox"><span class="qMark">“</span><p class="baSub">궁금한 항목을 눌러보세요</p><h2>유리복원 궁금증, 여기서 다 풀립니다.</h2></div>
       <span class="qTag">QUESTION</span>
       <div class="qBtnRow">
       <button type="button" class="qBtn qBtnGold" data-jump="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
@@ -5015,6 +5030,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
 
     <div class="qBox qBoxSub">
+      <div class="baHeadBox qHeadBox"><span class="qMark">“</span><p class="baSub">궁금한 항목을 눌러보세요</p><h2>유리복원 궁금증, 여기서 다 풀립니다.</h2></div>
       <span class="qTag">QUESTION</span>
       <div class="qBtnRow">
       <button type="button" class="qBtn qBtnGold" data-jump="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
