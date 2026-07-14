@@ -2396,8 +2396,30 @@ section.simpleSteps .sub{
 .qBtnRow{display:flex;flex-direction:column;gap:8px;margin-top:10px;}
 .qBtn{width:100%;border:2px solid #d9b96a;appearance:none;background:linear-gradient(135deg,#fdf6e2 0%,#f6dfa3 100%);border-radius:20px;padding:12px 18px;cursor:pointer;text-align:center;box-shadow:0 6px 16px rgba(180,140,50,.18);display:flex;flex-direction:column;gap:4px;}
 .qBtn:active{filter:brightness(.97);}
-.qBtn.qBtnBlue{border:2px solid #7fb1e6;background:linear-gradient(135deg,#eaf3fd 0%,#bcdafc 100%);box-shadow:0 6px 16px rgba(30,100,180,.18);}
-.qBtn.qBtnBlue .qLine1,.qBtn.qBtnBlue .qLine2{color:#123a63;}
+.qBtn.qBtnBlue{border:2px solid #7fb1e6;background:linear-gradient(135deg,#eaf3fd 0%,#bcdafc 100%);box-shadow:0 6px 16px rgba(30,100,180,.18);animation:qBtnColorShift 8s ease-in-out infinite;}
+.qBtn.qBtnBlue .qLine1,.qBtn.qBtnBlue .qLine2{color:#123a63;animation:qBtnTextShift 8s ease-in-out infinite;}
+.qBtn.qBtnGold{border:2px solid #d9b96a;background:linear-gradient(135deg,#fdf6e2 0%,#f6dfa3 100%);box-shadow:0 6px 16px rgba(180,140,50,.18);animation:qBtnColorShiftRev 8s ease-in-out infinite;}
+.qBtn.qBtnGold .qLine1,.qBtn.qBtnGold .qLine2{color:#4a3216;animation:qBtnTextShiftRev 8s ease-in-out infinite;}
+@keyframes qBtnColorShift{
+  0%{border-color:#7fb1e6;background:linear-gradient(135deg,#eaf3fd 0%,#bcdafc 100%);box-shadow:0 6px 16px rgba(30,100,180,.18);}
+  50%{border-color:#d9b96a;background:linear-gradient(135deg,#fdf6e2 0%,#f6dfa3 100%);box-shadow:0 6px 16px rgba(180,140,50,.18);}
+  100%{border-color:#7fb1e6;background:linear-gradient(135deg,#eaf3fd 0%,#bcdafc 100%);box-shadow:0 6px 16px rgba(30,100,180,.18);}
+}
+@keyframes qBtnTextShift{
+  0%{color:#123a63;}
+  50%{color:#4a3216;}
+  100%{color:#123a63;}
+}
+@keyframes qBtnColorShiftRev{
+  0%{border-color:#d9b96a;background:linear-gradient(135deg,#fdf6e2 0%,#f6dfa3 100%);box-shadow:0 6px 16px rgba(180,140,50,.18);}
+  50%{border-color:#7fb1e6;background:linear-gradient(135deg,#eaf3fd 0%,#bcdafc 100%);box-shadow:0 6px 16px rgba(30,100,180,.18);}
+  100%{border-color:#d9b96a;background:linear-gradient(135deg,#fdf6e2 0%,#f6dfa3 100%);box-shadow:0 6px 16px rgba(180,140,50,.18);}
+}
+@keyframes qBtnTextShiftRev{
+  0%{color:#4a3216;}
+  50%{color:#123a63;}
+  100%{color:#4a3216;}
+}
 .qLine1{display:block;font-size:22px;font-weight:600;color:#4a3216;letter-spacing:-.3px;margin-bottom:2px;}
 .qLine2{display:block;font-size:18px;font-weight:400;color:#4a3216;letter-spacing:-.2px;}
 .baGallery .baNote{margin:16px 4px 0;display:flex;gap:5px;text-align:left;color:#8593a4;font-size:13px;font-weight:450;line-height:1.5;letter-spacing:-.3px;}
@@ -3607,13 +3629,13 @@ body.subOpen{overflow:hidden}
   <div class="qBox">
     <span class="qTag">QUESTION</span>
     <div class="qBtnRow">
-      <button type="button" class="qBtn" data-open="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
+      <button type="button" class="qBtn qBtnGold" data-open="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
       <button type="button" class="qBtn qBtnBlue" data-open="7"><span class="qLine1">저렴한 견적</span><span class="qLine2">무조건 좋은 건 아닙니다</span></button>
-      <button type="button" class="qBtn" data-open="10"><span class="qLine1">카글라스 자동차유리복원</span><span class="qLine2">어떻게 평생보증이 가능할까?</span></button>
+      <button type="button" class="qBtn qBtnGold" data-open="10"><span class="qLine1">카글라스 자동차유리복원</span><span class="qLine2">어떻게 평생보증이 가능할까?</span></button>
       <button type="button" class="qBtn qBtnBlue" data-open="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
-      <button type="button" class="qBtn" data-open="1"><span class="qLine1">돌빵 발생 시</span><span class="qLine2">꼭 알아야 할 주의사항</span></button>
+      <button type="button" class="qBtn qBtnGold" data-open="1"><span class="qLine1">돌빵 발생 시</span><span class="qLine2">꼭 알아야 할 주의사항</span></button>
       <button type="button" class="qBtn qBtnBlue" data-open="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
-      <button type="button" class="qBtn" data-open="12"><span class="qLine1">수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
+      <button type="button" class="qBtn qBtnGold" data-open="12"><span class="qLine1">수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
     </div>
   </div>
   <div class="baHeadBox"><span class="qMark">“</span><p class="baSub">실제 고객 차량의 돌빵·크랙 복원 현장입니다.</p><h2>복원 전 · 후를 직접 확인하세요.</h2></div>
