@@ -2384,6 +2384,12 @@ section.simpleSteps .sub{
 .baTag.after{background:#05a63b;}
 .baPairBtn{display:block;width:100%;border:2px solid #d9b96a;appearance:none;background:linear-gradient(135deg,#fdf6e2 0%,#f6dfa3 100%);color:#4a3216;font-size:16px;font-weight:700;border-radius:20px;box-shadow:0 6px 16px rgba(180,140,50,.18);margin:-4px auto 10px;padding:14px 10px;text-align:center;cursor:pointer;letter-spacing:-.3px;}
 .qBox{margin:0;padding:18px 4px 8px;background:transparent;border:0;border-radius:0;}
+.qBoxSub{padding:28px 20px 8px;border-top:1px solid rgba(120,110,90,.14);margin-top:8px;}
+.qBoxSub .qBtn.qBtnBlue,.qBoxSub .qBtn.qBtnGold{animation:none!important;}
+.qBoxSub .qBtn.qBtnBlue .qLine1,.qBoxSub .qBtn.qBtnBlue .qLine2{animation:none!important;color:#123a63!important;}
+.qBoxSub .qBtn.qBtnGold .qLine1,.qBoxSub .qBtn.qBtnGold .qLine2{animation:none!important;color:#4a3216!important;}
+.qBoxSub .qBtn.qBtnBlue{border:2px solid #7fb1e6!important;background:linear-gradient(135deg,#eaf3fd 0%,#bcdafc 100%)!important;box-shadow:0 6px 16px rgba(30,100,180,.18)!important;}
+.qBoxSub .qBtn.qBtnGold{border:2px solid #d9b96a!important;background:linear-gradient(135deg,#fdf6e2 0%,#f6dfa3 100%)!important;box-shadow:0 6px 16px rgba(180,140,50,.18)!important;}
 .welcomeWrap{margin:28px 4px 4px;}
 .welcomeQMark{display:block;font-size:48px;font-weight:800;color:#123456;line-height:1;margin-bottom:-8px;font-family:Georgia,serif;}
 .welcomeText{margin:0;font-size:20px;font-weight:500;color:#7a8898;letter-spacing:-.3px;line-height:1.5;}
@@ -2422,8 +2428,8 @@ section.simpleSteps .sub{
   50%{color:#123a63;}
   85%,100%{color:#4a3216;}
 }
-.qLine1{display:block;font-size:22px;font-weight:600;color:#4a3216;letter-spacing:-.3px;margin-bottom:2px;}
-.qLine2{display:block;font-size:18px;font-weight:400;color:#4a3216;letter-spacing:-.2px;}
+.qLine1{display:block;font-size:21px;font-weight:600;color:#4a3216;letter-spacing:-.3px;margin-bottom:2px;}
+.qLine2{display:block;font-size:17px;font-weight:400;color:#4a3216;letter-spacing:-.2px;}
 .baGallery .baNote{margin:16px 4px 0;display:flex;gap:5px;text-align:left;color:#8593a4;font-size:13px;font-weight:450;line-height:1.5;letter-spacing:-.3px;}
 .baGallery .baNote .baNoteMark{flex:none;}
 .warrantyTopline{font-size:13px!important;font-weight:500!important;color:#5a9cf0!important;}
@@ -3917,6 +3923,18 @@ document.addEventListener('DOMContentLoaded', function(){
       <a href="javascript:void(0)" data-close="1"><span>‹</span> 메인으로 돌아가기</a>
     </div>
 
+    <div class="qBox qBoxSub">
+      <span class="qTag">QUESTION</span>
+      <div class="qBtnRow">
+      <button type="button" class="qBtn qBtnGold" data-jump="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="7"><span class="qLine1">저렴한 견적</span><span class="qLine2">무조건 좋은 건 아닙니다</span></button>
+      <button type="button" class="qBtn qBtnGold" data-jump="10"><span class="qLine1">카글라스 자동차유리복원</span><span class="qLine2">어떻게 평생보증이 가능할까?</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
+      <button type="button" class="qBtn qBtnGold" data-jump="12"><span class="qLine1">수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
+      </div>
+    </div>
+
   </div>
 </main>
   <div class="foot subFoot3">
@@ -4438,6 +4456,18 @@ document.addEventListener('DOMContentLoaded', function(){
       <a href="javascript:void(0)" data-close="7"><span>‹</span> 메인으로 돌아가기</a>
     </div>
 
+    <div class="qBox qBoxSub">
+      <span class="qTag">QUESTION</span>
+      <div class="qBtnRow">
+      <button type="button" class="qBtn qBtnGold" data-jump="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
+      <button type="button" class="qBtn qBtnGold" data-jump="10"><span class="qLine1">카글라스 자동차유리복원</span><span class="qLine2">어떻게 평생보증이 가능할까?</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
+      <button type="button" class="qBtn qBtnGold" data-jump="1"><span class="qLine1">돌빵 발생 시</span><span class="qLine2">꼭 알아야 할 주의사항</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="12"><span class="qLine1">수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
+      </div>
+    </div>
+
   </div>
 </main>
   <div class="foot subFoot3">
@@ -4543,6 +4573,18 @@ document.addEventListener('DOMContentLoaded', function(){
       <a href="javascript:void(0)" data-close="8"><span>‹</span> 메인으로 돌아가기</a>
     </div>
 
+    <div class="qBox qBoxSub">
+      <span class="qTag">QUESTION</span>
+      <div class="qBtnRow">
+      <button type="button" class="qBtn qBtnGold" data-jump="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="7"><span class="qLine1">저렴한 견적</span><span class="qLine2">무조건 좋은 건 아닙니다</span></button>
+      <button type="button" class="qBtn qBtnGold" data-jump="10"><span class="qLine1">카글라스 자동차유리복원</span><span class="qLine2">어떻게 평생보증이 가능할까?</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
+      <button type="button" class="qBtn qBtnGold" data-jump="1"><span class="qLine1">돌빵 발생 시</span><span class="qLine2">꼭 알아야 할 주의사항</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="12"><span class="qLine1">수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
+      </div>
+    </div>
+
   </div>
 </main>
   <div class="foot subFoot3">
@@ -4642,6 +4684,18 @@ document.addEventListener('DOMContentLoaded', function(){
 
     <div class="foot">
       <a href="javascript:void(0)" data-close="9"><span>‹</span> 메인으로 돌아가기</a>
+    </div>
+
+    <div class="qBox qBoxSub">
+      <span class="qTag">QUESTION</span>
+      <div class="qBtnRow">
+      <button type="button" class="qBtn qBtnGold" data-jump="10"><span class="qLine1">카글라스 자동차유리복원</span><span class="qLine2">어떻게 평생보증이 가능할까?</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="7"><span class="qLine1">저렴한 견적</span><span class="qLine2">무조건 좋은 건 아닙니다</span></button>
+      <button type="button" class="qBtn qBtnGold" data-jump="1"><span class="qLine1">돌빵 발생 시</span><span class="qLine2">꼭 알아야 할 주의사항</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
+      <button type="button" class="qBtn qBtnGold" data-jump="12"><span class="qLine1">수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
+      </div>
     </div>
 
   </div>
@@ -4757,6 +4811,18 @@ document.addEventListener('DOMContentLoaded', function(){
       <a href="javascript:void(0)" data-close="10"><span>‹</span> 메인으로 돌아가기</a>
     </div>
 
+    <div class="qBox qBoxSub">
+      <span class="qTag">QUESTION</span>
+      <div class="qBtnRow">
+      <button type="button" class="qBtn qBtnGold" data-jump="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="7"><span class="qLine1">저렴한 견적</span><span class="qLine2">무조건 좋은 건 아닙니다</span></button>
+      <button type="button" class="qBtn qBtnGold" data-jump="1"><span class="qLine1">돌빵 발생 시</span><span class="qLine2">꼭 알아야 할 주의사항</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
+      <button type="button" class="qBtn qBtnGold" data-jump="12"><span class="qLine1">수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
+      </div>
+    </div>
+
   </div>
 </main>
   <div class="foot subFoot3">
@@ -4848,6 +4914,18 @@ document.addEventListener('DOMContentLoaded', function(){
       <a href="javascript:void(0)" data-close="11"><span>‹</span> 메인으로 돌아가기</a>
     </div>
 
+    <div class="qBox qBoxSub">
+      <span class="qTag">QUESTION</span>
+      <div class="qBtnRow">
+      <button type="button" class="qBtn qBtnGold" data-jump="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="7"><span class="qLine1">저렴한 견적</span><span class="qLine2">무조건 좋은 건 아닙니다</span></button>
+      <button type="button" class="qBtn qBtnGold" data-jump="10"><span class="qLine1">카글라스 자동차유리복원</span><span class="qLine2">어떻게 평생보증이 가능할까?</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
+      <button type="button" class="qBtn qBtnGold" data-jump="1"><span class="qLine1">돌빵 발생 시</span><span class="qLine2">꼭 알아야 할 주의사항</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="12"><span class="qLine1">수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
+      </div>
+    </div>
+
   </div>
 </main>
   <div class="foot subFoot3">
@@ -4934,6 +5012,18 @@ document.addEventListener('DOMContentLoaded', function(){
 
     <div class="foot">
       <a href="javascript:void(0)" data-close="12"><span>‹</span> 메인으로 돌아가기</a>
+    </div>
+
+    <div class="qBox qBoxSub">
+      <span class="qTag">QUESTION</span>
+      <div class="qBtnRow">
+      <button type="button" class="qBtn qBtnGold" data-jump="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="7"><span class="qLine1">저렴한 견적</span><span class="qLine2">무조건 좋은 건 아닙니다</span></button>
+      <button type="button" class="qBtn qBtnGold" data-jump="10"><span class="qLine1">카글라스 자동차유리복원</span><span class="qLine2">어떻게 평생보증이 가능할까?</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
+      <button type="button" class="qBtn qBtnGold" data-jump="1"><span class="qLine1">돌빵 발생 시</span><span class="qLine2">꼭 알아야 할 주의사항</span></button>
+      <button type="button" class="qBtn qBtnBlue" data-jump="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
+      </div>
     </div>
 
   </div>
@@ -5135,6 +5225,23 @@ function _qScrollTo(){
 }
 var __openFns={'1':openNotice,'2':openNotice2,'3':openNotice3,'4':openNotice4,'5':openNotice5,'6':openNotice6,'7':openNotice7,'8':openNotice8,'9':openNotice9,'10':openNotice10,'11':openNotice11,'12':openNotice12};
 var __closeFns={'1':closeNotice,'2':closeNotice2,'3':closeNotice3,'4':closeNotice4,'5':closeNotice5,'6':closeNotice6,'7':closeNotice7,'8':closeNotice8,'9':closeNotice9,'10':closeNotice10,'11':closeNotice11,'12':closeNotice12};
+function __closeAllSub(){
+  var s0=document.getElementById('subPage');
+  if(s0 && s0.classList.contains('open')){
+    s0.classList.remove('open'); s0.setAttribute('aria-hidden','true');
+  }
+  ['2','3','4','5','6','7','8','9','10','11','12'].forEach(function(k){
+    var s=document.getElementById('subPage'+k);
+    if(s && s.style.display==='block'){
+      s.style.display='none'; s.setAttribute('aria-hidden','true');
+    }
+  });
+  document.body.classList.remove('subOpen');
+}
+function __jumpTo(n){
+  __closeAllSub();
+  if(__openFns[n]) __openFns[n]();
+}
 function __bindNoticeTriggers(){
   document.querySelectorAll('[data-open]').forEach(function(el){
     if(el.__bound) return; el.__bound=true;
@@ -5150,6 +5257,14 @@ function __bindNoticeTriggers(){
       e.preventDefault();
       var n=el.getAttribute('data-close');
       if(__closeFns[n]) __closeFns[n]();
+    });
+  });
+  document.querySelectorAll('[data-jump]').forEach(function(el){
+    if(el.__bound) return; el.__bound=true;
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      var n=el.getAttribute('data-jump');
+      __jumpTo(n);
     });
   });
 }
