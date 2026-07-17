@@ -5531,9 +5531,9 @@ function openNotice(){
 }
 function closeNotice(){
   var s=document.getElementById('subPage');
-  _qScrollTo(); // 먼저 스크롤
   s.classList.remove('open'); s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
+  _qScrollTo();
   if(location.hash==='#open'){_ignoreHash=true;history.back();}
 }
 function openNotice2(){
@@ -5617,8 +5617,8 @@ function openNotice7(){
 function closeNotice7(){
   var s=document.getElementById('subPage7');
   if(!s) return;
-  _qScrollTo(); // 먼저 스크롤
   s.style.display='none'; s.setAttribute('aria-hidden','true');
+  _qScrollTo();
   document.body.classList.remove('subOpen');
   if(location.hash==='#open'){_ignoreHash=true;history.back();}
 }
@@ -5633,8 +5633,8 @@ function openNotice8(){
 function closeNotice8(){
   var s=document.getElementById('subPage8');
   if(!s) return;
-  _qScrollTo(); // 먼저 스크롤
   s.style.display='none'; s.setAttribute('aria-hidden','true');
+  _qScrollTo();
   document.body.classList.remove('subOpen');
   if(location.hash==='#open'){_ignoreHash=true;history.back();}
 }
@@ -5649,8 +5649,8 @@ function openNotice9(){
 function closeNotice9(){
   var s=document.getElementById('subPage9');
   if(!s) return;
-  _qScrollTo(); // 먼저 스크롤
   s.style.display='none'; s.setAttribute('aria-hidden','true');
+  _qScrollTo();
   document.body.classList.remove('subOpen');
   if(location.hash==='#open'){_ignoreHash=true;history.back();}
 }
@@ -5665,8 +5665,8 @@ function openNotice10(){
 function closeNotice10(){
   var s=document.getElementById('subPage10');
   if(!s) return;
-  _qScrollTo(); // 먼저 스크롤
   s.style.display='none'; s.setAttribute('aria-hidden','true');
+  _qScrollTo();
   document.body.classList.remove('subOpen');
   if(location.hash==='#open'){_ignoreHash=true;history.back();}
 }
@@ -5681,8 +5681,8 @@ function openNotice11(){
 function closeNotice11(){
   var s=document.getElementById('subPage11');
   if(!s) return;
-  _qScrollTo(); // 먼저 스크롤
   s.style.display='none'; s.setAttribute('aria-hidden','true');
+  _qScrollTo();
   document.body.classList.remove('subOpen');
   if(location.hash==='#open'){_ignoreHash=true;history.back();}
 }
@@ -5697,8 +5697,8 @@ function openNotice12(){
 function closeNotice12(){
   var s=document.getElementById('subPage12');
   if(!s) return;
-  _qScrollTo(); // 먼저 스크롤
   s.style.display='none'; s.setAttribute('aria-hidden','true');
+  _qScrollTo();
   document.body.classList.remove('subOpen');
   if(location.hash==='#open'){_ignoreHash=true;history.back();}
 }
@@ -5713,8 +5713,8 @@ function openNotice13(){
 function closeNotice13(){
   var s=document.getElementById('subPage13');
   if(!s) return;
-  _qScrollTo(); // 먼저 스크롤
   s.style.display='none'; s.setAttribute('aria-hidden','true');
+  _qScrollTo();
   document.body.classList.remove('subOpen');
   if(location.hash==='#open'){_ignoreHash=true;history.back();}
 }
@@ -5729,17 +5729,20 @@ function openNotice14(){
 function closeNotice14(){
   var s=document.getElementById('subPage14');
   if(!s) return;
-  _qScrollTo(); // 먼저 스크롤
   s.style.display='none'; s.setAttribute('aria-hidden','true');
+  _qScrollTo();
   document.body.classList.remove('subOpen');
   if(location.hash==='#open'){_ignoreHash=true;history.back();}
 }
 
 
 function _qScrollTo(){
-  var el=document.querySelector('.welcomeWrap'), top=0, cur=el;
-  while(cur){top+=cur.offsetTop;cur=cur.offsetParent;}
-  window.scrollTo({top:Math.max(0,top-10),behavior:'instant'});
+  requestAnimationFrame(function(){
+    window.scrollTo({top:0,left:0,behavior:'instant'});
+    requestAnimationFrame(function(){
+      window.scrollTo({top:0,left:0,behavior:'instant'});
+    });
+  });
 }
 var __openFns={'1':openNotice,'2':openNotice2,'3':openNotice3,'4':openNotice4,'5':openNotice5,'6':openNotice6,'7':openNotice7,'8':openNotice8,'9':openNotice9,'10':openNotice10,'11':openNotice11,'12':openNotice12,'13':openNotice13,'14':openNotice14};
 var __closeFns={'1':closeNotice,'2':closeNotice2,'3':closeNotice3,'4':closeNotice4,'5':closeNotice5,'6':closeNotice6,'7':closeNotice7,'8':closeNotice8,'9':closeNotice9,'10':closeNotice10,'11':closeNotice11,'12':closeNotice12,'13':closeNotice13,'14':closeNotice14};
@@ -5806,11 +5809,11 @@ document.addEventListener('selectstart', function(e){
   if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') e.preventDefault();
 });
 // 하드웨어 백버튼: hash 변화로 서브페이지 닫기
+if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
 var _ignoreHash=false;
 window.addEventListener('hashchange', function(){
   if(_ignoreHash){_ignoreHash=false;return;}
   if(!location.hash || location.hash==='#'){
-    _qScrollTo(); // 먼저 스크롤 (서브페이지가 덮고 있는 동안)
     var ids=['subPage','subPage2','subPage3','subPage4','subPage5',
              'subPage6','subPage7','subPage8','subPage9','subPage10','subPage11','subPage12'];
     for(var i=0;i<ids.length;i++){
@@ -5820,10 +5823,14 @@ window.addEventListener('hashchange', function(){
       if(isOpen){
         if(ids[i]==='subPage'){ el.classList.remove('open'); el.setAttribute('aria-hidden','true'); document.body.classList.remove('subOpen'); }
         else{ el.style.display='none'; el.setAttribute('aria-hidden','true'); document.body.classList.remove('subOpen'); }
+        _qScrollTo();
         return;
       }
     }
   }
+});
+window.addEventListener('popstate', function(){
+  _qScrollTo();
 });
 
 </script>
