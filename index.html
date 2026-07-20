@@ -5879,6 +5879,11 @@ window.addEventListener('popstate', function(){
   __showSubFromHash();
 });
 
+// 새로고침 시에도 현재 서브페이지 상태 복원
+if(location.hash && location.hash.indexOf('#sub')===0){
+  __showSubFromHash();
+}
+
 </script>
 </body>
 </html>
