@@ -5770,7 +5770,7 @@ function _qScrollTo(){
 }
 var __openFns={'1':openNotice,'2':openNotice2,'3':openNotice3,'4':openNotice4,'5':openNotice5,'6':openNotice6,'7':openNotice7,'8':openNotice8,'9':openNotice9,'10':openNotice10,'11':openNotice11,'12':openNotice12,'13':openNotice13,'14':openNotice14};
 var __closeFns={'1':closeNotice,'2':closeNotice2,'3':closeNotice3,'4':closeNotice4,'5':closeNotice5,'6':closeNotice6,'7':closeNotice7,'8':closeNotice8,'9':closeNotice9,'10':closeNotice10,'11':closeNotice11,'12':closeNotice12,'13':closeNotice13,'14':closeNotice14};
-function __closeAllSub(){
+function __closeAllSub(keepBody){
   var s0=document.getElementById('subPage');
   if(s0 && s0.classList.contains('open')){
     s0.classList.remove('open'); s0.setAttribute('aria-hidden','true');
@@ -5781,10 +5781,10 @@ function __closeAllSub(){
       s.style.display='none'; s.setAttribute('aria-hidden','true');
     }
   });
-  document.body.classList.remove('subOpen');
+  if(!keepBody){ document.body.classList.remove('subOpen'); }
 }
 function __jumpTo(n){
-  __closeAllSub();
+  __closeAllSub(true);
   if(__openFns[n]) __openFns[n]();
 }
 function __goHome(){
