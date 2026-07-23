@@ -3853,7 +3853,7 @@ body.subOpen main.mobile{display:none}
 </style>
 
 </head>
-<body>
+<body ontouchstart="">
 <main class="mobile">
 <header class="top">
   <div class="logo">
@@ -4084,6 +4084,7 @@ body.subOpen main.mobile{display:none}
 </main>
 
 <script>
+document.addEventListener('touchstart', function(){}, {passive:true});
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting) entry.target.classList.add('show');
