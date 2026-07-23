@@ -1321,7 +1321,7 @@ html,body{
 .mobile{
   background:var(--kg-bg)!important;
   box-shadow:0 0 34px rgba(0,0,0,.13)!important;
-  padding-top:62px!important;
+  padding-top:72px!important;
 }
 .top{position:fixed!important;top:0!important;left:50%!important;transform:translateX(-50%)!important;width:100%!important;max-width:430px!important;
   background:#d6dde5!important;
@@ -2508,13 +2508,13 @@ section.simpleSteps .sub{
 #subPage2 *,#subPage3 *,#subPage4 *,#subPage5 *,#subPage6 *{box-sizing:border-box}
 #subPage2 .wrap,#subPage3 .wrap,#subPage4 .wrap,#subPage5 .wrap,#subPage6 .wrap{max-width:600px;margin:0 auto;padding:0 22px}
 #subPage2 a,#subPage3 a,#subPage4 a,#subPage5 a,#subPage6 a{color:inherit}
-#subPage2 .nav,#subPage3 .nav,#subPage4 .nav,#subPage5 .nav,#subPage6 .nav{position:sticky;top:0;z-index:30;background:#ffffff;backdrop-filter:blur(12px);border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
+#subPage2 .nav,#subPage3 .nav,#subPage4 .nav,#subPage5 .nav,#subPage6 .nav{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:9000;background:#ffffff;border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
 #subPage2 .nav .wrap,#subPage3 .nav .wrap,#subPage4 .nav .wrap,#subPage5 .nav .wrap,#subPage6 .nav .wrap{display:flex;align-items:center;height:56px}
 #subPage2 .back,#subPage3 .back,#subPage4 .back,#subPage5 .back,#subPage6 .back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#5a6577;font-size:17px;font-weight:600}
 #subPage2 .back .arw,#subPage3 .back .arw,#subPage4 .back .arw,#subPage5 .back .arw,#subPage6 .back .arw{font-size:20px;line-height:1}
-#subPage2 .hero,#subPage3 .hero,#subPage4 .hero,#subPage5 .hero,#subPage6 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:visible;padding:34px 0 30px;border-bottom:none;box-shadow:0 6px 12px -8px rgba(0,0,0,.15)}
+#subPage2 .hero,#subPage3 .hero,#subPage4 .hero,#subPage5 .hero,#subPage6 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:visible;padding:34px 0 30px;border-bottom:none;box-shadow:0 6px 12px -8px rgba(0,0,0,.15);margin-top:56px}
 #subPage2 .hero .eyebrow,#subPage3 .hero .eyebrow,#subPage4 .hero .eyebrow,#subPage5 .hero .eyebrow,#subPage6 .hero .eyebrow{display:none!important}
-#subPage2 .hero h1,#subPage3 .hero h1,#subPage4 .hero h1,#subPage5 .hero h1,#subPage6 .hero h1{margin:0 0 10px;font-size:20px;line-height:1.34;font-weight:750!important;letter-spacing:-1px;color:#fff;text-shadow:none!important}
+#subPage2 .hero h1,#subPage3 .hero h1,#subPage4 .hero h1,#subPage5 .hero h1,#subPage6 .hero h1{margin:0 0 10px;font-size:20px;line-height:1.34;font-weight:750!important;letter-spacing:-1px;color:#eef2f8;text-shadow:none!important}
 #subPage2 .hero .sub,#subPage3 .hero .sub,#subPage4 .hero .sub,#subPage5 .hero .sub,#subPage6 .hero .sub{margin:0;color:#c3d0e2;font-size:16px;font-weight:400;max-width:92%}
 #subPage2 main,#subPage3 main,#subPage4 main,#subPage5 main,#subPage6 main{padding:48px 0 10px}
 #subPage2 main.wrap,#subPage3 main.wrap,#subPage4 main.wrap,#subPage5 main.wrap,#subPage6 main.wrap{padding:48px 22px 10px!important;max-width:600px;margin:0 auto}
@@ -2578,12 +2578,12 @@ body.subOpen main.mobile{display:none}
 #subPage.open,#subPage2.open{display:block!important;}
 #subPage .wrap{max-width:600px;margin:0 auto;padding:0 22px}
 #subPage a{color:inherit}
-#subPage .nav{position:sticky;top:0;z-index:30;background:#e4e6e9;backdrop-filter:blur(12px);border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
+#subPage .nav{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:9000;background:#e4e6e9;border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
 #subPage .nav .wrap{display:flex;align-items:center;height:56px}
 #subPage .back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#000000;font-size:18px;font-weight:600}
 #subPage .back:hover{color:var(--sub-ink)}
 #subPage .back .arw{font-size:20px;line-height:1}
-#subPage .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15)}
+#subPage .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15);margin-top:56px}
 #subPage .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,98,.55),transparent)}
 #subPage .hero::before{content:"";position:absolute;top:-45%;right:-25%;width:80%;height:190%;background:radial-gradient(closest-side,rgba(201,168,98,.20),transparent);opacity:.9}
 #subPage .hero .wrap{position:relative}
@@ -2669,12 +2669,12 @@ body.subOpen main.mobile{display:none}
 
 #subPage7 .wrap{max-width:600px;margin:0 auto;padding:0 22px}
 #subPage7 a{color:inherit}
-#subPage7 .nav{position:sticky;top:0;z-index:30;background:#e4e6e9;backdrop-filter:blur(12px);border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
+#subPage7 .nav{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:9000;background:#e4e6e9;border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
 #subPage7 .nav .wrap{display:flex;align-items:center;height:56px}
 #subPage7 .back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#000000;font-size:18px;font-weight:600}
 #subPage7 .back:hover{color:var(--sub-ink)}
 #subPage7 .back .arw{font-size:20px;line-height:1}
-#subPage7 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15)}
+#subPage7 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15);margin-top:56px}
 #subPage7 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,98,.55),transparent)}
 #subPage7 .hero::before{content:"";position:absolute;top:-45%;right:-25%;width:80%;height:190%;background:radial-gradient(closest-side,rgba(201,168,98,.20),transparent);opacity:.9}
 #subPage7 .hero .wrap{position:relative}
@@ -2787,12 +2787,12 @@ body.subOpen main.mobile{display:none}
 #subPage.open,#subPage2.open{display:block!important;}
 #subPage .wrap{max-width:600px;margin:0 auto;padding:0 22px}
 #subPage a{color:inherit}
-#subPage .nav{position:sticky;top:0;z-index:30;background:#e4e6e9;backdrop-filter:blur(12px);border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
+#subPage .nav{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:9000;background:#e4e6e9;border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
 #subPage .nav .wrap{display:flex;align-items:center;height:56px}
 #subPage .back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#000000;font-size:18px;font-weight:600}
 #subPage .back:hover{color:var(--sub-ink)}
 #subPage .back .arw{font-size:20px;line-height:1}
-#subPage .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15)}
+#subPage .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15);margin-top:56px}
 #subPage .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,98,.55),transparent)}
 #subPage .hero::before{content:"";position:absolute;top:-45%;right:-25%;width:80%;height:190%;background:radial-gradient(closest-side,rgba(201,168,98,.20),transparent);opacity:.9}
 #subPage .hero .wrap{position:relative}
@@ -2878,12 +2878,12 @@ body.subOpen main.mobile{display:none}
 
 #subPage8 .wrap{max-width:600px;margin:0 auto;padding:0 22px}
 #subPage8 a{color:inherit}
-#subPage8 .nav{position:sticky;top:0;z-index:30;background:#e4e6e9;backdrop-filter:blur(12px);border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
+#subPage8 .nav{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:9000;background:#e4e6e9;border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
 #subPage8 .nav .wrap{display:flex;align-items:center;height:56px}
 #subPage8 .back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#000000;font-size:18px;font-weight:600}
 #subPage8 .back:hover{color:var(--sub-ink)}
 #subPage8 .back .arw{font-size:20px;line-height:1}
-#subPage8 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15)}
+#subPage8 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15);margin-top:56px}
 #subPage8 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,98,.55),transparent)}
 #subPage8 .hero::before{content:"";position:absolute;top:-45%;right:-25%;width:80%;height:190%;background:radial-gradient(closest-side,rgba(201,168,98,.20),transparent);opacity:.9}
 #subPage8 .hero .wrap{position:relative}
@@ -2992,12 +2992,12 @@ body.subOpen main.mobile{display:none}
 #subPage.open,#subPage2.open{display:block!important;}
 #subPage .wrap{max-width:600px;margin:0 auto;padding:0 22px}
 #subPage a{color:inherit}
-#subPage .nav{position:sticky;top:0;z-index:30;background:#e4e6e9;backdrop-filter:blur(12px);border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
+#subPage .nav{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:9000;background:#e4e6e9;border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
 #subPage .nav .wrap{display:flex;align-items:center;height:56px}
 #subPage .back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#000000;font-size:18px;font-weight:600}
 #subPage .back:hover{color:var(--sub-ink)}
 #subPage .back .arw{font-size:20px;line-height:1}
-#subPage .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15)}
+#subPage .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15);margin-top:56px}
 #subPage .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,98,.55),transparent)}
 #subPage .hero::before{content:"";position:absolute;top:-45%;right:-25%;width:80%;height:190%;background:radial-gradient(closest-side,rgba(201,168,98,.20),transparent);opacity:.9}
 #subPage .hero .wrap{position:relative}
@@ -3083,12 +3083,12 @@ body.subOpen main.mobile{display:none}
 
 #subPage9 .wrap{max-width:600px;margin:0 auto;padding:0 22px}
 #subPage9 a{color:inherit}
-#subPage9 .nav{position:sticky;top:0;z-index:30;background:#e4e6e9;backdrop-filter:blur(12px);border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
+#subPage9 .nav{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:9000;background:#e4e6e9;border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
 #subPage9 .nav .wrap{display:flex;align-items:center;height:56px}
 #subPage9 .back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#000000;font-size:18px;font-weight:600}
 #subPage9 .back:hover{color:var(--sub-ink)}
 #subPage9 .back .arw{font-size:20px;line-height:1}
-#subPage9 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15)}
+#subPage9 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15);margin-top:56px}
 #subPage9 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,98,.55),transparent)}
 #subPage9 .hero::before{content:"";position:absolute;top:-45%;right:-25%;width:80%;height:190%;background:radial-gradient(closest-side,rgba(201,168,98,.20),transparent);opacity:.9}
 #subPage9 .hero .wrap{position:relative}
@@ -3186,12 +3186,12 @@ body.subOpen main.mobile{display:none}
 }
 #subPage11 .wrap{max-width:600px;margin:0 auto;padding:0 22px}
 #subPage11 a{color:inherit}
-#subPage11 .nav{position:sticky;top:0;z-index:30;background:#e4e6e9;backdrop-filter:blur(12px);border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
+#subPage11 .nav{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:9000;background:#e4e6e9;border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
 #subPage11 .nav .wrap{display:flex;align-items:center;height:56px}
 #subPage11 .back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#000000;font-size:18px;font-weight:600}
 #subPage11 .back:hover{color:var(--sub-ink)}
 #subPage11 .back .arw{font-size:20px;line-height:1}
-#subPage11 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15)}
+#subPage11 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15);margin-top:56px}
 #subPage11 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,98,.55),transparent)}
 #subPage11 .hero::before{content:"";position:absolute;top:-45%;right:-25%;width:80%;height:190%;background:radial-gradient(closest-side,rgba(201,168,98,.20),transparent);opacity:.9}
 #subPage11 .hero .wrap{position:relative}
@@ -3284,12 +3284,12 @@ body.subOpen main.mobile{display:none}
 }
 #subPage14 .wrap{max-width:600px;margin:0 auto;padding:0 22px}
 #subPage14 a{color:inherit}
-#subPage14 .nav{position:sticky;top:0;z-index:30;background:#e4e6e9;backdrop-filter:blur(12px);border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
+#subPage14 .nav{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:9000;background:#e4e6e9;border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
 #subPage14 .nav .wrap{display:flex;align-items:center;height:56px}
 #subPage14 .back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#000000;font-size:18px;font-weight:600}
 #subPage14 .back:hover{color:var(--sub-ink)}
 #subPage14 .back .arw{font-size:20px;line-height:1}
-#subPage14 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15)}
+#subPage14 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15);margin-top:56px}
 #subPage14 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,98,.55),transparent)}
 #subPage14 .hero::before{content:"";position:absolute;top:-45%;right:-25%;width:80%;height:190%;background:radial-gradient(closest-side,rgba(201,168,98,.20),transparent);opacity:.9}
 #subPage14 .hero .wrap{position:relative}
@@ -3384,12 +3384,12 @@ body.subOpen main.mobile{display:none}
 }
 #subPage13 .wrap{max-width:600px;margin:0 auto;padding:0 22px}
 #subPage13 a{color:inherit}
-#subPage13 .nav{position:sticky;top:0;z-index:30;background:#e4e6e9;backdrop-filter:blur(12px);border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
+#subPage13 .nav{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:9000;background:#e4e6e9;border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
 #subPage13 .nav .wrap{display:flex;align-items:center;height:56px}
 #subPage13 .back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#000000;font-size:18px;font-weight:600}
 #subPage13 .back:hover{color:var(--sub-ink)}
 #subPage13 .back .arw{font-size:20px;line-height:1}
-#subPage13 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15)}
+#subPage13 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15);margin-top:56px}
 #subPage13 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,98,.55),transparent)}
 #subPage13 .hero::before{content:"";position:absolute;top:-45%;right:-25%;width:80%;height:190%;background:radial-gradient(closest-side,rgba(201,168,98,.20),transparent);opacity:.9}
 #subPage13 .hero .wrap{position:relative}
@@ -3483,12 +3483,12 @@ body.subOpen main.mobile{display:none}
 }
 #subPage12 .wrap{max-width:600px;margin:0 auto;padding:0 22px}
 #subPage12 a{color:inherit}
-#subPage12 .nav{position:sticky;top:0;z-index:30;background:#e4e6e9;backdrop-filter:blur(12px);border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
+#subPage12 .nav{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:9000;background:#e4e6e9;border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
 #subPage12 .nav .wrap{display:flex;align-items:center;height:56px}
 #subPage12 .back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#000000;font-size:18px;font-weight:600}
 #subPage12 .back:hover{color:var(--sub-ink)}
 #subPage12 .back .arw{font-size:20px;line-height:1}
-#subPage12 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15)}
+#subPage12 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15);margin-top:56px}
 #subPage12 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,98,.55),transparent)}
 #subPage12 .hero::before{content:"";position:absolute;top:-45%;right:-25%;width:80%;height:190%;background:radial-gradient(closest-side,rgba(201,168,98,.20),transparent);opacity:.9}
 #subPage12 .hero .wrap{position:relative}
@@ -3620,12 +3620,12 @@ body.subOpen main.mobile{display:none}
 #subPage.open,#subPage2.open{display:block!important;}
 #subPage .wrap{max-width:600px;margin:0 auto;padding:0 22px}
 #subPage a{color:inherit}
-#subPage .nav{position:sticky;top:0;z-index:30;background:#e4e6e9;backdrop-filter:blur(12px);border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
+#subPage .nav{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:9000;background:#e4e6e9;border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
 #subPage .nav .wrap{display:flex;align-items:center;height:56px}
 #subPage .back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#000000;font-size:18px;font-weight:600}
 #subPage .back:hover{color:var(--sub-ink)}
 #subPage .back .arw{font-size:20px;line-height:1}
-#subPage .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15)}
+#subPage .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15);margin-top:56px}
 #subPage .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,98,.55),transparent)}
 #subPage .hero::before{content:"";position:absolute;top:-45%;right:-25%;width:80%;height:190%;background:radial-gradient(closest-side,rgba(201,168,98,.20),transparent);opacity:.9}
 #subPage .hero .wrap{position:relative}
@@ -3711,12 +3711,12 @@ body.subOpen main.mobile{display:none}
 
 #subPage10 .wrap{max-width:600px;margin:0 auto;padding:0 22px}
 #subPage10 a{color:inherit}
-#subPage10 .nav{position:sticky;top:0;z-index:30;background:#e4e6e9;backdrop-filter:blur(12px);border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
+#subPage10 .nav{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:9000;background:#e4e6e9;border-bottom:1px solid #c7bfae;box-shadow:0 2px 8px rgba(20,20,20,.08)}
 #subPage10 .nav .wrap{display:flex;align-items:center;height:56px}
 #subPage10 .back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#000000;font-size:18px;font-weight:600}
 #subPage10 .back:hover{color:var(--sub-ink)}
 #subPage10 .back .arw{font-size:20px;line-height:1}
-#subPage10 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15)}
+#subPage10 .hero{background:linear-gradient(168deg,#0f2038 0%,#18324f 60%,#1d3a5c 100%);color:#fff;position:relative;overflow:hidden;padding:36px 0 32px;box-shadow:0 6px 12px -8px rgba(0,0,0,.15);margin-top:56px}
 #subPage10 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,98,.55),transparent)}
 #subPage10 .hero::before{content:"";position:absolute;top:-45%;right:-25%;width:80%;height:190%;background:radial-gradient(closest-side,rgba(201,168,98,.20),transparent);opacity:.9}
 #subPage10 .hero .wrap{position:relative}
@@ -3849,6 +3849,7 @@ body.subOpen main.mobile{display:none}
 .welcomeWrap:active{
   transform:scale(1.1)!important;
 }
+.hero[data-home]{cursor:pointer;-webkit-tap-highlight-color:transparent;}
 </style>
 
 </head>
@@ -4129,7 +4130,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="wrap"><a class="back" href="javascript:void(0)" data-home="1">복원 수리 전 꼭 읽어주세요.</a></div>
 </nav>
 
-<header class="hero">
+<header class="hero" data-home="1">
   <div class="wrap">
     <p class="sub">조치 방법에 따라 복원율이 크게 달라져요.<br>시공 전 아래 내용을 꼭 읽어주세요.</p>
   </div>
@@ -4274,7 +4275,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <nav class="nav">
     <div class="wrap"><a class="back" href="javascript:void(0)" data-home="1"><span class="arw">‹</span> 메인으로 돌아가기</a></div>
   </nav>
-  <div class="hero">
+  <div class="hero" data-home="1">
     <div class="wrap">
       <span class="eyebrow">복원 시공 사례</span>
       <h1 class="subTitle">벤츠 E300 앞유리 돌빵 복원</h1>
@@ -4352,7 +4353,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <nav class="nav">
     <div class="wrap"><a class="back" href="javascript:void(0)" data-home="1"><span class="arw">‹</span> 메인으로 돌아가기</a></div>
   </nav>
-  <div class="hero">
+  <div class="hero" data-home="1">
     <div class="wrap">
       <span class="eyebrow">복원 시공 사례</span>
       <h1 class="subTitle">테슬라 모델 3 트렁크 유리 복원</h1>
@@ -4440,7 +4441,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <nav class="nav">
     <div class="wrap"><a class="back" href="javascript:void(0)" data-home="1"><span class="arw">‹</span> 메인으로 돌아가기</a></div>
   </nav>
-  <div class="hero">
+  <div class="hero" data-home="1">
     <div class="wrap">
       <span class="eyebrow">복원 시공 사례</span>
       <h1 class="subTitle">페라리 캘리포니아 앞유리 롱크랙 복원</h1>
@@ -4528,7 +4529,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <nav class="nav">
     <div class="wrap"><a class="back" href="javascript:void(0)" data-home="1"><span class="arw">‹</span> 메인으로 돌아가기</a></div>
   </nav>
-  <div class="hero">
+  <div class="hero" data-home="1">
     <div class="wrap">
       <span class="eyebrow">복원 시공 사례</span>
       <h1 class="subTitle">그랜저 크랙 동반 파손 복원</h1>
@@ -4617,7 +4618,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <nav class="nav">
     <div class="wrap"><a class="back" href="javascript:void(0)" data-home="1"><span class="arw">‹</span> 메인으로 돌아가기</a></div>
   </nav>
-  <div class="hero">
+  <div class="hero" data-home="1">
     <div class="wrap">
       <span class="eyebrow">특수 복원 사례</span>
       <h1 class="subTitle">쇼케이스 유리 크랙 복원</h1>
@@ -4692,7 +4693,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="wrap"><a class="back" href="javascript:void(0)" data-home="1">저렴한 견적, 무조건 좋은 건 아닙니다</a></div>
 </nav>
 
-<header class="hero">
+<header class="hero" data-home="1">
   <div class="wrap">
     <p class="sub">후회 없는 선택을 위해, 아래 내용을 확인해 주세요.</p>
   </div>
@@ -4815,7 +4816,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="wrap"><a class="back" href="javascript:void(0)" data-home="1">셀프 유리복원 키트, 정말 효과가 있을까?</a></div>
 </nav>
 
-<header class="hero">
+<header class="hero" data-home="1">
   <div class="wrap">
     <p class="sub">길거리 유리용접, 인터넷 복원키트.<br>선택 전 아래 내용을 꼭 확인해 주세요.</p>
   </div>
@@ -4935,7 +4936,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="wrap"><a class="back" href="javascript:void(0)" data-home="1">돌빵을 방치하면 언제 롱크랙으로 커질까?</a></div>
 </nav>
 
-<header class="hero">
+<header class="hero" data-home="1">
   <div class="wrap">
     <p class="sub">작은 흠집이 어느새 길게 번지는 이유,<br>그리고 예방하는 방법을 알려드립니다.</p>
   </div>
@@ -5050,7 +5051,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="wrap"><a class="back" href="javascript:void(0)" data-home="1">어떻게 평생보증이 가능할까요?</a></div>
 </nav>
 
-<header class="hero">
+<header class="hero" data-home="1">
   <div class="wrap">
     <p class="sub">"정말 평생보증이 가능한가요?"<br>가장 많이 받는 질문에 솔직하게 답합니다.</p>
   </div>
@@ -5177,7 +5178,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="wrap"><a class="back" href="javascript:void(0)" data-home="1">유리복원, 유리용접 맞는 표현일까?</a></div>
 </nav>
 
-<header class="hero">
+<header class="hero" data-home="1">
   <div class="wrap">
     <p class="sub">많이 쓰이는 표현이지만, 실제 시공<br>원리와는 조금 차이가 있습니다.</p>
   </div>
@@ -5282,7 +5283,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="wrap"><a class="back" href="javascript:void(0)" data-home="1">복원을 했는데도 흔적이 남아 보이는 이유?</a></div>
 </nav>
 
-<header class="hero">
+<header class="hero" data-home="1">
   <div class="wrap">
     <p class="sub">유리복원의 원리, 쉽게 알려드립니다.</p>
     <p class="sub">원리를 알면, 결과를 오해하지 않습니다.</p>
@@ -5380,7 +5381,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="wrap"><a class="back" href="javascript:void(0)" data-home="1">시공 비용 안내</a></div>
 </nav>
 
-<header class="hero">
+<header class="hero" data-home="1">
   <div class="wrap">
     <p class="sub">파손 형태에 따라 비용이 달라집니다.<br>내 차 손상은 어떤 유형인지 확인해보세요.</p>
   </div>
@@ -5484,7 +5485,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="wrap"><a class="back" href="javascript:void(0)" data-home="1">복원 수리 문의 방법 전화한통, 사진 한 장 끝</a></div>
 </nav>
 
-<header class="hero">
+<header class="hero" data-home="1">
   <div class="wrap">
     <p class="sub">전화 한 통, 사진 한 장이면 끝납니다.</p>
   </div>
