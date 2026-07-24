@@ -2408,11 +2408,13 @@ section.simpleSteps .sub{
 .baPairBtn{display:block;width:100%;border:2px solid #d9b96a;appearance:none;background:linear-gradient(135deg,#fdf6e2 0%,#f6dfa3 100%);color:#4a3216;font-size:16px;font-weight:700;border-radius:20px;box-shadow:0 6px 16px rgba(180,140,50,.18);margin:-4px auto 10px;padding:14px 10px;text-align:center;cursor:pointer;letter-spacing:-.3px;}
 .qBox{margin:0;padding:18px 4px 8px;background:transparent;border:0;border-radius:0;}
 .qBoxSub{padding:28px 20px 8px;border-top:1px solid rgba(120,110,90,.14);margin-top:8px;}
-.qBoxSub .qBtn.qBtnBlue,.qBoxSub .qBtn.qBtnGold{animation:none!important;}
+.qBoxSub .qBtn.qBtnBlue,.qBoxSub .qBtn.qBtnGold,.qBoxSub .qBtn.qBtnPink{animation:none!important;}
 .qBoxSub .qBtn.qBtnBlue .qLine1,.qBoxSub .qBtn.qBtnBlue .qLine2{animation:none!important;color:#123a63!important;}
 .qBoxSub .qBtn.qBtnGold .qLine1,.qBoxSub .qBtn.qBtnGold .qLine2{animation:none!important;color:#4a3216!important;}
+.qBoxSub .qBtn.qBtnPink .qLine1,.qBoxSub .qBtn.qBtnPink .qLine2{animation:none!important;color:#7a1f4d!important;}
 .qBoxSub .qBtn.qBtnBlue{border:2px solid #7fb1e6!important;background:linear-gradient(135deg,#eaf3fd 0%,#bcdafc 100%)!important;box-shadow:0 6px 16px rgba(30,100,180,.18)!important;}
 .qBoxSub .qBtn.qBtnGold{border:2px solid #d9b96a!important;background:linear-gradient(135deg,#fdf6e2 0%,#f6dfa3 100%)!important;box-shadow:0 6px 16px rgba(180,140,50,.18)!important;}
+.qBoxSub .qBtn.qBtnPink{border:2px solid #e0679f!important;background:linear-gradient(135deg,#fce0ec 0%,#f4a9cb 100%)!important;box-shadow:0 6px 16px rgba(200,60,130,.28)!important;}
 .welcomeWrap{margin:28px 4px 4px;padding:11px 20px 10px;position:relative;text-align:center;}
 .welcomeWrap::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:44px;height:1px;background:linear-gradient(90deg,transparent,#c9a862,transparent);}
 .welcomeQMark{display:block;font-size:35px;font-weight:800;color:#b08d4d;line-height:1;margin-bottom:2px;font-family:Georgia,serif;opacity:.85;}
@@ -2437,6 +2439,8 @@ section.simpleSteps .sub{
 .qBtn.qBtnBlue .qLine1,.qBtn.qBtnBlue .qLine2{color:#123a63;animation:qBtnTextShift 10s ease-in-out infinite;}
 .qBtn.qBtnGold{border:2px solid #d9b96a;background:linear-gradient(135deg,#fdf6e2 0%,#f6dfa3 100%);box-shadow:0 6px 16px rgba(180,140,50,.18);animation:qBtnColorShiftRev 10s ease-in-out infinite;}
 .qBtn.qBtnGold .qLine1,.qBtn.qBtnGold .qLine2{color:#4a3216;animation:qBtnTextShiftRev 10s ease-in-out infinite;}
+.qBtn.qBtnPink{border:2px solid #e0679f;background:linear-gradient(135deg,#fce0ec 0%,#f4a9cb 100%);box-shadow:0 6px 16px rgba(200,60,130,.28);}
+.qBtn.qBtnPink .qLine1,.qBtn.qBtnPink .qLine2{color:#7a1f4d;}
 
 @keyframes qBtnColorShift{
   0%,15%{border-color:#7fb1e6;background:linear-gradient(135deg,#eaf3fd 0%,#bcdafc 100%);box-shadow:0 6px 16px rgba(30,100,180,.18);}
@@ -2458,6 +2462,12 @@ section.simpleSteps .sub{
   50%{color:#123a63;}
   85%,100%{color:#4a3216;}
 }
+@keyframes qBtnPinkBlink{
+  0%,15%{border-color:#e0679f;background:linear-gradient(135deg,#fce0ec 0%,#f4a9cb 100%);box-shadow:0 6px 22px rgba(200,60,130,.42);}
+  50%{border-color:#eab0cc;background:linear-gradient(135deg,#fdeef5 0%,#f9cfe2 100%);box-shadow:0 6px 16px rgba(200,60,130,.18);}
+  85%,100%{border-color:#e0679f;background:linear-gradient(135deg,#fce0ec 0%,#f4a9cb 100%);box-shadow:0 6px 22px rgba(200,60,130,.42);}
+}
+.qBtn.qBtnPink[data-open]{animation:qBtnPinkBlink 10s ease-in-out infinite;}
 .qLine1{display:block;font-size:21px;font-weight:600;color:#4a3216;letter-spacing:-.3px;margin-bottom:2px;}
 .qLine2{display:block;font-size:17px;font-weight:400;color:#4a3216;letter-spacing:-.2px;}
 .baGallery .baNote{margin:16px 4px 0;display:flex;gap:5px;text-align:left;color:#8593a4;font-size:13px;font-weight:450;line-height:1.5;letter-spacing:-.3px;}
@@ -3920,7 +3930,7 @@ body.subOpen main.mobile{display:none}
       <button type="button" class="qBtn qBtnBlue" data-open="7"><span class="qLine1">저렴한 견적</span><span class="qLine2">무조건 좋은 건 아닙니다</span></button>
       <button type="button" class="qBtn qBtnGold" data-open="10"><span class="qLine1">어떻게 평생보증이 가능할까?</span></button>
       <button type="button" class="qBtn qBtnBlue" data-open="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
-      <button type="button" class="qBtn qBtnGold" data-open="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
+      <button type="button" class="qBtn qBtnPink" data-open="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-open="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
       <button type="button" class="qBtn qBtnGold" data-open="12"><span class="qLine1">복원 수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-open="13"><span class="qLine1">유리복원을 했는데도</span><span class="qLine2">흔적이 남아 보이는 이유?</span></button>
@@ -4187,7 +4197,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="sect-h"><span class="idx">04</span><span class="t">고속도로 운행 중 튄 돌빵, 보상 받을 수 있을까요?</span><span class="rule"></span></div>
       <div class="item">
         <h2>돌빵사고는 억울하지만 대부분 본인이 손해를 감수합니다</h2>
-        <p>도로 시설물 문제로 생긴 돌빵 사고라면 도로공사 측에 책임이 있기 때문에, <b>도로공사로부터 보상을 받을 수 있습니다.</b><br><span style="display:block;margin-top:10px"></span>하지만 운전 중 발생한 돌빵은 어디에서 날아왔는지조차 가늠하기 어렵고, 블랙박스에도 잘 찍히지 않는 경우가 대부분이라 <b>억울하지만 현실적으로는 보상 받기는 매우 어렵답니다.</b> 정확한 것은 가입하신 보험사에 문의해보시는 게 가장 확실합니다.</p>
+        <p>도로 시설물 문제로 생긴 돌빵 사고라면 도로공사 측에 책임이 있기 때문에, <b>도로공사로부터 보상을 받을 수 있습니다.</b><br><span style="display:block;margin-top:10px"></span>하지만 운전 중 발생한 돌빵은 어디에서 날아왔는지조차 가늠하기 어렵고, 블랙박스에도 잘 찍히지 않는 경우가 대부분이라 <b>억울하지만 현실적으로는 보상 받기는 매우 어렵답니다.</b> 정확한 것은 가입하신 보험사에 문의해보시는 게 가장 확실합니다.<br><span style="display:block;margin-top:10px"></span>유리복원 비용을 보험 처리 하신다면 복원비용 보다 자기분담금이 더 비싸집니다.</p>
       </div>
     </section>
 
@@ -4220,6 +4230,14 @@ document.addEventListener('DOMContentLoaded', function(){
         <span class="cap"><span class="dot"></span>주의</span>
         <h2>유리 특성상 예상치 못한 상황</h2>
         <p>작업 진행 과정에서 유리 특성상 예상치 못한 상황이 발생할 수 있으며, 경우에 따라 <b>정상적인 복원이 어려워 임시 조치 또는 유리 교체가 필요한 경우도 발생할 수 있습니다.</b></p>
+      </div>
+    </section>
+
+    <section class="sect">
+      <div class="sect-h"><span class="idx">07</span><span class="t">출장 방식, 안심하셔도 됩니다</span><span class="rule"></span></div>
+      <div class="item">
+        <h2>카글라스 기술팀은 안심하셔도 됩니다.</h2>
+        <p>전화 상담을 하다 보면, 출장 방문 방식에 대해 신뢰가 가는지 걱정하시는 분들이 간혹 계십니다. 자동차유리복원은 지역별 수요가 제한적인 특성상, 출장 중심으로 운영되는 경우가 많습니다.<br><span style="display:block;margin-top:10px"></span><b>출장이라고 해서 품질이 달라지는 것은 아닙니다.</b> 오히려 <b>고객님의 시간과 이동 부담을 덜어드릴 수 있는 가장 효율적인 방식</b>이지요.<br><span style="display:block;margin-top:10px"></span>3만 대 이상의 시공 경험과 기술과 노하우로 고객님 계신 곳 어디든 직접 방문드려 시공해 드리오니, 카글라스 기술팀만큼은 안심하고 맡기셔도 됩니다.</p>
       </div>
       <div class="free" style="margin-top:48px;">
         <div class="ic">🛡️</div>
@@ -4796,7 +4814,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <button type="button" class="qBtn qBtnBlue" data-jump="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
       <button type="button" class="qBtn qBtnGold" data-jump="10"><span class="qLine1">어떻게 평생보증이 가능할까?</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
-      <button type="button" class="qBtn qBtnGold" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
+      <button type="button" class="qBtn qBtnPink" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="13"><span class="qLine1">유리복원을 했는데도</span><span class="qLine2">흔적이 남아 보이는 이유?</span></button>
       <button type="button" class="qBtn qBtnGold" data-jump="12"><span class="qLine1">복원 수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="14"><span class="qLine1">시공 비용 안내</span></button>
@@ -4845,7 +4863,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="sect-h"><span class="idx">02</span><span class="t">셀프 복원키트, 한계는 있습니다</span><span class="rule"></span></div>
       <div class="item">
         <h2>간단한 보수조차 쉽지 않습니다</h2>
-        <p>인터넷에는 누구나 쉽게 쓸 수 있다는 유리복원키트가 많이 판매되고 있습니다. 마치 마법을 부린 듯 감쪽같이 새 유리가 됩니다.<br><span style="display:block;margin-top:10px"></span><b>하지만 실상은 복원키트로는 간단한 보수조차 기대만큼 효과를 보기 어려운 것이 현실인 경우가 많습니다.</b> 전문 기술자 및 전문 장비를 이용한 복원과 같은 결과는 더더욱 기대하기 어려운 것이 사실입니다. 그 이유는 유리의 파손 형태는 저마다 다르고, 시공 중 예상치 못한 변수가 많기 때문에 아래 요소를 함께 고려해야 하기 때문입니다.</p>
+        <p>인터넷에는 누구나 쉽게 쓸 수 있다는 유리복원키트가 많이 판매되고 있습니다. 광고는 마치 마법을 부린 듯 감쪽같이 새 유리가 됩니다.<br><span style="display:block;margin-top:10px"></span><b>하지만 실상은 복원키트로는 간단한 보수조차 기대만큼 효과를 보기 어려운 것이 현실인 경우가 많습니다.</b> 전문 기술자 및 전문 장비를 이용한 복원과 같은 결과는 더더욱 기대하기 어려운 것이 사실입니다. 그 이유는 유리의 파손 형태는 저마다 다르고, 시공 중 예상치 못한 변수가 많기 때문에 아래 요소를 함께 고려해야 하기 때문입니다.</p>
         <ul class="qaList">
           <li>균열의 깊이</li>
           <li>충격의 방향</li>
@@ -4916,7 +4934,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <button type="button" class="qBtn qBtnBlue" data-jump="7"><span class="qLine1">저렴한 견적</span><span class="qLine2">무조건 좋은 건 아닙니다</span></button>
       <button type="button" class="qBtn qBtnGold" data-jump="10"><span class="qLine1">어떻게 평생보증이 가능할까?</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
-      <button type="button" class="qBtn qBtnGold" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
+      <button type="button" class="qBtn qBtnPink" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="13"><span class="qLine1">유리복원을 했는데도</span><span class="qLine2">흔적이 남아 보이는 이유?</span></button>
       <button type="button" class="qBtn qBtnGold" data-jump="12"><span class="qLine1">복원 수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="14"><span class="qLine1">시공 비용 안내</span></button>
@@ -5029,7 +5047,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="qBtnRow">
       <button type="button" class="qBtn qBtnGold" data-jump="10"><span class="qLine1">어떻게 평생보증이 가능할까?</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="7"><span class="qLine1">저렴한 견적</span><span class="qLine2">무조건 좋은 건 아닙니다</span></button>
-      <button type="button" class="qBtn qBtnGold" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
+      <button type="button" class="qBtn qBtnPink" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
       <button type="button" class="qBtn qBtnGold" data-jump="12"><span class="qLine1">복원 수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
@@ -5119,7 +5137,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="sect-h"><span class="idx">04</span><span class="t">출장 방식, 안심하셔도 됩니다</span><span class="rule"></span></div>
       <div class="item">
         <h2>카글라스 기술팀은 안심하셔도 됩니다.</h2>
-        <p>전화 상담을 하다 보면, 출장 방문 방식에 대해 신뢰가 가는지 걱정하시는 분들이 간혹 계십니다. 자동차유리복원은 지역별 수요가 제한적인 특성상, 출장 중심으로 운영되는 경우가 많습니다.<br><span style="display:block;margin-top:10px"></span><b>출장이라고 해서 품질이 달라지는 것은 아닙니다.</b> 오히려 고객님의 시간과 이동 부담을 덜어드릴 수 있는 가장 효율적인 방식이지요.<br><span style="display:block;margin-top:10px"></span>3만 대 이상의 시공 경험과 기술과 노하우로 고객님 계신 곳 어디든 직접 방문드려 시공해 드리오니, 카글라스 기술팀만큼은 안심하고 맡기셔도 됩니다.</p>
+        <p>전화 상담을 하다 보면, 출장 방문 방식에 대해 신뢰가 가는지 걱정하시는 분들이 간혹 계십니다. 자동차유리복원은 지역별 수요가 제한적인 특성상, 출장 중심으로 운영되는 경우가 많습니다.<br><span style="display:block;margin-top:10px"></span><b>출장이라고 해서 품질이 달라지는 것은 아닙니다.</b> 오히려 <b>고객님의 시간과 이동 부담을 덜어드릴 수 있는 가장 효율적인 방식</b>이지요.<br><span style="display:block;margin-top:10px"></span>3만 대 이상의 시공 경험과 기술과 노하우로 고객님 계신 곳 어디든 직접 방문드려 시공해 드리오니, 카글라스 기술팀만큼은 안심하고 맡기셔도 됩니다.</p>
       </div>
       <div class="free" style="margin-top:48px;">
         <div class="ic">🚗</div>
@@ -5156,7 +5174,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="qBtnRow">
       <button type="button" class="qBtn qBtnGold" data-jump="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="7"><span class="qLine1">저렴한 견적</span><span class="qLine2">무조건 좋은 건 아닙니다</span></button>
-      <button type="button" class="qBtn qBtnGold" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
+      <button type="button" class="qBtn qBtnPink" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
       <button type="button" class="qBtn qBtnGold" data-jump="12"><span class="qLine1">복원 수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
@@ -5261,7 +5279,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <button type="button" class="qBtn qBtnBlue" data-jump="7"><span class="qLine1">저렴한 견적</span><span class="qLine2">무조건 좋은 건 아닙니다</span></button>
       <button type="button" class="qBtn qBtnGold" data-jump="10"><span class="qLine1">어떻게 평생보증이 가능할까?</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
-      <button type="button" class="qBtn qBtnGold" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
+      <button type="button" class="qBtn qBtnPink" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="13"><span class="qLine1">유리복원을 했는데도</span><span class="qLine2">흔적이 남아 보이는 이유?</span></button>
       <button type="button" class="qBtn qBtnGold" data-jump="12"><span class="qLine1">복원 수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="14"><span class="qLine1">시공 비용 안내</span></button>
@@ -5359,7 +5377,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <button type="button" class="qBtn qBtnBlue" data-jump="7"><span class="qLine1">저렴한 견적</span><span class="qLine2">무조건 좋은 건 아닙니다</span></button>
       <button type="button" class="qBtn qBtnGold" data-jump="10"><span class="qLine1">어떻게 평생보증이 가능할까?</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
-      <button type="button" class="qBtn qBtnGold" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
+      <button type="button" class="qBtn qBtnPink" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
       <button type="button" class="qBtn qBtnGold" data-jump="12"><span class="qLine1">복원 수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="14"><span class="qLine1">시공 비용 안내</span></button>
@@ -5463,7 +5481,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <button type="button" class="qBtn qBtnBlue" data-jump="7"><span class="qLine1">저렴한 견적</span><span class="qLine2">무조건 좋은 건 아닙니다</span></button>
       <button type="button" class="qBtn qBtnGold" data-jump="10"><span class="qLine1">어떻게 평생보증이 가능할까?</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
-      <button type="button" class="qBtn qBtnGold" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
+      <button type="button" class="qBtn qBtnPink" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
       <button type="button" class="qBtn qBtnGold" data-jump="12"><span class="qLine1">복원 수리 문의 방법</span><span class="qLine2">전화한통, 사진 한 장이면 끝납니다.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="13"><span class="qLine1">유리복원을 했는데도</span><span class="qLine2">흔적이 남아 보이는 이유?</span></button>
@@ -5535,7 +5553,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="sect-h" style="margin-top:32px;margin-bottom:15px;"><span class="t">출장 방식, 안심하셔도 됩니다</span><span class="rule"></span></div>
       <div class="item">
         <h2>카글라스 기술팀은 안심하셔도 됩니다.</h2>
-        <p>전화 상담을 하다 보면, 출장 방문 방식에 대해 신뢰가 가는지 걱정하시는 분들이 간혹 계십니다. 자동차유리복원은 지역별 수요가 제한적인 특성상, 출장 중심으로 운영되는 경우가 많습니다.<br><span style="display:block;margin-top:10px"></span><b>출장이라고 해서 품질이 달라지는 것은 아닙니다.</b> 오히려 고객님의 시간과 이동 부담을 덜어드릴 수 있는 가장 효율적인 방식이지요.<br><span style="display:block;margin-top:10px"></span>3만 대 이상의 시공 경험과 기술과 노하우로 고객님 계신 곳 어디든 직접 방문드려 시공해 드리오니, 카글라스 기술팀만큼은 안심하고 맡기셔도 됩니다.</p>
+        <p>전화 상담을 하다 보면, 출장 방문 방식에 대해 신뢰가 가는지 걱정하시는 분들이 간혹 계십니다. 자동차유리복원은 지역별 수요가 제한적인 특성상, 출장 중심으로 운영되는 경우가 많습니다.<br><span style="display:block;margin-top:10px"></span><b>출장이라고 해서 품질이 달라지는 것은 아닙니다.</b> 오히려 <b>고객님의 시간과 이동 부담을 덜어드릴 수 있는 가장 효율적인 방식</b>이지요.<br><span style="display:block;margin-top:10px"></span>3만 대 이상의 시공 경험과 기술과 노하우로 고객님 계신 곳 어디든 직접 방문드려 시공해 드리오니, 카글라스 기술팀만큼은 안심하고 맡기셔도 됩니다.</p>
       </div>
       <div class="free" style="margin-top:48px;">
         <div class="ic">🕐</div>
@@ -5570,7 +5588,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <button type="button" class="qBtn qBtnBlue" data-jump="7"><span class="qLine1">저렴한 견적</span><span class="qLine2">무조건 좋은 건 아닙니다</span></button>
       <button type="button" class="qBtn qBtnGold" data-jump="10"><span class="qLine1">어떻게 평생보증이 가능할까?</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="8"><span class="qLine1">셀프 유리복원 키트</span><span class="qLine2">정말 효과가 있을까?</span></button>
-      <button type="button" class="qBtn qBtnGold" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
+      <button type="button" class="qBtn qBtnPink" data-jump="1"><span class="qLine1">복원 수리 전 꼭 읽어주세요.</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="11"><span class="qLine1">유리복원, 유리용접</span><span class="qLine2">맞는 표현일까?</span></button>
       <button type="button" class="qBtn qBtnGold" data-jump="14"><span class="qLine1">시공 비용 안내</span></button>
       <button type="button" class="qBtn qBtnBlue" data-jump="13"><span class="qLine1">유리복원을 했는데도</span><span class="qLine2">흔적이 남아 보이는 이유?</span></button>
