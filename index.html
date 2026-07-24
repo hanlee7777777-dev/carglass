@@ -24,9 +24,10 @@ img{
 a,button,.qBtn,.baPairLink,.baPairBtn,.noticeTextLink,.subBackBtn,.back,input,textarea{
   -webkit-touch-callout:default;
 }
-a img,button img,.baItem img,.equip-photo img{
+a img,button img,.baItem img,.equip-photo img,[id^="subPage"] img{
   pointer-events:auto;
 }
+#imgLightbox img{pointer-events:auto;}
 html{scroll-behavior:smooth}
 html{scroll-behavior:smooth}
 html,body{overflow-x:hidden}
@@ -338,15 +339,15 @@ url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA4KCw0LCQ4NDA0QDw4R
 .premiumCard:nth-child(2){animation-delay:.18s}
 .premiumCard:nth-child(3){animation-delay:.36s}
 .premiumIcon{
-  width:50px;
-  height:50px;
+  width:62px;
+  height:62px;
   border-radius:50%;
   background:radial-gradient(circle at 35% 30%,#ffffff,#dceeff);
   display:flex;
   align-items:center;
   justify-content:center;
   color:#0869e8;
-  font-size:27px;
+  font-size:34px;
   margin-bottom:13px;
   box-shadow:inset 0 0 0 1px rgba(8,105,232,.08);
 }
@@ -383,7 +384,7 @@ url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA4KCw0LCQ4NDA0QDw4R
 @media(max-width:370px){
   .premiumStats{gap:7px;margin-top:20px}
   .premiumCard{height:134px;border-radius:18px;padding:11px 3px}
-  .premiumIcon{width:40px;height:40px;font-size:22px;margin-bottom:10px}
+  .premiumIcon{width:50px;height:50px;font-size:28px;margin-bottom:10px}
   .premiumCard strong{font-size:21px;letter-spacing:-1px}
   .premiumCard p{font-size:12px;margin-top:8px}
   .premiumCard i{height:3px;margin-top:11px}
@@ -1334,7 +1335,7 @@ html,body{
   box-shadow:0 8px 18px rgba(7,95,227,.24)!important;
 }
 .hero .badgeTop{
-  transform:scale(1.08)!important;
+  transform:scale(1.2)!important;
   transform-origin:left center!important;
   background:rgba(6,26,51,.62)!important;
   border:1px solid rgba(255,255,255,.32)!important;
@@ -3823,10 +3824,11 @@ body.subOpen main.mobile{display:none}
   .top{max-width:700px!important;}
   .subFoot3{max-width:700px!important;}
   [id^="subPage"]{left:50%!important;right:auto!important;margin-left:-350px!important;width:100%!important;max-width:700px!important;box-shadow:0 0 60px rgba(0,0,0,.3);}
+  [id^="subPage"] .wrap{max-width:100%!important;}
   .nav{max-width:700px!important;}
 }
 .free{cursor:pointer;-webkit-tap-highlight-color:transparent;}
-.free .ic.icShake, .stepIcon.icShake, .stepIc.icShake{animation:freeIconShake .4s cubic-bezier(.36,.07,.19,.97);}
+.free .ic.icShake, .stepIcon.icShake, .stepIc.icShake, .premiumIcon.icShake{animation:freeIconShake .4s cubic-bezier(.36,.07,.19,.97);}
 .stepCard{cursor:pointer;-webkit-tap-highlight-color:transparent;}
 .stepItem{cursor:pointer;-webkit-tap-highlight-color:transparent;}
 .welcomeWrap{cursor:pointer;-webkit-tap-highlight-color:transparent;}
@@ -3850,17 +3852,36 @@ body.subOpen main.mobile{display:none}
   75%{transform:translate3d(-6px,0,0) rotate(-8deg);}
   100%{transform:translate3d(0,0,0) rotate(0);}
 }
-.item,.closing,.rate,.carTypes>div,.fleetLogoImageWrap,.fleetHero,.baNote2,.free,.stepCard,.stepItem,.welcomeWrap{
+.item,.closing,.rate,.carTypes>div,.fleetLogoImageWrap,.fleetHero,.baNote2,.free,.stepCard,.stepItem,.welcomeWrap,.premiumWarrantyBox{
   transition:transform .15s ease,box-shadow .15s ease!important;
 }
-.item:active,.closing:active,.rate:active,.carTypes>div:active,.fleetLogoImageWrap:active,.fleetHero:active,.baNote2:active,.free:active,.stepCard:active,.stepItem:active{
+.item:active,.closing:active,.rate:active,.carTypes>div:active,.fleetLogoImageWrap:active,.fleetHero:active,.baNote2:active,.free:active,.stepCard:active,.stepItem:active,.premiumWarrantyBox:active{
   transform:scale(1.2)!important;
   box-shadow:0 10px 26px rgba(21,39,68,.18)!important;
+}
+.premiumWarrantyBox:active{
+  transform:scale(1.12)!important;
 }
 .welcomeWrap:active{
   transform:scale(1.2)!important;
 }
 .hero[data-home]{cursor:pointer;-webkit-tap-highlight-color:transparent;}
+[id^="subPage"] .baItem,[id^="subPage"] .equip-photo,[id^="subPage"] figure.ba-photo img,[id^="subPage"] .ba-cell,.baGrid .baItem{
+  transition:transform .15s ease,box-shadow .15s ease!important;
+  -webkit-tap-highlight-color:transparent;
+}
+[id^="subPage"] .baItem:active,[id^="subPage"] .equip-photo:active,[id^="subPage"] .ba-cell:active,.baGrid .baItem:active{
+  transform:scale(1.12)!important;
+  box-shadow:0 10px 26px rgba(21,39,68,.28)!important;
+  position:relative;
+  z-index:5;
+}
+[id^="subPage"] figure.ba-photo:active img{
+  transform:scale(1.12)!important;
+  box-shadow:0 10px 26px rgba(21,39,68,.28)!important;
+  position:relative;
+  z-index:5;
+}
 </style>
 
 </head>
@@ -4114,8 +4135,6 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 document.addEventListener('DOMContentLoaded', function(){
   const counters = document.querySelectorAll('.countUp');
   const runCounter = (el) => {
-    if (el.dataset.done) return;
-    el.dataset.done = '1';
     const target = Number(el.dataset.target || 30000);
     const duration = 1500;
     const start = performance.now();
@@ -4128,9 +4147,29 @@ document.addEventListener('DOMContentLoaded', function(){
     requestAnimationFrame(tick);
   };
   const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{ if(entry.isIntersecting) runCounter(entry.target); });
+    entries.forEach(entry=>{
+      if(entry.isIntersecting && !entry.target.dataset.done){
+        entry.target.dataset.done = '1';
+        runCounter(entry.target);
+      }
+    });
   }, {threshold:.2});
   counters.forEach(el=>obs.observe(el));
+
+  document.querySelectorAll('.premiumCard').forEach(function(card){
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function(){
+      var icon = card.querySelector('.premiumIcon');
+      if(icon){
+        icon.classList.remove('icShake');
+        void icon.offsetWidth;
+        icon.classList.add('icShake');
+        setTimeout(function(){ icon.classList.remove('icShake'); }, 650);
+      }
+      var counter = card.querySelector('.countUp');
+      if(counter) runCounter(counter);
+    });
+  });
 });
 </script>
 
@@ -4969,7 +5008,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="sect-h"><span class="idx">01</span><span class="t">돌빵, 바로 금이 가는 게 아닙니다</span><span class="rule"></span></div>
       <div class="item">
         <span class="num">POINT 1</span>
-        <h2>돌빵은 나중에 롱크랙으로 커집니다</h2>
+        <h2>나중에 롱크랙으로 커집니다.</h2>
         <p>돌빵이 발생한 직후 바로 롱크랙으로 가는 경우도 있지만, 대부분은 며칠 또는 몇 주가 지난 뒤 균열이 길게 진행됩니다. 퇴근할 때까지 이상 없었는데 다음 날 아침 길게 금이 가 있거나, 며칠 주차만 해뒀는데 어느새 롱크랙으로 진행된 경우처럼 <b>운전자도 모르는 사이 커지는 일이 흔합니다.</b></p>
       </div>
     </section>
