@@ -4062,6 +4062,7 @@ body.subOpen main.mobile{display:none}
     <span class="welcomeQMark">“</span>
     <span class="welcomeBrand">CARGLASS</span>
     <p class="welcomeText">자동차유리복원에 오신 것을<br>환영합니다.</p>
+    <div class="runningDogWrap"><span class="runningDog">🚗</span></div>
   </div>
   <div class="qBox">
     <div class="baHeadBox qHeadBox qHeadBoxMain"><span class="qMark">“</span><p class="baSub">궁금한 항목을 눌러보세요</p><h2>유리복원 궁금증, 여기서 다 풀립니다.</h2></div>
@@ -6393,6 +6394,44 @@ document.addEventListener('click', function(e){
 .qBtn.qBtnPink[data-open]{animation:qBtnPinkBlink 10s ease-in-out infinite!important;}
 
 #subPage .free,#subPage2 .free,#subPage3 .free,#subPage4 .free,#subPage5 .free,#subPage6 .free,#subPage7 .free,#subPage8 .free,#subPage9 .free,#subPage10 .free,#subPage11 .free,#subPage12 .free,#subPage13 .free,#subPage14 .free,#subPage15 .free{margin-top:19px!important;}
+
+.welcomeWrap{position:relative;overflow:hidden;}
+.welcomeBrand,.welcomeQMark{animation:welcomeColorShift 3.5s ease-in-out infinite;}
+@keyframes welcomeColorShift{
+  0%,10%{color:#b08d4d;}
+  25%{color:#f0951e;}
+  40%,100%{color:#b08d4d;}
+}
+.welcomeWrap::after{
+  content:"";
+  position:absolute;
+  top:0;left:-60%;
+  width:40%;height:100%;
+  background:linear-gradient(115deg,transparent 0%,rgba(255,255,255,.65) 50%,transparent 100%);
+  animation:welcomeShine 3.5s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes welcomeShine{
+  0%{left:-60%;}
+  55%{left:130%;}
+  100%{left:130%;}
+}
+
+.runningDogWrap{position:relative;height:34px;margin-top:8px;overflow:hidden;}
+.runningDog{
+  position:absolute;
+  left:-15%;
+  top:0;
+  font-size:26px;
+  animation:dogRun 6s linear infinite;
+  display:inline-block;
+  filter:grayscale(1) brightness(2.2) contrast(.7);opacity:.75;
+}
+@keyframes dogRun{
+  0%{left:-15%;transform:scaleX(-1) translateY(0);}
+  50%{transform:scaleX(-1) translateY(-0.4px);}
+  100%{left:105%;transform:scaleX(-1) translateY(0);}
+}
 </style>
 <script>
 (function(){
