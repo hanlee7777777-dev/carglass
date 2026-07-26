@@ -4062,7 +4062,13 @@ body.subOpen main.mobile{display:none}
     <span class="welcomeQMark">“</span>
     <span class="welcomeBrand">CARGLASS</span>
     <p class="welcomeText">자동차유리복원에 오신 것을<br>환영합니다.</p>
-    <div class="runningDogWrap"><span class="runningDog">🚗</span></div>
+    <div class="runningDogWrap">
+      <svg class="carTrailSvg" viewBox="0 0 300 14" preserveAspectRatio="none">
+        <path pathLength="100" d="M4,7 L26,6.3 L48,7.4 L70,6.6 L92,7.2 L114,6.4 L136,7.3 L158,6.5 L180,7.1 L202,6.3 L224,7.4 L246,6.6 L268,7.2 L296,6.8" stroke="#c9a862" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="carLetter carLetter1">C</span><span class="carLetter carLetter2">A</span><span class="carLetter carLetter3">R</span><span class="carLetter carLetter4">G</span><span class="carLetter carLetter5">L</span><span class="carLetter carLetter6">A</span><span class="carLetter carLetter7">S</span><span class="carLetter carLetter8">S</span>
+      <span class="runningDog">🚗</span>
+    </div>
   </div>
   <div class="qBox">
     <div class="baHeadBox qHeadBox qHeadBoxMain"><span class="qMark">“</span><p class="baSub">궁금한 항목을 눌러보세요</p><h2>유리복원 궁금증, 여기서 다 풀립니다.</h2></div>
@@ -6417,20 +6423,59 @@ document.addEventListener('click', function(e){
   100%{left:130%;}
 }
 
-.runningDogWrap{position:relative;height:34px;margin-top:8px;overflow:hidden;}
+.runningDogWrap{position:relative;height:34px;margin-top:30px;overflow:hidden;}
+.carTrailSvg{position:absolute;left:0;bottom:4px;width:100%;height:14px;overflow:visible;}
+.carTrailSvg path{
+  stroke-dasharray:100;
+  stroke-dashoffset:100;
+  animation:roadTrail 10s linear infinite;
+  opacity:.55;
+}
+@keyframes roadTrail{
+  0%{stroke-dashoffset:100;}
+  80%{stroke-dashoffset:0;}
+  100%{stroke-dashoffset:0;}
+}
 .runningDog{
   position:absolute;
   left:-15%;
   top:0;
   font-size:26px;
-  animation:dogRun 6s linear infinite;
+  animation:dogRun 10s linear infinite;
   display:inline-block;
   filter:grayscale(1) brightness(2.2) contrast(.7);opacity:.75;
 }
 @keyframes dogRun{
   0%{left:-15%;transform:scaleX(-1) translateY(0);}
-  50%{transform:scaleX(-1) translateY(-0.4px);}
+  40%{transform:scaleX(-1) translateY(-0.4px);}
+  80%{left:105%;transform:scaleX(-1) translateY(0);}
   100%{left:105%;transform:scaleX(-1) translateY(0);}
+}
+
+.carLetter{position:absolute;bottom:10px;font-size:18px;font-weight:800;color:#d9ad5f;letter-spacing:0;opacity:0;white-space:nowrap;}
+.carLetter1{left:10.0%;animation:letterFade1 10s linear infinite;}
+@keyframes letterFade1{0%,15.8%{opacity:0;}16.6%,100%{opacity:1;}}
+.carLetter2{left:21.0%;animation:letterFade2 10s linear infinite;}
+@keyframes letterFade2{0%,23.2%{opacity:0;}24.0%,100%{opacity:1;}}
+.carLetter3{left:32.0%;animation:letterFade3 10s linear infinite;}
+@keyframes letterFade3{0%,30.6%{opacity:0;}31.4%,100%{opacity:1;}}
+.carLetter4{left:43.0%;animation:letterFade4 10s linear infinite;}
+@keyframes letterFade4{0%,37.8%{opacity:0;}38.6%,100%{opacity:1;}}
+.carLetter5{left:54.0%;animation:letterFade5 10s linear infinite;}
+@keyframes letterFade5{0%,45.2%{opacity:0;}46.0%,100%{opacity:1;}}
+.carLetter6{left:65.0%;animation:letterFade6 10s linear infinite;}
+@keyframes letterFade6{0%,52.6%{opacity:0;}53.4%,100%{opacity:1;}}
+.carLetter7{left:76.0%;animation:letterFade7 10s linear infinite;}
+@keyframes letterFade7{0%,59.8%{opacity:0;}60.6%,100%{opacity:1;}}
+.carLetter8{left:87.0%;animation:letterFade8 10s linear infinite;}
+@keyframes letterFade8{0%,67.2%{opacity:0;}68.0%,100%{opacity:1;}}
+}
+}
+}
+}
+}
+}
+}
 }
 </style>
 <script>
