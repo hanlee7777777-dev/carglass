@@ -2409,12 +2409,10 @@ section.simpleSteps .sub{
 .baPairBtn{display:block;width:100%;border:2px solid #d9b96a;appearance:none;background:linear-gradient(135deg,#fdf6e2 0%,#f6dfa3 100%);color:#4a3216;font-size:16px;font-weight:700;border-radius:20px;box-shadow:0 6px 16px rgba(180,140,50,.18);margin:-4px auto 10px;padding:14px 10px;text-align:center;cursor:pointer;letter-spacing:-.3px;}
 .qBox{margin:0;padding:18px 4px 8px;background:transparent;border:0;border-radius:0;}
 .qBoxSub{padding:28px 20px 8px;border-top:1px solid rgba(120,110,90,.14);margin-top:8px;}
-.qBoxSub .qBtn.qBtnBlue,.qBoxSub .qBtn.qBtnGold,.qBoxSub .qBtn.qBtnPink{animation:none!important;}
-.qBoxSub .qBtn.qBtnBlue .qLine1,.qBoxSub .qBtn.qBtnBlue .qLine2{animation:none!important;color:#123a63!important;}
-.qBoxSub .qBtn.qBtnGold .qLine1,.qBoxSub .qBtn.qBtnGold .qLine2{animation:none!important;color:#4a3216!important;}
+
+
 .qBoxSub .qBtn.qBtnPink .qLine1,.qBoxSub .qBtn.qBtnPink .qLine2{animation:none!important;color:#1e5c30!important;}
-.qBoxSub .qBtn.qBtnBlue{border:2px solid #7fb1e6!important;background:linear-gradient(135deg,#eaf3fd 0%,#bcdafc 100%)!important;box-shadow:0 6px 16px rgba(30,100,180,.18)!important;}
-.qBoxSub .qBtn.qBtnGold{border:2px solid #d9b96a!important;background:linear-gradient(135deg,#fdf6e2 0%,#f6dfa3 100%)!important;box-shadow:0 6px 16px rgba(180,140,50,.18)!important;}
+
 .qBoxSub .qBtn.qBtnPink{border:2px solid #5cb87a!important;background:linear-gradient(135deg,#eafaf0 0%,#b8ecc9 100%)!important;box-shadow:0 6px 16px rgba(40,150,90,.28)!important;}
 .welcomeWrap{margin:28px 4px 4px;padding:11px 20px 10px;position:relative;text-align:center;}
 .welcomeWrap::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:44px;height:1px;background:linear-gradient(90deg,transparent,#c9a862,transparent);}
@@ -2443,6 +2441,11 @@ section.simpleSteps .sub{
 .qBtn.qBtnPink{border:2px solid #5cb87a;background:linear-gradient(135deg,#eafaf0 0%,#b8ecc9 100%);box-shadow:0 6px 16px rgba(40,150,90,.28);}
 .qBtn.qBtnPink .qLine1,.qBtn.qBtnPink .qLine2{color:#1e5c30;}
 .qBtn.qBtnPink[data-open],.qBtn.qBtnPink[data-jump]{animation:qBtnPinkBlink 10s ease-in-out infinite;}
+.qBoxSub .qBtn.qBtnPink[data-open],.qBoxSub .qBtn.qBtnPink[data-jump]{animation:qBtnPinkBlink 10s ease-in-out infinite!important;}
+.qBoxSub .qBtn.qBtnBlue{animation:qBtnColorShift 10s ease-in-out infinite!important;}
+.qBoxSub .qBtn.qBtnBlue .qLine1,.qBoxSub .qBtn.qBtnBlue .qLine2{animation:qBtnTextShift 10s ease-in-out infinite!important;}
+.qBoxSub .qBtn.qBtnGold{animation:qBtnColorShiftRev 10s ease-in-out infinite!important;}
+.qBoxSub .qBtn.qBtnGold .qLine1,.qBoxSub .qBtn.qBtnGold .qLine2{animation:qBtnTextShiftRev 10s ease-in-out infinite!important;}
 
 @keyframes qBtnColorShift{
   0%,15%{border-color:#7fb1e6;background:linear-gradient(135deg,#eaf3fd 0%,#bcdafc 100%);box-shadow:0 6px 16px rgba(30,100,180,.18);}
@@ -4008,7 +4011,7 @@ body.subOpen main.mobile{display:none}
   <div class="logo">
   
   <div class="logoText">
-    <b>평생보증하는</b><span>카글라스 자동차유리복원</span>
+    <b>평생보증하는</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">카글라스 자동차유리복원</span>
   </div>
 </div>
 
@@ -4213,7 +4216,7 @@ body.subOpen main.mobile{display:none}
 <section style="padding:40px 20px 48px;background:linear-gradient(180deg,#123a5e,#0a1d33);">
   <div class="noticeBox heroNotice">
     <a class="noticeTextLink" href="javascript:void(0)" data-open="1" role="button" style="display:flex;align-items:center;gap:14px;text-decoration:none;width:100%;">
-      <div class="noticeIcon kgNoticePulse storeIconMove" style="width:46px!important;height:46px!important;border-radius:50%!important;background:linear-gradient(135deg,#fbe7bf 0%,#c39a45 100%)!important;box-shadow:0 6px 14px rgba(0,0,0,.45)!important;display:grid;place-items:center;"><b style="font-size:20px!important;font-weight:800!important;color:#3a2a08!important;line-height:1!important;">?</b></div>
+      <div class="noticeIcon kgNoticePulse storeIconMove" style="width:46px!important;height:46px!important;border-radius:50%!important;background:linear-gradient(135deg,#fbe7bf 0%,#c39a45 100%)!important;box-shadow:0 6px 14px rgba(0,0,0,.45)!important;display:grid;place-items:center;"><b style="font-size:20px!important;font-weight:800!important;color:#3a2a08!important;line-height:1!important;display:block!important;transform:translateY(1px)!important;">?</b></div>
       <div>
         <b>복원 전 꼭 읽어주세요</b>
         <span>조치 방법에 따라 복원율이 달라집니다</span>
@@ -4409,15 +4412,19 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <div class="free" style="margin-top:48px;">
         <div class="ic">🛡️</div>
-        <div><b>시공 후 제한 없음</b><span>세차·충격 걱정 없이 시공 직후 바로 이용 가능</span></div>
+        <div><b>시공 후 제한 없음</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">세차·충격 걱정 없이 시공 직후 바로 이용 가능</span></div>
       </div>
-      <div class="free">
+      <div class="free free2">
         <div class="ic">🚗</div>
-        <div><b>출장비 무료</b><span>서울 전지역 · 경기 일부지역 무료 출장</span></div>
+        <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
       </div>
       <div class="free">
         <div class="ic">📱</div>
-        <div><b>평생보증서 발급</b><span>수리 후 ‘평생보증서’를 문자메시지로 발급해 드립니다</span></div>
+        <div><b>평생보증서 발급</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">수리 후 ‘평생보증서’를 문자메시지로 발급해 드립니다</span></div>
+      </div>
+      <div class="free free2">
+        <div class="ic">📸</div>
+        <div><b>사진으로 빠른 진단</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">사진 한 장 보내주시면 복원 가능 여부를 빠르게 확인해 드립니다</span></div>
       </div>
     </section>
 
@@ -4510,15 +4517,19 @@ document.addEventListener('DOMContentLoaded', function(){
 
     <div class="free" style="margin-top:32px;">
       <div class="ic">⏱️</div>
-      <div><b>20분 완료</b><span>출장 방문부터 복원까지 신속하게 진행됩니다</span></div>
+      <div><b>20분 완료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">출장 방문부터 복원까지 신속하게 진행됩니다</span></div>
     </div>
-    <div class="free">
+    <div class="free free2">
       <div class="ic">🚗</div>
-      <div><b>출장비 무료</b><span>서울 전지역 · 경기 일부지역 무료 출장</span></div>
+      <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
     </div>
     <div class="free">
       <div class="ic">📱</div>
-      <div><b>평생보증서 발급</b><span>수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+      <div><b>평생보증서 발급</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+    </div>
+    <div class="free free2">
+      <div class="ic">🔧</div>
+      <div><b>숙련된 전문 기술진</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">다양한 차종의 시공 경험을 갖춘 전문가가 직접 시공합니다</span></div>
     </div>
     <div class="closing">
       <div class="q-mark">“</div>
@@ -4598,15 +4609,19 @@ document.addEventListener('DOMContentLoaded', function(){
 
     <div class="free" style="margin-top:32px;">
       <div class="ic">💰</div>
-      <div><b>교체보다 합리적</b><span>유리 교체 견적 대비 부담 없는 비용으로 복원</span></div>
+      <div><b>교체보다 합리적</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">유리 교체 견적 대비 부담 없는 비용으로 복원</span></div>
     </div>
-    <div class="free">
+    <div class="free free2">
       <div class="ic">🚗</div>
-      <div><b>출장비 무료</b><span>서울 전지역 · 경기 일부지역 무료 출장</span></div>
+      <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
     </div>
     <div class="free">
       <div class="ic">📱</div>
-      <div><b>평생보증서 발급</b><span>수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+      <div><b>평생보증서 발급</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+    </div>
+    <div class="free free2">
+      <div class="ic">🚙</div>
+      <div><b>모든 부위 복원 가능</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">앞유리뿐 아니라 트렁크·사이드 유리까지 복원해 드립니다</span></div>
     </div>
     <div class="closing">
       <div class="q-mark">“</div>
@@ -4686,15 +4701,19 @@ document.addEventListener('DOMContentLoaded', function(){
 
     <div class="free" style="margin-top:32px;">
       <div class="ic">📏</div>
-      <div><b>롱크랙 전문 복원</b><span>30cm 이상 긴 크랙까지 복원하는 전문 기술력</span></div>
+      <div><b>롱크랙 전문 복원</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">30cm 이상 긴 크랙까지 복원하는 전문 기술력</span></div>
     </div>
-    <div class="free">
+    <div class="free free2">
       <div class="ic">🚗</div>
-      <div><b>출장비 무료</b><span>서울 전지역 · 경기 일부지역 무료 출장</span></div>
+      <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
     </div>
     <div class="free">
       <div class="ic">📱</div>
-      <div><b>평생보증서 발급</b><span>수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+      <div><b>평생보증서 발급</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+    </div>
+    <div class="free free2">
+      <div class="ic">🏎️</div>
+      <div><b>수입차·고급차 전문</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">다양한 수입차·고급차 시공 경험으로 안심하고 맡기실 수 있습니다</span></div>
     </div>
     <div class="closing">
       <div class="q-mark">“</div>
@@ -4774,15 +4793,19 @@ document.addEventListener('DOMContentLoaded', function(){
 
     <div class="free" style="margin-top:32px;">
       <div class="ic">🔍</div>
-      <div><b>조기 발견 시 최선의 복원</b><span>크랙이 번지기 전 빠른 대응으로 손상 최소화</span></div>
+      <div><b>조기 발견 시 최선의 복원</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">크랙이 번지기 전 빠른 대응으로 손상 최소화</span></div>
     </div>
-    <div class="free">
+    <div class="free free2">
       <div class="ic">🚗</div>
-      <div><b>출장비 무료</b><span>서울 전지역 · 경기 일부지역 무료 출장</span></div>
+      <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
     </div>
     <div class="free">
       <div class="ic">📱</div>
-      <div><b>평생보증서 발급</b><span>수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+      <div><b>평생보증서 발급</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+    </div>
+    <div class="free free2">
+      <div class="ic">🔎</div>
+      <div><b>정확한 진단 먼저</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">복원 가능 여부를 정확히 진단한 후 시공을 진행합니다</span></div>
     </div>
     <div class="closing">
       <div class="q-mark">“</div>
@@ -4849,15 +4872,19 @@ document.addEventListener('DOMContentLoaded', function(){
 
     <div class="free" style="margin-top:32px;">
       <div class="ic">🪟</div>
-      <div><b>특수 유리도 복원</b><span>쇼케이스·건물 유리 등 두꺼운 특수 유리까지 복원</span></div>
+      <div><b>특수 유리도 복원</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">쇼케이스·건물 유리 등 두꺼운 특수 유리까지 복원</span></div>
     </div>
-    <div class="free">
+    <div class="free free2">
       <div class="ic">🚗</div>
-      <div><b>출장비 무료</b><span>서울 전지역 · 경기 일부지역 무료 출장</span></div>
+      <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
     </div>
     <div class="free">
       <div class="ic">📱</div>
-      <div><b>평생보증서 발급</b><span>수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+      <div><b>평생보증서 발급</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+    </div>
+    <div class="free free2">
+      <div class="ic">🏢</div>
+      <div><b>매장·건물 유리도 출장</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">상업 시설의 쇼케이스, 창호 유리도 동일하게 방문 복원합니다</span></div>
     </div>
     <div class="closing">
       <div class="q-mark">“</div>
@@ -4951,15 +4978,19 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <div class="free" style="margin-top:48px;">
         <div class="ic">🛡️</div>
-        <div><b>시공 후 제한 없음</b><span>세차·충격 걱정 없이 시공 직후 바로 이용 가능</span></div>
+        <div><b>시공 후 제한 없음</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">세차·충격 걱정 없이 시공 직후 바로 이용 가능</span></div>
       </div>
-      <div class="free">
+      <div class="free free2">
         <div class="ic">🚗</div>
-        <div><b>출장비 무료</b><span>서울 전지역 · 경기 일부지역 무료 출장</span></div>
+        <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
       </div>
       <div class="free">
         <div class="ic">📱</div>
-        <div><b>평생보증서 발급</b><span>수리 후 ‘평생보증서’를 문자메시지로 발급해 드립니다</span></div>
+        <div><b>평생보증서 발급</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">수리 후 ‘평생보증서’를 문자메시지로 발급해 드립니다</span></div>
+      </div>
+      <div class="free free2">
+        <div class="ic">🔧</div>
+        <div><b>숙련된 전문 기술진</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">다양한 시공 경험을 갖춘 전문가가 정직하게 안내해 드립니다</span></div>
       </div>
     </section>
 
@@ -5071,15 +5102,19 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <div class="free" style="margin-top:48px;">
         <div class="ic">🔬</div>
-        <div><b>전문 장비 · 검증된 레진</b><span>UV 경화 전문 장비와 프리미엄 레진으로 정밀 시공</span></div>
+        <div><b>전문 장비 · 검증된 레진</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">UV 경화 전문 장비와 프리미엄 레진으로 정밀 시공</span></div>
       </div>
-      <div class="free">
+      <div class="free free2">
         <div class="ic">🚗</div>
-        <div><b>출장비 무료</b><span>서울 전지역 · 경기 일부지역 무료 출장</span></div>
+        <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
       </div>
       <div class="free">
         <div class="ic">📱</div>
-        <div><b>평생보증서 발급</b><span>수리 후 ‘평생보증서’를 문자메시지로 발급해 드립니다</span></div>
+        <div><b>평생보증서 발급</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">수리 후 ‘평생보증서’를 문자메시지로 발급해 드립니다</span></div>
+      </div>
+      <div class="free free2">
+        <div class="ic">🧑‍🔧</div>
+        <div><b>전문가가 직접 시공</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">자가 시공의 위험 없이 숙련된 기술자가 안전하게 복원합니다</span></div>
       </div>
     </section>
 
@@ -5186,15 +5221,19 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <div class="free" style="margin-top:48px;">
         <div class="ic">⚡</div>
-        <div><b>당일 즉시 복원</b><span>발견 즉시 방문해 균열이 커지기 전에 바로 복원</span></div>
+        <div><b>당일 즉시 복원</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">발견 즉시 방문해 균열이 커지기 전에 바로 복원</span></div>
       </div>
-      <div class="free">
+      <div class="free free2">
         <div class="ic">🚗</div>
-        <div><b>출장비 무료</b><span>서울 전지역 · 경기 일부지역 무료 출장</span></div>
+        <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
       </div>
       <div class="free">
         <div class="ic">📱</div>
-        <div><b>평생보증서 발급</b><span>수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+        <div><b>평생보증서 발급</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+      </div>
+      <div class="free free2">
+        <div class="ic">🔍</div>
+        <div><b>정밀 진단 후 시공</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">균열 상태를 정확히 진단해 최적의 복원 방법을 안내합니다</span></div>
       </div>
     </section>
 
@@ -5309,19 +5348,19 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <div class="free" style="margin-top:48px;">
         <div class="ic">🚗</div>
-        <div><b>출장비 무료</b><span>서울 전지역 · 경기 일부지역 무료 출장</span></div>
+        <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
       </div>
-      <div class="free">
+      <div class="free free2">
         <div class="ic">🛠️</div>
-        <div><b>장비 직접 제작</b><span>전문가용 장비를 직접 연구·개발하는 기술력</span></div>
+        <div><b>장비 직접 제작</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">전문가용 장비를 직접 연구·개발하는 기술력</span></div>
       </div>
       <div class="free">
         <div class="ic">🎓</div>
-        <div><b>기술 교육 진행</b><span>기술 교육까지 진행하는 전문팀 운영</span></div>
+        <div><b>기술 교육 진행</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">기술 교육까지 진행하는 전문팀 운영</span></div>
       </div>
-      <div class="free">
+      <div class="free free2">
         <div class="ic">📱</div>
-        <div><b>평생보증서 발급</b><span>수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+        <div><b>평생보증서 발급</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
       </div>
       <div class="noticeBox heroNotice" style="margin-top:44px!important;margin-left:0px!important;margin-right:0px!important;">
         <a class="noticeTextLink" href="javascript:void(0)" data-jump="15" role="button" style="display:flex;align-items:center;gap:14px;text-decoration:none;width:100%;">
@@ -5427,15 +5466,19 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <div class="free" style="margin-top:48px;">
         <div class="ic">🪟</div>
-        <div><b>순정 유리 그대로 유지</b><span>교체 없이 원래 유리를 보존하며 비용 부담도 절감</span></div>
+        <div><b>순정 유리 그대로 유지</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">교체 없이 원래 유리를 보존하며 비용 부담도 절감</span></div>
       </div>
-      <div class="free">
+      <div class="free free2">
         <div class="ic">🚗</div>
-        <div><b>출장비 무료</b><span>서울 전지역 · 경기 일부지역 무료 출장</span></div>
+        <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
       </div>
       <div class="free">
         <div class="ic">📱</div>
-        <div><b>평생보증서 발급</b><span>복원 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+        <div><b>평생보증서 발급</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">복원 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+      </div>
+      <div class="free free2">
+        <div class="ic">📖</div>
+        <div><b>정확한 용어로 안내</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">궁금하신 용어와 절차를 이해하기 쉽게 설명해 드립니다</span></div>
       </div>
     </section>
 
@@ -5525,15 +5568,19 @@ document.addEventListener('DOMContentLoaded', function(){
     <section class="sect">
       <div class="free" style="margin-top:8px;">
         <div class="ic">🏆</div>
-        <div><b>3만대 이상 시공 경험과 노하우</b><span>축적된 노하우로 흔적을 최소화하는 정밀 시공</span></div>
+        <div><b>3만대 이상 시공 경험과 노하우</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">축적된 노하우로 흔적을 최소화하는 정밀 시공</span></div>
       </div>
-      <div class="free">
+      <div class="free free2">
         <div class="ic">🚗</div>
-        <div><b>출장비 무료</b><span>서울 전지역 · 경기 일부지역 무료 출장</span></div>
+        <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
       </div>
       <div class="free">
         <div class="ic">📱</div>
-        <div><b>평생보증서 발급</b><span>복원 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+        <div><b>평생보증서 발급</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">복원 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+      </div>
+      <div class="free free2">
+        <div class="ic">🎯</div>
+        <div><b>흔적 최소화 노하우</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">축적된 경험을 바탕으로 흔적을 최소화하는 정밀 시공을 진행합니다</span></div>
       </div>
     </section>
 
@@ -5629,15 +5676,19 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <div class="free" style="margin-top:48px;">
         <div class="ic">📸</div>
-        <div><b>사진 한 장으로 견적 확인</b><span>촛점 맞춰 찍은 사진 한 장이면 예상 비용을 빠르게 안내해 드립니다</span></div>
+        <div><b>사진 한 장으로 견적 확인</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">촛점 맞춰 찍은 사진 한 장이면 예상 비용을 빠르게 안내해 드립니다</span></div>
       </div>
-      <div class="free">
+      <div class="free free2">
         <div class="ic">🚗</div>
-        <div><b>출장비 무료</b><span>서울 전지역 · 경기 일부지역 무료 출장</span></div>
+        <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
       </div>
       <div class="free">
         <div class="ic">📱</div>
-        <div><b>평생보증서 발급</b><span>복원 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+        <div><b>평생보증서 발급</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">복원 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+      </div>
+      <div class="free free2">
+        <div class="ic">📐</div>
+        <div><b>롱크랙도 평생보증</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">긴 크랙을 복원한 경우에도 동일하게 평생보증서를 발급해 드립니다</span></div>
       </div>
     </section>
 
@@ -5736,15 +5787,19 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <div class="free" style="margin-top:48px;">
         <div class="ic">🕐</div>
-        <div><b>24시간 상담 가능</b><span>상담은 무료, 언제든 부담 없이 연락 주세요</span></div>
+        <div><b>24시간 상담 가능</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">상담은 무료, 언제든 부담 없이 연락 주세요</span></div>
       </div>
-      <div class="free">
+      <div class="free free2">
         <div class="ic">🚗</div>
-        <div><b>출장비 무료</b><span>서울 전지역 · 경기 일부지역 무료 출장</span></div>
+        <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
       </div>
       <div class="free">
         <div class="ic">📱</div>
-        <div><b>평생보증서 발급</b><span>수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+        <div><b>평생보증서 발급</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">수리 후 '평생보증서'를 문자메시지로 발급해 드립니다</span></div>
+      </div>
+      <div class="free free2">
+        <div class="ic">💬</div>
+        <div><b>간편한 상담 절차</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">전화 한 통, 사진 한 장이면 상담부터 예약까지 빠르게 진행됩니다</span></div>
       </div>
     </section>
 
@@ -6179,6 +6234,18 @@ function __goHome(){
   window.scrollTo({top:0,left:0,behavior:'instant'});
   if(location.hash){ try{ history.pushState({sub:null}, '', location.pathname+location.search); }catch(e){} }
 }
+function __restartQBtnAnim(){
+  document.querySelectorAll('.qBtn.qBtnBlue, .qBtn.qBtnGold, .qBtn.qBtnPink').forEach(function(btn){
+    btn.style.animation='none';
+    void btn.offsetWidth;
+    btn.style.animation='';
+    btn.querySelectorAll('.qLine1,.qLine2').forEach(function(sp){
+      sp.style.animation='none';
+      void sp.offsetWidth;
+      sp.style.animation='';
+    });
+  });
+}
 function __bindNoticeTriggers(){
   document.querySelectorAll('[data-open]').forEach(function(el){
     if(el.__bound) return; el.__bound=true;
@@ -6186,6 +6253,7 @@ function __bindNoticeTriggers(){
       e.preventDefault();
       var n=el.getAttribute('data-open');
       if(__openFns[n]) __openFns[n]();
+      setTimeout(__restartQBtnAnim, 50);
     });
   });
   document.querySelectorAll('[data-close]').forEach(function(el){
@@ -6202,6 +6270,7 @@ function __bindNoticeTriggers(){
       e.preventDefault();
       var n=el.getAttribute('data-jump');
       __jumpTo(n);
+      setTimeout(__restartQBtnAnim, 50);
     });
   });
   document.querySelectorAll('[data-home]').forEach(function(el){
@@ -6294,6 +6363,36 @@ document.addEventListener('click', function(e){
 .free .ic.autoShakeIcon, .stepIcon.autoShakeIcon, .stepIc.autoShakeIcon, .premiumIcon.autoShakeIcon{
   animation:freeIconShakeSlow 2.4s ease-in-out infinite !important;
 }
+
+/* 2nd free card in each list styled green for visual distinction */
+#subPage .free.free2,#subPage2 .free.free2,#subPage3 .free.free2,#subPage4 .free.free2,#subPage5 .free.free2,#subPage6 .free.free2,#subPage7 .free.free2,#subPage8 .free.free2,#subPage9 .free.free2,#subPage10 .free.free2,#subPage11 .free.free2,#subPage12 .free.free2,#subPage13 .free.free2,#subPage14 .free.free2,#subPage15 .free.free2{
+  background:linear-gradient(135deg,#f2fbf5 0%,#d4f0dd 100%)!important;
+  border:2px solid #8fd0a3!important;
+  box-shadow:0 6px 16px rgba(40,150,90,.14)!important;
+}
+#subPage .free.free2 .ic,#subPage2 .free.free2 .ic,#subPage3 .free.free2 .ic,#subPage4 .free.free2 .ic,#subPage5 .free.free2 .ic,#subPage6 .free.free2 .ic,#subPage7 .free.free2 .ic,#subPage8 .free.free2 .ic,#subPage9 .free.free2 .ic,#subPage10 .free.free2 .ic,#subPage11 .free.free2 .ic,#subPage12 .free.free2 .ic,#subPage13 .free.free2 .ic,#subPage14 .free.free2 .ic,#subPage15 .free.free2 .ic{
+  background:rgba(255,255,255,.6)!important;
+  border:1px solid #8fd0a3!important;
+}
+#subPage .free.free2 b,#subPage2 .free.free2 b,#subPage3 .free.free2 b,#subPage4 .free.free2 b,#subPage5 .free.free2 b,#subPage6 .free.free2 b,#subPage7 .free.free2 b,#subPage8 .free.free2 b,#subPage9 .free.free2 b,#subPage10 .free.free2 b,#subPage11 .free.free2 b,#subPage12 .free.free2 b,#subPage13 .free.free2 b,#subPage14 .free.free2 b,#subPage15 .free.free2 b{color:#1e5c30!important;}
+#subPage .free.free2 span,#subPage2 .free.free2 span,#subPage3 .free.free2 span,#subPage4 .free.free2 span,#subPage5 .free.free2 span,#subPage6 .free.free2 span,#subPage7 .free.free2 span,#subPage8 .free.free2 span,#subPage9 .free.free2 span,#subPage10 .free.free2 span,#subPage11 .free.free2 span,#subPage12 .free.free2 span,#subPage13 .free.free2 span,#subPage14 .free.free2 span,#subPage15 .free.free2 span{color:#1e5c30!important;}
+
+.free span{line-height:1.38!important;}
+.free b{line-height:1.3!important;}
+
+#subPage .free,#subPage2 .free,#subPage3 .free,#subPage4 .free,#subPage5 .free,#subPage6 .free,#subPage7 .free,#subPage8 .free,#subPage9 .free,#subPage10 .free,#subPage11 .free,#subPage12 .free,#subPage13 .free,#subPage14 .free,#subPage15 .free{padding:17px 20px!important;}
+#subPage .free span,#subPage2 .free span,#subPage3 .free span,#subPage4 .free span,#subPage5 .free span,#subPage6 .free span,#subPage7 .free span,#subPage8 .free span,#subPage9 .free span,#subPage10 .free span,#subPage11 .free span,#subPage12 .free span,#subPage13 .free span,#subPage14 .free span,#subPage15 .free span{line-height:1.15!important;}
+#subPage .free b,#subPage2 .free b,#subPage3 .free b,#subPage4 .free b,#subPage5 .free b,#subPage6 .free b,#subPage7 .free b,#subPage8 .free b,#subPage9 .free b,#subPage10 .free b,#subPage11 .free b,#subPage12 .free b,#subPage13 .free b,#subPage14 .free b,#subPage15 .free b{margin-bottom:0px!important;}
+
+.qBtn.qBtnBlue[data-jump],.qBtn.qBtnGold[data-jump],.qBtn.qBtnPink[data-jump]{animation:none!important;}
+.qBtn.qBtnBlue[data-jump] .qLine1,.qBtn.qBtnBlue[data-jump] .qLine2,.qBtn.qBtnGold[data-jump] .qLine1,.qBtn.qBtnGold[data-jump] .qLine2{animation:none!important;}
+.qBtn.qBtnBlue[data-open]{animation:qBtnColorShift 10s ease-in-out infinite!important;}
+.qBtn.qBtnBlue[data-open] .qLine1,.qBtn.qBtnBlue[data-open] .qLine2{animation:qBtnTextShift 10s ease-in-out infinite!important;}
+.qBtn.qBtnGold[data-open]{animation:qBtnColorShiftRev 10s ease-in-out infinite!important;}
+.qBtn.qBtnGold[data-open] .qLine1,.qBtn.qBtnGold[data-open] .qLine2{animation:qBtnTextShiftRev 10s ease-in-out infinite!important;}
+.qBtn.qBtnPink[data-open]{animation:qBtnPinkBlink 10s ease-in-out infinite!important;}
+
+#subPage .free,#subPage2 .free,#subPage3 .free,#subPage4 .free,#subPage5 .free,#subPage6 .free,#subPage7 .free,#subPage8 .free,#subPage9 .free,#subPage10 .free,#subPage11 .free,#subPage12 .free,#subPage13 .free,#subPage14 .free,#subPage15 .free{margin-top:19px!important;}
 </style>
 <script>
 (function(){
