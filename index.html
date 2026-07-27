@@ -2421,9 +2421,9 @@ section.simpleSteps .sub{
 .qBoxSub .qBtn.qBtnPink .qLine1,.qBoxSub .qBtn.qBtnPink .qLine2{animation:none!important;color:#1e5c30!important;}
 
 .qBoxSub .qBtn.qBtnPink{border:2px solid #5cb87a!important;background:linear-gradient(135deg,#eafaf0 0%,#b8ecc9 100%)!important;box-shadow:0 6px 16px rgba(40,150,90,.28)!important;}
-.welcomeWrap{margin:28px 4px 4px;padding:11px 20px 10px;position:relative;text-align:center;}
+.welcomeWrap{margin:28px 4px 4px;padding:11px 20px 90px;position:relative;text-align:center;}
 .welcomeWrap::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:44px;height:1px;background:linear-gradient(90deg,transparent,#c9a862,transparent);}
-.welcomeQMark{display:block;font-size:35px;font-weight:800;color:#b08d4d;line-height:1;margin-bottom:2px;font-family:Georgia,serif;opacity:.85;}
+.welcomeQMark{display:block;font-size:42px;font-weight:800;color:#b08d4d;line-height:1;margin-bottom:2px;font-family:Georgia,serif;opacity:.85;}
 .welcomeBrand{display:block;font-size:20px;font-weight:800;letter-spacing:4px;color:#b08d4d;margin-bottom:8px;text-transform:uppercase;}
 .welcomeText{margin:0;font-size:20px;font-weight:600;color:#3d4758;letter-spacing:-.3px;line-height:1.5;}
 .baHeadBox{margin:0 4px 20px;padding:8px 4px 0;background:transparent;border:0;text-align:left;box-shadow:none;position:relative;}
@@ -2432,7 +2432,7 @@ section.simpleSteps .sub{
 .qHeadBox:not(.qHeadBoxMain) .qMark{font-size:47px!important;}
 .qHeadBox .qMark,.qHeadBox h2,.qHeadBox .baSub{text-align:left!important;}
 .qHeadBoxMain .qMark,.qHeadBoxMain h2,.qHeadBoxMain .baSub{text-align:left!important;}
-.baHeadBox .qMark{display:block;font-size:52px;font-weight:800;color:#4a3216;line-height:1;margin:14px 0 -14px;font-family:Georgia,serif;}
+.baHeadBox .qMark{display:block;font-size:32px;font-weight:800;color:#b08d4d;line-height:1;margin:14px 0 -14px;font-family:Georgia,serif;}
 .baHeadBox h2{margin:6px 0 0;color:#586577;font-size:20px;font-weight:700;text-align:left;letter-spacing:-.5px;line-height:1.35;}
 .baHeadBox .baSub{margin:0;color:#7c8798;text-align:left;font-size:15px;font-weight:400;letter-spacing:-.2px;line-height:1.5;}
 .qTag{display:inline-block;font-size:15px;font-weight:800;letter-spacing:1px;color:#7A9FC4;background:#fff;padding:5px 12px;border-radius:20px;}
@@ -4036,10 +4036,11 @@ body.subOpen main.mobile{display:none}
       </svg>
       <span class="carLetter carLetter1">C</span><span class="carLetter carLetter2">A</span><span class="carLetter carLetter3">R</span><span class="carLetter carLetter4">G</span><span class="carLetter carLetter5">L</span><span class="carLetter carLetter6">A</span><span class="carLetter carLetter7">S</span><span class="carLetter carLetter8">S</span>
       <span class="runningDog">🚗</span>
+      
     </div>
   </div>
   <div class="qBox">
-    <div class="baHeadBox qHeadBox qHeadBoxMain"><span class="qMark">“</span><p class="baSub">궁금한 항목을 눌러보세요</p><h2>유리복원 궁금증, 여기서 다 풀립니다.</h2></div>
+    <div class="baHeadBox qHeadBox qHeadBoxMain"><span class="qMark" style="font-size:48px;">“</span><p class="baSub">궁금한 항목을 눌러보세요</p><h2>유리복원 궁금증, 여기서 다 풀립니다.</h2></div>
     <span class="qTag">QUESTION</span>
     <div class="qBtnRow">
       <button type="button" class="qBtn qBtnGold" data-open="9"><span class="qLine1">돌빵을 방치하면</span><span class="qLine2">언제 롱크랙으로 커질까?</span></button>
@@ -6416,7 +6417,7 @@ document.addEventListener('click', function(e){
 
 #subPage .free,#subPage2 .free,#subPage3 .free,#subPage4 .free,#subPage5 .free,#subPage6 .free,#subPage7 .free,#subPage8 .free,#subPage9 .free,#subPage10 .free,#subPage11 .free,#subPage12 .free,#subPage13 .free,#subPage14 .free,#subPage15 .free{margin-top:19px!important;}
 
-.welcomeWrap{position:relative;overflow:hidden;}
+.welcomeWrap{position:relative;overflow:visible;}
 .welcomeBrand,.welcomeQMark{animation:welcomeColorShift 3.5s ease-in-out infinite;}
 @keyframes welcomeColorShift{
   0%,10%{color:#b08d4d;}
@@ -6438,7 +6439,7 @@ document.addEventListener('click', function(e){
   100%{left:130%;}
 }
 
-.runningDogWrap{position:relative;height:34px;margin-top:30px;overflow:hidden;}
+.runningDogWrap{position:relative;height:34px;margin-top:30px;overflow:visible;}.runningDogWrap::after{content:"";position:absolute;left:50%;bottom:-80px;transform:translateX(-50%);width:100vw;height:26px;background:linear-gradient(to bottom, rgba(0,0,0,.07) 0%, rgba(0,0,0,0) 100%);pointer-events:none;}
 .carTrailSvg{position:absolute;left:0;bottom:4px;width:100%;height:14px;overflow:visible;}
 .carTrailSvg path{
   stroke-dasharray:100;
