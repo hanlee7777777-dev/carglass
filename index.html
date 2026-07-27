@@ -789,7 +789,7 @@ background:linear-gradient(135deg,#184f8d,#2f73c0)!important;
 }
 .heroTitle{
   position:relative;
-  overflow:visible;
+  overflow:hidden;
   font-size:41px!important;
   letter-spacing:-1.6px!important;
   line-height:1.12!important;
@@ -2286,11 +2286,6 @@ section.simpleSteps .sub{
   0%,100%{box-shadow:0 12px 26px rgba(42,128,235,.34);filter:brightness(1)}
   50%{box-shadow:0 16px 40px rgba(82,164,255,.6);filter:brightness(1.08)}
 }
-@keyframes kgWarrantyBtnShine{
-  0%{left:-60%}
-  60%{left:130%}
-  100%{left:130%}
-}
 .hero .premiumStats{
   margin-top:26px!important;
 }
@@ -2346,12 +2341,16 @@ section.simpleSteps .sub{
 .carTypes div{height:auto!important;padding:0 0 12px!important;position:relative!important;overflow:hidden!important;display:block!important;}
 .carTypes div b{position:static!important;display:block!important;margin:0!important;padding:10px 8px 0!important;background:none!important;color:#0d2c4d!important;font-size:18px!important;font-weight:900!important;letter-spacing:-1px!important;text-align:center!important;}
 
-.warrantyDetailBtn{position:relative!important;overflow:hidden!important;}
+.warrantyDetailBtn{position:relative!important;overflow:hidden!important;clip-path:inset(0 0 0 0);}
 .warrantyDetailBtn::after{
-  content:"";position:absolute;top:0;left:-60%;width:45%;height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);
-  transform:skewX(-22deg);pointer-events:none;
-  animation:kgWarrantyBtnShine 3.4s ease-in-out infinite;
+  content:"";position:absolute;top:0;left:0;width:100%;height:100%;
+  background:linear-gradient(120deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%);
+  background-size:250% 100%;background-position:150% 0;pointer-events:none;
+  animation:kgWarrantyBtnShine2 3.4s ease-in-out infinite;
+}
+@keyframes kgWarrantyBtnShine2{
+  0%{background-position:150% 0}
+  60%,100%{background-position:-50% 0}
 }
 
 .noticeBox b,.noticeTextLink b{font-weight:800!important;}
@@ -2421,7 +2420,7 @@ section.simpleSteps .sub{
 .qBoxSub .qBtn.qBtnPink .qLine1,.qBoxSub .qBtn.qBtnPink .qLine2{animation:none!important;color:#1e5c30!important;}
 
 .qBoxSub .qBtn.qBtnPink{border:2px solid #5cb87a!important;background:linear-gradient(135deg,#eafaf0 0%,#b8ecc9 100%)!important;box-shadow:0 6px 16px rgba(40,150,90,.28)!important;}
-.welcomeWrap{margin:28px 4px 4px;padding:11px 20px 90px;position:relative;text-align:center;}
+.welcomeWrap{margin:28px 4px 4px;padding:11px 20px 110px;position:relative;text-align:center;}
 .welcomeWrap::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:44px;height:1px;background:linear-gradient(90deg,transparent,#c9a862,transparent);}
 .welcomeQMark{display:block;font-size:42px;font-weight:800;color:#b08d4d;line-height:1;margin-bottom:2px;font-family:Georgia,serif;opacity:.85;}
 .welcomeBrand{display:block;font-size:20px;font-weight:800;letter-spacing:4px;color:#b08d4d;margin-bottom:8px;text-transform:uppercase;}
@@ -3838,6 +3837,31 @@ body.subOpen main.mobile{display:none}
   [id^="subPage"] .wrap{max-width:100%!important;}
   .nav{max-width:700px!important;}
 }
+@media (min-width:481px){
+  .caseImg{height:300px!important;}
+  .blogPromoBtn{padding:22px 16px!important;font-size:19px!important;}
+  .caseBody{padding:20px 24px!important;}
+  .bottom a{height:78px!important;font-size:19px!important;}
+  .heroBtns a{height:74px!important;font-size:21px!important;}
+  .premiumCard{padding:26px 16px!important;height:190px!important;}
+  .premiumCard strong{font-size:26px!important;}
+  .stepCard,.stepItem{padding:26px 22px!important;}
+  .item{padding:24px 22px!important;}
+  .fleetLogoImageWrap{padding:14px!important;}
+}
+@media (min-width:481px){
+  .hero::before{content:"";position:absolute;top:480px;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(15,32,56,.75) 0%,rgba(10,20,38,.97) 40%,#0a1526 100%);z-index:-1;pointer-events:none;}
+}
+@media (min-width:481px){
+  .hero .premiumWarrantyBox{padding:46px 36px 42px!important;margin:36px 0 40px!important;}
+  .hero .premiumWarrantyBox h3{font-size:38px!important;}
+  .hero .premiumWarrantyBox .warrantyLead{font-size:19px!important;line-height:1.6!important;}
+  .warrantyTopline{font-size:15px!important;margin-bottom:22px!important;}
+  .warrantyDetailBtn{width:min(440px,90%)!important;height:78px!important;white-space:nowrap!important;font-size:20px!important;}
+  .warrantyInnerCard{padding:30px 24px!important;}
+  .warrantyIcon{width:72px!important;height:72px!important;font-size:34px!important;}
+}
+
 .free{cursor:pointer;-webkit-tap-highlight-color:transparent;}
 .free .ic.icShake, .stepIcon.icShake, .stepIc.icShake, .premiumIcon.icShake{animation:freeIconShake .4s cubic-bezier(.36,.07,.19,.97);}
 .stepCard{cursor:pointer;-webkit-tap-highlight-color:transparent;}
@@ -6417,7 +6441,7 @@ document.addEventListener('click', function(e){
 
 #subPage .free,#subPage2 .free,#subPage3 .free,#subPage4 .free,#subPage5 .free,#subPage6 .free,#subPage7 .free,#subPage8 .free,#subPage9 .free,#subPage10 .free,#subPage11 .free,#subPage12 .free,#subPage13 .free,#subPage14 .free,#subPage15 .free{margin-top:19px!important;}
 
-.welcomeWrap{position:relative;overflow:visible;}
+.welcomeWrap{position:relative;overflow:hidden;}
 .welcomeBrand,.welcomeQMark{animation:welcomeColorShift 3.5s ease-in-out infinite;}
 @keyframes welcomeColorShift{
   0%,10%{color:#b08d4d;}
@@ -6439,7 +6463,7 @@ document.addEventListener('click', function(e){
   100%{left:130%;}
 }
 
-.runningDogWrap{position:relative;height:34px;margin-top:30px;overflow:visible;}.runningDogWrap::after{content:"";position:absolute;left:50%;bottom:-80px;transform:translateX(-50%);width:100vw;height:26px;background:linear-gradient(to bottom, rgba(0,0,0,.07) 0%, rgba(0,0,0,0) 100%);pointer-events:none;}
+.runningDogWrap{position:relative;height:34px;margin-top:30px;overflow:visible;}.runningDogWrap::after{content:"";position:absolute;left:-20px;right:-20px;bottom:-80px;width:auto;height:26px;background:linear-gradient(to bottom, rgba(0,0,0,.07) 0%, rgba(0,0,0,0) 100%);pointer-events:none;}
 .carTrailSvg{position:absolute;left:0;bottom:4px;width:100%;height:14px;overflow:visible;}
 .carTrailSvg path{
   stroke-dasharray:100;
