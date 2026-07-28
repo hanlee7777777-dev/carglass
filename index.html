@@ -2423,10 +2423,11 @@ section.simpleSteps .sub{
 .qBoxSub .qBtn.qBtnPink .qLine1,.qBoxSub .qBtn.qBtnPink .qLine2{animation:none!important;color:#1e5c30!important;}
 
 .qBoxSub .qBtn.qBtnPink{border:2px solid #5cb87a!important;background:linear-gradient(135deg,#eafaf0 0%,#b8ecc9 100%)!important;box-shadow:0 6px 16px rgba(40,150,90,.28)!important;}
-.welcomeWrap{margin:28px 4px 4px;padding:11px 20px 110px;position:relative;text-align:center;}
+.welcomeWrap{margin:28px 4px 4px;padding:11px 20px 20px;position:relative;text-align:center;}
 .welcomeWrap::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:44px;height:1px;background:linear-gradient(90deg,transparent,#c9a862,transparent);}
 .welcomeQMark{display:block;font-size:42px;font-weight:800;color:#b08d4d;line-height:1;margin-bottom:2px;font-family:Georgia,serif;opacity:.85;}
 .welcomeBrand{display:block;font-size:20px;font-weight:800;letter-spacing:4px;color:#b08d4d;margin-bottom:8px;text-transform:uppercase;}
+@keyframes freeShippingBlink{0%,100%{opacity:1;}50%{opacity:.4;}}
 .welcomeText{margin:0;font-size:20px;font-weight:600;color:#3d4758;letter-spacing:-.3px;line-height:1.5;}
 .baHeadBox{margin:0 4px 20px;padding:8px 4px 0;background:transparent;border:0;text-align:left;box-shadow:none;position:relative;}
 .qHeadBox{margin-bottom:14px;}
@@ -4083,6 +4084,7 @@ body.subOpen main.mobile{display:none}
       <div class="carClip"><span class="runningDog">🚗</span></div>
       
     </div>
+    <div class="warrantyTrailWrap"><span class="wLetter wLetter1">L</span><span class="wLetter wLetter2">I</span><span class="wLetter wLetter3">F</span><span class="wLetter wLetter4">E</span><span class="wLetter wLetter5">T</span><span class="wLetter wLetter6">I</span><span class="wLetter wLetter7">M</span><span class="wLetter wLetter8">E</span><span class="wLetter wLetter9">W</span><span class="wLetter wLetter10">A</span><span class="wLetter wLetter11">R</span><span class="wLetter wLetter12">R</span><span class="wLetter wLetter13">A</span><span class="wLetter wLetter14">N</span><span class="wLetter wLetter15">T</span><span class="wLetter wLetter16">Y</span></div>
   </div>
   <div class="qBox">
     <div class="baHeadBox qHeadBox qHeadBoxMain"><span class="qMark" style="font-size:48px;">“</span><p class="baSub" style="font-size:18px;">궁금한 항목을 눌러보세요</p><h2>유리복원 궁금증, 여기서 다 풀립니다.</h2></div>
@@ -4437,8 +4439,8 @@ document.addEventListener('DOMContentLoaded', function(){
         <p>전화 상담을 하다 보면, 출장 방문 방식에 대해 신뢰가 가는지 걱정하시는 분들이 간혹 계십니다. 자동차유리복원은 지역별 수요가 제한적인 특성상, 출장 중심으로 운영되는 경우가 많습니다.<br><span style="display:block;margin-top:10px"></span><b>출장이라고 해서 품질이 달라지는 것은 아닙니다.</b> 오히려 <b>고객님의 시간과 이동 부담을 덜어드릴 수 있는 가장 효율적인 방식</b>이지요.<br><span style="display:block;margin-top:10px"></span>3만 대 이상의 시공 경험과 기술과 노하우로 고객님 계신 곳 어디든 직접 방문드려 시공해 드리오니, 카글라스 기술팀만큼은 안심하고 맡기셔도 됩니다.</p>
       </div>
       <div class="free" style="margin-top:48px;">
-        <div class="ic">🛡️</div>
-        <div><b>시공 후 제한 없음</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">세차·충격 걱정 없이 시공 직후 바로 이용 가능</span></div>
+        <div class="ic">🚗</div>
+        <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
       </div>
       <div class="free free2">
         <div class="ic">🚗</div>
@@ -5690,7 +5692,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="sect-h"><span class="idx">02</span><span class="t">알아두시면 좋은 점</span><span class="rule"></span></div>
       <div style="display:block;width:fit-content;margin:0 auto 16px;background:linear-gradient(135deg,#fffbf0,#f6e6b8);border:1.5px solid #c9a862;border-radius:999px;box-shadow:0 4px 12px rgba(180,140,50,.2);padding:10px 20px;font-size:18px;font-weight:600;color:#1a1206;">국산차·외제차 비용은 동일합니다</div>
       <div class="item">
-        <p>슈퍼카, 특수차일 경우에는 <b>별도 상담이 필요합니다.</b><br><span style="display:block;margin-top:10px"></span>와이퍼 교체 과정에서 와이퍼 암을 놓쳐 유리 하단을 강하게 타격해 발생한 롱크랙은 <b>균열의 특성상 복원이 어려운 경우가 대부분입니다.</b> 정확한 판단을 위해 타격 지점이 잘 보이도록 사진을 촬영하여 보내주시면 확인 후 안내드리겠습니다.</p>
+        <p>슈퍼카, 특수차, 대형차 수리여부는 <b>별도 상담이 필요합니다.</b></p>
       </div>
     </section>
 
@@ -5819,8 +5821,8 @@ document.addEventListener('DOMContentLoaded', function(){
         <div><b>24시간 상담 가능</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">상담은 무료, 언제든 부담 없이 연락 주세요</span></div>
       </div>
       <div class="free free2">
-        <div class="ic">🚗</div>
-        <div><b>출장비 무료</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">서울 전지역 · 경기 일부지역 무료 출장</span></div>
+        <div class="ic">⏱️</div>
+        <div><b>출장이라도 품질은 그대로</b><span style="line-height:1.35!important;display:block!important;margin-top:4px!important;">고객님의 시간과 이동 부담을 줄여드리는 효율적인 서비스입니다</span></div>
       </div>
       <div class="free">
         <div class="ic">📱</div>
@@ -6433,7 +6435,7 @@ document.addEventListener('click', function(e){
 .welcomeWrap::after{
   content:"";
   position:absolute;
-  top:0;left:0;right:0;height:24%;
+  top:0;left:0;right:0;height:30%;
   background:radial-gradient(ellipse at center, rgba(255,255,255,.5) 0%, rgba(255,255,255,.5) 60%, transparent 100%);
   animation:welcomeShine 3.5s ease-in-out infinite;
   pointer-events:none;
@@ -6491,6 +6493,40 @@ document.addEventListener('click', function(e){
 @keyframes letterFade7{0%,51.78%{opacity:0;}52.78%,100%{opacity:1;}}
 .carLetter8{left:87.0%;animation:letterFade8 11.5s linear infinite;}
 @keyframes letterFade8{0%,58.16%{opacity:0;}59.16%,100%{opacity:1;}}
+.wLetter{position:static;font-size:17px;font-weight:800;color:#d9ad5f;letter-spacing:0;opacity:0;white-space:nowrap;}
+.wLetter1{animation:wLetterFade1 11.5s linear infinite;}
+@keyframes wLetterFade1{0%,9.00%{opacity:0;}10.00%,100%{opacity:1;}}
+.wLetter2{animation:wLetterFade2 11.5s linear infinite;}
+@keyframes wLetterFade2{0%,12.33%{opacity:0;}13.33%,100%{opacity:1;}}
+.wLetter3{animation:wLetterFade3 11.5s linear infinite;}
+@keyframes wLetterFade3{0%,15.67%{opacity:0;}16.67%,100%{opacity:1;}}
+.wLetter4{animation:wLetterFade4 11.5s linear infinite;}
+@keyframes wLetterFade4{0%,19.00%{opacity:0;}20.00%,100%{opacity:1;}}
+.wLetter5{animation:wLetterFade5 11.5s linear infinite;}
+@keyframes wLetterFade5{0%,22.33%{opacity:0;}23.33%,100%{opacity:1;}}
+.wLetter6{animation:wLetterFade6 11.5s linear infinite;}
+@keyframes wLetterFade6{0%,25.67%{opacity:0;}26.67%,100%{opacity:1;}}
+.wLetter7{animation:wLetterFade7 11.5s linear infinite;}
+@keyframes wLetterFade7{0%,29.00%{opacity:0;}30.00%,100%{opacity:1;}}
+.wLetter8{animation:wLetterFade8 11.5s linear infinite;margin-right:8px;}
+@keyframes wLetterFade8{0%,32.33%{opacity:0;}33.33%,100%{opacity:1;}}
+.wLetter9{animation:wLetterFade9 11.5s linear infinite;}
+@keyframes wLetterFade9{0%,35.67%{opacity:0;}36.67%,100%{opacity:1;}}
+.wLetter10{animation:wLetterFade10 11.5s linear infinite;}
+@keyframes wLetterFade10{0%,39.00%{opacity:0;}40.00%,100%{opacity:1;}}
+.wLetter11{animation:wLetterFade11 11.5s linear infinite;}
+@keyframes wLetterFade11{0%,42.33%{opacity:0;}43.33%,100%{opacity:1;}}
+.wLetter12{animation:wLetterFade12 11.5s linear infinite;}
+@keyframes wLetterFade12{0%,45.67%{opacity:0;}46.67%,100%{opacity:1;}}
+.wLetter13{animation:wLetterFade13 11.5s linear infinite;}
+@keyframes wLetterFade13{0%,49.00%{opacity:0;}50.00%,100%{opacity:1;}}
+.wLetter14{animation:wLetterFade14 11.5s linear infinite;}
+@keyframes wLetterFade14{0%,52.33%{opacity:0;}53.33%,100%{opacity:1;}}
+.wLetter15{animation:wLetterFade15 11.5s linear infinite;}
+@keyframes wLetterFade15{0%,55.67%{opacity:0;}56.67%,100%{opacity:1;}}
+.wLetter16{animation:wLetterFade16 11.5s linear infinite;}
+@keyframes wLetterFade16{0%,59.00%{opacity:0;}60.00%,100%{opacity:1;}}
+.warrantyTrailWrap{position:relative;height:30px;margin-top:20px;overflow:visible;display:flex;align-items:center;justify-content:center;gap:2px;}
 }
 }
 }
