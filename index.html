@@ -4031,7 +4031,6 @@ body.subOpen main.mobile{display:none}
 #equipLightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);align-items:center;justify-content:center;padding:8px;}
 #equipLightbox.open{display:flex;}
 #equipLightbox img{width:auto;height:auto;max-width:98vw;max-height:98vh;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,.5);object-fit:contain;}
-#equipLightbox .elClose{position:absolute;top:12px;right:16px;color:#fff;font-size:36px;line-height:1;background:none;border:none;cursor:pointer;padding:6px 10px;z-index:2;}
 }
 
 
@@ -6376,7 +6375,6 @@ document.addEventListener('DOMContentLoaded', function(){
 </div>
 
 <div id="equipLightbox" onclick="closeEquipLightbox()">
-  <button type="button" class="elClose" onclick="closeEquipLightbox()" aria-label="닫기">&times;</button>
   <img id="equipLightboxImg" src="" alt="확대 이미지">
 </div>
 
@@ -6612,10 +6610,14 @@ function openEquipLightbox(src){
   if(!lb||!img) return;
   img.src=src;
   lb.classList.add('open');
+  try{ history.pushState({lightbox:true}, '', location.hash || location.pathname); }catch(e){}
 }
-function closeEquipLightbox(){
+function closeEquipLightbox(fromPopstate){
   var lb=document.getElementById('equipLightbox');
   if(lb) lb.classList.remove('open');
+  if(!fromPopstate){
+    try{ if(history.state && history.state.lightbox){ history.back(); } }catch(e){}
+  }
 }
 document.addEventListener('click', function(e){
   var t=e.target.closest('#subPage15 .equip-photo img');
@@ -6774,6 +6776,11 @@ function __showSubFromHash(){
 }
 
 window.addEventListener('popstate', function(){
+  var lb=document.getElementById('equipLightbox');
+  if(lb && lb.classList.contains('open')){
+    closeEquipLightbox(true);
+    return;
+  }
   __showSubFromHash();
 });
 
