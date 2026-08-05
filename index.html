@@ -4093,6 +4093,7 @@ body.subOpen main.mobile{display:none}
       curFlag.src = img.src;
       curFlag.style.border = (this.dataset.lang === "ko") ? "0.5px solid #000" : "none";
       menu.style.display="none";
+      try{ localStorage.setItem("siteLang", this.dataset.lang); }catch(e){}
       if(window.__applyLang) window.__applyLang(this.dataset.lang);
     });
   });
@@ -7013,6 +7014,18 @@ html[lang="en"] .premiumCard p{font-size:12px!important;}
     document.documentElement.lang = (lang === "ko") ? "ko" : "en";
     document.title = (lang === "ko") ? koTitle : "Carglass Windshield Repair";
   };
+  try{
+    var savedLang = localStorage.getItem("siteLang");
+    if(savedLang === "en"){
+      window.__applyLang("en");
+      var curFlag = document.getElementById("langCurrentFlag");
+      var enOpt = document.querySelector('.langOpt[data-lang="en"] img');
+      if(curFlag && enOpt){
+        curFlag.src = enOpt.src;
+        curFlag.style.border = "none";
+      }
+    }
+  }catch(e){}
 })();
 </script>
 <!-- /I18N -->
