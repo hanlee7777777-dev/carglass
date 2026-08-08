@@ -7024,5 +7024,43 @@ html[lang="en"] .premiumCard p{font-size:12px!important;}
 })();
 </script>
 <!-- /I18N -->
+<style id="autohide-bar-landscape">
+.top,.nav{transition:transform .25s ease;}
+.bottom,.subFoot3{transition:transform .25s ease;}
+.top.navHideUp,.nav.navHideUp{transform:translateY(-100%)!important;}
+#subPage15 .nav.navHideUp{transform:translateX(-50%) translateY(-100%)!important;}
+.bottom.barHideDown{transform:translateX(-50%) translateY(100%)!important;}
+.subFoot3.barHideDown{transform:translateX(-50%) translateY(100%)!important;}
+</style>
+<script>
+(function(){
+  var mq = window.matchMedia('(orientation:landscape) and (max-width:1023px) and (max-height:650px)');
+  var lastY = window.scrollY || window.pageYOffset || 0;
+  var ticking = false;
+  function showBars(){
+    document.querySelectorAll('.top,.nav').forEach(function(el){ el.classList.remove('navHideUp'); });
+    document.querySelectorAll('.bottom').forEach(function(el){ el.classList.remove('barHideDown'); });
+    document.querySelectorAll('.subFoot3').forEach(function(el){ el.classList.remove('barHideDown'); });
+  }
+  function hideBars(){
+    document.querySelectorAll('.top,.nav').forEach(function(el){ el.classList.add('navHideUp'); });
+    document.querySelectorAll('.bottom').forEach(function(el){ el.classList.add('barHideDown'); });
+    document.querySelectorAll('.subFoot3').forEach(function(el){ el.classList.add('barHideDown'); });
+  }
+  function onScroll(){
+    ticking = false;
+    if(!mq.matches){ showBars(); lastY = window.scrollY || window.pageYOffset || 0; return; }
+    var y = window.scrollY || window.pageYOffset || 0;
+    if(y > lastY && y > 40){ hideBars(); }
+    else if(y < lastY){ showBars(); }
+    lastY = y;
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(onScroll); ticking = true; }
+  }, {passive:true});
+  window.addEventListener('resize', function(){ if(!mq.matches) showBars(); });
+  window.addEventListener('orientationchange', function(){ showBars(); lastY = window.scrollY || window.pageYOffset || 0; });
+})();
+</script>
 </body>
 </html>
