@@ -100,6 +100,7 @@ url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA4KCw0LCQ4NDA0QDw4R
 .consult h2{color:#fff;font-size:31px}
 .consult p{color:#dbe9fb;font-size:14px;font-weight:750;line-height:1.6;margin:0 0 16px}
 .formCard{background:#fff;border-radius:22px;padding:16px;box-shadow:0 12px 30px rgba(0,0,0,.28)}
+[id^="inqToggleBtnSub"], #inqToggleBtnMain{scroll-margin-top:76px;}
 .formCard{background:#eaf7ee!important;border:2px solid #2f7d47!important;box-shadow:0 4px 14px rgba(0,0,0,.12)!important;}
 .formCard input,.formCard select,.formCard textarea{font-family:"Apple SD Gothic Neo","Malgun Gothic",sans-serif!important;}
 .formCard label{font-size:17px!important;font-weight:600!important;}
@@ -8138,6 +8139,8 @@ function inqToggleFormGeneric(suffix){
     btn.scrollIntoView({behavior:'smooth', block:'start'});
     setTimeout(function(){ btn.scrollIntoView({behavior:'smooth', block:'start'}); }, 400);
     setTimeout(function(){ btn.scrollIntoView({behavior:'smooth', block:'start'}); }, 1100);
+    setTimeout(function(){ btn.scrollIntoView({behavior:'smooth', block:'start'}); }, 2000);
+    setTimeout(function(){ window.scrollBy(0, -70); }, 1400);
   }
 }
 function inqOpenFormFromFooter(e){
@@ -8185,6 +8188,9 @@ function inqAutoOpenFromHash(){
     setTimeout(function(){
       if(btn){ btn.scrollIntoView({behavior:'smooth', block:'start'}); }
     }, 1100);
+    setTimeout(function(){
+      if(btn){ btn.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }, 2000);
   }, 600);
 }
 if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', inqAutoOpenFromHash); }
@@ -8279,6 +8285,8 @@ function inqToggleFormMain(){
     btn.scrollIntoView({behavior:'smooth', block:'start'});
     setTimeout(function(){ btn.scrollIntoView({behavior:'smooth', block:'start'}); }, 400);
     setTimeout(function(){ btn.scrollIntoView({behavior:'smooth', block:'start'}); }, 1100);
+    setTimeout(function(){ btn.scrollIntoView({behavior:'smooth', block:'start'}); }, 2000);
+    setTimeout(function(){ window.scrollBy(0, -70); }, 1400);
   }
 }
 function inqToggleFormSub(){
@@ -8298,6 +8306,8 @@ function inqToggleFormSub(){
     btn.scrollIntoView({behavior:'smooth', block:'start'});
     setTimeout(function(){ btn.scrollIntoView({behavior:'smooth', block:'start'}); }, 400);
     setTimeout(function(){ btn.scrollIntoView({behavior:'smooth', block:'start'}); }, 1100);
+    setTimeout(function(){ btn.scrollIntoView({behavior:'smooth', block:'start'}); }, 2000);
+    setTimeout(function(){ window.scrollBy(0, -70); }, 1400);
   }
 }
 (function(){
