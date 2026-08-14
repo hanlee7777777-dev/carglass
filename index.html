@@ -8080,19 +8080,36 @@ var __inqGenericSuffixes = ['_1','_2','_3','_4','_5','_6','_7','_8','_9','_10','
 function inqStableScrollTo(btn){
   if(!btn) return;
   btn.scrollIntoView({behavior:'auto', block:'start'});
+  var cancelled = false;
   var settleTimer = null;
+  var hardTimer = null;
+  function cancel(){
+    cancelled = true;
+    ro.disconnect();
+    if(settleTimer) clearTimeout(settleTimer);
+    if(hardTimer) clearTimeout(hardTimer);
+    window.removeEventListener('wheel', cancel);
+    window.removeEventListener('touchstart', cancel);
+    window.removeEventListener('pointerdown', cancel);
+  }
   var ro = new ResizeObserver(function(){
+    if(cancelled) return;
     if(settleTimer) clearTimeout(settleTimer);
     settleTimer = setTimeout(function(){
+      if(cancelled) return;
       ro.disconnect();
       btn.scrollIntoView({behavior:'smooth', block:'start'});
     }, 220);
   });
   ro.observe(document.body);
-  setTimeout(function(){
+  hardTimer = setTimeout(function(){
+    if(cancelled) return;
     ro.disconnect();
     btn.scrollIntoView({behavior:'smooth', block:'start'});
   }, 2500);
+  window.addEventListener('wheel', cancel, {passive:true, once:true});
+  window.addEventListener('touchstart', cancel, {passive:true, once:true});
+  window.addEventListener('pointerdown', cancel, {passive:true, once:true});
 }
 
 var inqPendingActionMap = {};
