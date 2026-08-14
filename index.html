@@ -7969,6 +7969,16 @@ html[lang="en"] .premiumCard p{font-size:12px!important;}
       var el = document.getElementById(k);
       if(el) el.setAttribute("placeholder", __inqPH[k][window.__inqLang]);
     }
+    var isEn = window.__inqLang === "en";
+    var closedText = isEn ? "Quick Inquiry" : "간편 문의 바로가기";
+    var openText = isEn ? "Quick Inquiry - Close" : "간편 문의 바로가기 - 닫기";
+    document.querySelectorAll('[id^="inqToggleBtnSub"], #inqToggleBtnMain').forEach(function(btn){
+      var idBase = btn.id.replace('inqToggleBtnSub','inqCollapseSub').replace('inqToggleBtnMain','inqCollapseMain');
+      var collapse = document.getElementById(idBase);
+      var span = btn.querySelector('span');
+      if(!span || !collapse) return;
+      span.textContent = (collapse.style.display === 'block') ? openText : closedText;
+    });
   };
   try{
     var savedLang = localStorage.getItem("siteLang");
@@ -8119,7 +8129,10 @@ function inqToggleFormGeneric(suffix){
   box.style.display = isOpen ? 'none' : 'block';
   if(btn){
     var span = btn.querySelector('span');
-    if(span) span.textContent = isOpen ? '간편 문의 바로가기' : '간편 문의 바로가기 - 닫기';
+    if(span){
+      var __isEn = window.__inqLang === 'en';
+      span.textContent = isOpen ? (__isEn ? 'Quick Inquiry' : '간편 문의 바로가기') : (__isEn ? 'Quick Inquiry - Close' : '간편 문의 바로가기 - 닫기');
+    }
   }
   if(!isOpen && btn){
     btn.scrollIntoView({behavior:'smooth', block:'start'});
@@ -8257,7 +8270,10 @@ function inqToggleFormMain(){
   if(arrow) arrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
   if(btn){
     var span = btn.querySelector('span');
-    if(span) span.textContent = isOpen ? '간편 문의 바로가기' : '간편 문의 바로가기 - 닫기';
+    if(span){
+      var __isEn = window.__inqLang === 'en';
+      span.textContent = isOpen ? (__isEn ? 'Quick Inquiry' : '간편 문의 바로가기') : (__isEn ? 'Quick Inquiry - Close' : '간편 문의 바로가기 - 닫기');
+    }
   }
   if(!isOpen && btn){
     btn.scrollIntoView({behavior:'smooth', block:'start'});
@@ -8273,7 +8289,10 @@ function inqToggleFormSub(){
   box.style.display = isOpen ? 'none' : 'block';
   if(btn){
     var span = btn.querySelector('span');
-    if(span) span.textContent = isOpen ? '간편 문의 바로가기' : '간편 문의 바로가기 - 닫기';
+    if(span){
+      var __isEn = window.__inqLang === 'en';
+      span.textContent = isOpen ? (__isEn ? 'Quick Inquiry' : '간편 문의 바로가기') : (__isEn ? 'Quick Inquiry - Close' : '간편 문의 바로가기 - 닫기');
+    }
   }
   if(!isOpen && btn){
     btn.scrollIntoView({behavior:'smooth', block:'start'});
