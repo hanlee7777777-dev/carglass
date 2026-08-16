@@ -8048,30 +8048,25 @@ function inqShare(){
   else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t);alert('문의 내용이 복사되었습니다.');}
   else{alert(t);}
 }
-function inqResetForm(){
-  var ids = ['inqPhone','inqPart','inqArea','inqMsg','inqNoMsg','inqPhoneMain','inqPartMain','inqAreaMain','inqMsgMain','inqNoMsgMain'];
-  ids.forEach(function(id){
-    var el = document.getElementById(id);
-    if(!el) return;
-    if(el.type === 'checkbox'){ el.checked = false; }
-    else { el.value = ''; }
-  });
-  var phMap = {
-        inqPhone:'연락 가능한 핸드폰 번호를 입력해주세요.', inqPhoneMain:'연락 가능한 핸드폰 번호를 입력해주세요.',
-    inqArea:'예: 강남구 논현동, 강서구 마곡동', inqAreaMain:'예: 강남구 논현동, 강서구 마곡동',
-    inqMsg:'궁금한 점을 자유롭게 남겨주세요', inqMsgMain:'궁금한 점을 자유롭게 남겨주세요'
-  };
+function inqResetForm(){ inqResetAllForms(); }
+function inqResetAllForms(){
   var isEn = window.__inqLang === 'en';
-  var phMapEn = {
-        inqPhone:'Enter a phone number we can reach you at.', inqPhoneMain:'Enter a phone number we can reach you at.',
-    inqArea:'e.g. Nonhyeon-dong, Gangnam-gu', inqAreaMain:'e.g. Nonhyeon-dong, Gangnam-gu',
-    inqMsg:'Feel free to leave any questions', inqMsgMain:'Feel free to leave any questions'
+  var suffixes = ['', 'Main', '_1','_2','_3','_4','_5','_6','_7','_8','_9','_10','_11','_13','_14','_16'];
+  var phMap = {
+    inqPhone:{ko:'연락 가능한 핸드폰 번호를 입력해주세요.', en:'Enter a phone number we can reach you at.'},
+    inqArea:{ko:'예: 강남구 논현동, 강서구 마곡동', en:'e.g. Nonhyeon-dong, Gangnam-gu'},
+    inqMsg:{ko:'궁금한 점을 자유롭게 남겨주세요', en:'Feel free to leave any questions'}
   };
-  Object.keys(phMap).forEach(function(id){
-    var el = document.getElementById(id);
-    if(el) el.setAttribute('placeholder', isEn ? phMapEn[id] : phMap[id]);
+  suffixes.forEach(function(suf){
+    ['inqPhone','inqPart','inqArea','inqMsg','inqNoMsg'].forEach(function(base){
+      var el = document.getElementById(base+suf);
+      if(!el) return;
+      if(el.type === 'checkbox'){ el.checked = false; }
+      else { el.value = ''; }
+      if(phMap[base]) el.setAttribute('placeholder', isEn ? phMap[base].en : phMap[base].ko);
+    });
   });
-  ['inqSaved_name','inqSaved_phone','inqSaved_part','inqSaved_area','inqSaved_msg'].forEach(function(k){
+  ['inqSaved_phone','inqSaved_part','inqSaved_area','inqSaved_msg'].forEach(function(k){
     try{ localStorage.removeItem(k); }catch(e){}
   });
   alert(isEn ? 'The form has been cleared.' : '입력하신 내용이 모두 초기화되었습니다.');
@@ -8214,26 +8209,7 @@ function inqAutoOpenFromHash(){
 }
 if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', inqAutoOpenFromHash); }
 else { inqAutoOpenFromHash(); }
-function inqResetFormGeneric(suffix){
-  var ids = ['inqPhone','inqPart','inqArea','inqMsg','inqNoMsg'];
-  var isEn = window.__inqLang === 'en';
-  var phMap = {
-    inqPhone:{ko:'연락 가능한 핸드폰 번호를 입력해주세요.', en:'Enter a phone number we can reach you at.'},
-    inqArea:{ko:'예: 강남구 논현동, 강서구 마곡동', en:'e.g. Nonhyeon-dong, Gangnam-gu'},
-    inqMsg:{ko:'궁금한 점을 자유롭게 남겨주세요', en:'Feel free to leave any questions'}
-  };
-  ids.forEach(function(id){
-    var el = document.getElementById(id+suffix);
-    if(!el) return;
-    if(el.type === 'checkbox'){ el.checked = false; }
-    else { el.value = ''; }
-    if(phMap[id]) el.setAttribute('placeholder', isEn ? phMap[id].en : phMap[id].ko);
-  });
-  ['inqSaved_name','inqSaved_phone','inqSaved_part','inqSaved_area','inqSaved_msg'].forEach(function(k){
-    try{ localStorage.removeItem(k); }catch(e){}
-  });
-  alert(isEn ? 'The form has been cleared.' : '입력하신 내용이 모두 초기화되었습니다.');
-}
+function inqResetFormGeneric(suffix){ inqResetAllForms(); }
 function inqBuildTextMain(){
   var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
   var phone=g('inqPhoneMain'), part=g('inqPartMain'), area=g('inqAreaMain'), msg=g('inqMsgMain');
@@ -8360,12 +8336,26 @@ function inqToggleFormSub(){
       }
     });
   }
+  function syncAllForms(fieldKey, value){
+    Object.keys(fieldMap).forEach(function(id){
+      if(fieldMap[id] !== fieldKey) return;
+      var el = document.getElementById(id);
+      if(!el || document.activeElement === el) return;
+      if(el.value !== value){
+        el.value = value;
+        if(value && (el.tagName === 'TEXTAREA' || el.tagName === 'INPUT')){ el.setAttribute('placeholder',''); }
+      }
+    });
+  }
+  window.__inqSyncAllForms = syncAllForms;
   function bindInqSave(){
     Object.keys(fieldMap).forEach(function(id){
       var el = document.getElementById(id);
       if(!el) return;
       var save = function(){
-        try{ localStorage.setItem(STORAGE_PREFIX + fieldMap[id], el.value); }catch(e){}
+        var key = fieldMap[id];
+        try{ localStorage.setItem(STORAGE_PREFIX + key, el.value); }catch(e){}
+        syncAllForms(key, el.value);
       };
       el.addEventListener('input', save);
       el.addEventListener('change', save);
