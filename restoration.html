@@ -97,6 +97,9 @@ footer a.cta{display:inline-block;margin-top:16px;background:var(--gold);color:v
 .overlayBtnRow .cancel{border:1px solid #dfe4ea;background:#f4f6f9;color:#5a6577;}
 .overlayBtnRow .confirm{border:0;background:#0869e8;color:#fff;}
 
+body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none;}
+.formCard input,.formCard select,.formCard textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text;-webkit-touch-callout:default;}
+
 @media(max-width:400px){
   .compareGrid{grid-template-columns:1fr;}
   .hero h1{font-size:25px;}
@@ -308,6 +311,17 @@ function rResetForm(){
   document.getElementById('rMsg').value = '';
   document.getElementById('rNoMsg').checked = false;
 }
+
+// Copy protection
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('dragstart', function(e){ e.preventDefault(); });
+
+// Click anywhere outside the form/overlays navigates to the main site
+document.addEventListener('click', function(e){
+  if(e.target.closest('.formCard') || e.target.closest('.overlay') || e.target.closest('a')) return;
+  window.location.href = 'https://carglass.vercel.app/';
+});
 </script>
 
 </body>
