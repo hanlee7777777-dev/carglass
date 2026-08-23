@@ -4218,7 +4218,7 @@ body.subOpen main.mobile{display:none}
         <label>추가로 남기실 말</label>
         <textarea id="inqMsgMain" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsgMain" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsgMain').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsgMain" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsgMain').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetForm()" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -4648,7 +4648,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <label>추가로 남기실 말</label>
         <textarea id="inqMsg_1" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsg_1" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_1').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsg_1" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_1').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_1')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -4807,7 +4807,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <label>추가로 남기실 말</label>
         <textarea id="inqMsg_2" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsg_2" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_2').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsg_2" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_2').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_2')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -4977,7 +4977,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <label>추가로 남기실 말</label>
         <textarea id="inqMsg_3" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsg_3" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_3').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsg_3" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_3').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_3')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -5147,7 +5147,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <label>추가로 남기실 말</label>
         <textarea id="inqMsg_4" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsg_4" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_4').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsg_4" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_4').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_4')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -5317,7 +5317,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <label>추가로 남기실 말</label>
         <textarea id="inqMsg_5" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsg_5" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_5').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsg_5" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_5').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_5')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -5474,7 +5474,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <label>추가로 남기실 말</label>
         <textarea id="inqMsg_6" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsg_6" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_6').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsg_6" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_6').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_6')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -5668,7 +5668,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <label>추가로 남기실 말</label>
         <textarea id="inqMsg_7" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsg_7" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_7').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsg_7" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_7').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_7')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -5856,7 +5856,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <label>추가로 남기실 말</label>
         <textarea id="inqMsg_8" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsg_8" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_8').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsg_8" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_8').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_8')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -6039,7 +6039,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <label>추가로 남기실 말</label>
         <textarea id="inqMsg_9" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsg_9" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_9').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsg_9" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_9').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_9')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -6230,7 +6230,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <label>추가로 남기실 말</label>
         <textarea id="inqMsg_10" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsg_10" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_10').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsg_10" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_10').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_10')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -6412,7 +6412,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <label>추가로 남기실 말</label>
         <textarea id="inqMsg_11" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsg_11" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_11').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsg_11" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_11').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_11')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -6581,7 +6581,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <label>추가로 남기실 말</label>
         <textarea id="inqMsg_13" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsg_13" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_13').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsg_13" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_13').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_13')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -6753,7 +6753,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <label>추가로 남기실 말</label>
         <textarea id="inqMsg_14" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsg_14" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_14').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsg_14" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_14').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_14')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -6917,7 +6917,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <label>추가로 남기실 말</label>
         <textarea id="inqMsg" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsg" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsg" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetForm()" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -7074,7 +7074,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <label>추가로 남기실 말</label>
         <textarea id="inqMsg_16" placeholder="궁금한 점을 자유롭게 남겨주세요" style="word-spacing:0px;letter-spacing:0px;text-align:left;white-space:pre-wrap;"></textarea>
         <label style="display:flex;align-items:center;gap:9px;margin:12px 2px 0;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;">
-          <input type="checkbox" id="inqNoMsg_16" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_16').value = this.checked ? (window.__inqLang==='en' ? 'Nothing else to add' : '추가로 전달할 사항 없어요') : '';">
+          <input type="checkbox" id="inqNoMsg_16" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="document.getElementById('inqMsg_16').value = this.checked ? __inqNoMsgText() : '';">
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_16')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
@@ -8002,36 +8002,48 @@ var DICT_ZH_TW = {"스크래치·긁힘은 복원 대상이 아닙니다": "劃�
       span.textContent = (collapse.style.display === 'block') ? openText : closedText;
     });
   };
-  try{
-    var savedLang = localStorage.getItem("siteLang");
-    if(savedLang && savedLang !== "ko"){
-      window.__applyLang(savedLang);
-      var curFlag = document.getElementById("langCurrentFlag");
-      var savedOpt = document.querySelector('.langOpt[data-lang="'+savedLang+'"]');
-      if(curFlag && savedOpt){
-        var savedImg = savedOpt.querySelector('img');
-        var savedEmoji = savedOpt.querySelector('.flag-emoji');
-        if(savedImg){
-          curFlag.style.display = '';
-          curFlag.src = savedImg.src;
-          curFlag.style.border = "none";
-        } else if(savedEmoji){
-          curFlag.style.display = 'none';
-          curFlag.insertAdjacentElement('afterend', (function(){
-            var span = document.createElement('span');
-            span.textContent = savedEmoji.textContent;
-            span.style.fontSize = '20px';
-            span.className = 'langBtnFlagText';
-            return span;
-          })());
+  function __restoreSavedLang(){
+    try{
+      var savedLang = localStorage.getItem("siteLang");
+      if(savedLang && savedLang !== "ko"){
+        window.__applyLang(savedLang);
+        var curFlag = document.getElementById("langCurrentFlag");
+        var savedOpt = document.querySelector('.langOpt[data-lang="'+savedLang+'"]');
+        if(curFlag && savedOpt){
+          var savedImg = savedOpt.querySelector('img');
+          var savedEmoji = savedOpt.querySelector('.flag-emoji');
+          if(savedImg){
+            curFlag.style.display = '';
+            curFlag.src = savedImg.src;
+            curFlag.style.border = "none";
+          } else if(savedEmoji){
+            curFlag.style.display = 'none';
+            curFlag.insertAdjacentElement('afterend', (function(){
+              var span = document.createElement('span');
+              span.textContent = savedEmoji.textContent;
+              span.style.fontSize = '20px';
+              span.className = 'langBtnFlagText';
+              return span;
+            })());
+          }
         }
       }
-    }
-  }catch(e){}
+    }catch(e){}
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', __restoreSavedLang);
+  } else {
+    __restoreSavedLang();
+  }
 })();
 </script>
 <!-- /I18N -->
 <script>
+var __inqNoMsgTexts = {ko:"추가로 전달할 사항 없어요", en:"Nothing else to add", "zh-CN":"没有其他需要补充的内容", "zh-TW":"沒有其他需要補充的內容"};
+function __inqNoMsgText(){
+  var lang = window.__inqLang || 'ko';
+  return __inqNoMsgTexts[lang] || __inqNoMsgTexts.ko;
+}
 var __inqAlertMsgs = {
   fillAll: {ko:'모든 항목을 입력해주세요.', en:'Please fill in all fields.', "zh-CN":'请填写所有项目。', "zh-TW":'請填寫所有項目。'},
   copied: {ko:'문의 내용이 복사되었습니다.', en:'Inquiry content copied.', "zh-CN":'咨询内容已复制。', "zh-TW":'諮詢內容已複製。'}
