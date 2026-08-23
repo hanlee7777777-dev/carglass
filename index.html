@@ -8032,6 +8032,39 @@ var DICT_ZH_TW = {"스크래치·긁힘은 복원 대상이 아닙니다": "劃�
 </script>
 <!-- /I18N -->
 <script>
+var __inqAlertMsgs = {
+  fillAll: {ko:'모든 항목을 입력해주세요.', en:'Please fill in all fields.', "zh-CN":'请填写所有项目。', "zh-TW":'請填寫所有項目。'},
+  copied: {ko:'문의 내용이 복사되었습니다.', en:'Inquiry content copied.', "zh-CN":'咨询内容已复制。', "zh-TW":'諮詢內容已複製。'}
+};
+var __inqAlertOkText = {ko:'확인', en:'OK', "zh-CN":'确定', "zh-TW":'確定'};
+function __inqShowAlert(text){
+  var lang = window.__inqLang || 'ko';
+  var existing = document.getElementById('__inqAlertOverlay');
+  if(existing) existing.remove();
+  var overlay = document.createElement('div');
+  overlay.id = '__inqAlertOverlay';
+  overlay.style.cssText = 'display:flex;position:fixed;inset:0;z-index:30000;background:rgba(10,20,35,.55);align-items:center;justify-content:center;padding:20px;';
+  var box = document.createElement('div');
+  box.style.cssText = 'background:#fff;border-radius:16px;padding:24px 20px;max-width:320px;width:100%;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.2);';
+  var p = document.createElement('div');
+  p.style.cssText = 'font-size:15px;color:#222;margin-bottom:18px;line-height:1.5;white-space:pre-line;';
+  p.textContent = text;
+  var btn = document.createElement('button');
+  btn.type = 'button';
+  btn.textContent = __inqAlertOkText[lang] || __inqAlertOkText.ko;
+  btn.style.cssText = 'background:#2f6fed;color:#fff;border:none;border-radius:10px;padding:10px 24px;font-size:15px;font-weight:600;cursor:pointer;';
+  btn.addEventListener('click', function(){ overlay.remove(); });
+  box.appendChild(p); box.appendChild(btn);
+  overlay.appendChild(box);
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) overlay.remove(); });
+  document.body.appendChild(overlay);
+}
+function __inqAlert(key){
+  var lang = window.__inqLang || 'ko';
+  var entry = __inqAlertMsgs[key];
+  var msg = entry ? (entry[lang] || entry.ko) : key;
+  __inqShowAlert(msg);
+}
 function inqBuildText(){
   var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
   var part=g('inqPart'), area=g('inqArea'), msg=g('inqMsg');
@@ -8047,7 +8080,7 @@ function inqTrySend(action){
   var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
   var part=g('inqPart'), area=g('inqArea'), msg=g('inqMsg');
   if(!part || !area || !msg){
-    alert(window.__inqLang === 'en' ? 'Please fill in all fields.' : '모든 항목을 입력해주세요.');
+    __inqAlert('fillAll');
     return;
   }
   inqPendingAction = action;
@@ -8079,8 +8112,8 @@ function inqSendKakao(){
 function inqShare(){
   var t=inqBuildText();
   if(navigator.share){navigator.share({text:t}).catch(function(){});}
-  else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t);alert('문의 내용이 복사되었습니다.');}
-  else{alert(t);}
+  else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t);__inqAlert('copied');}
+  else{__inqShowAlert(t);}
 }
 function inqResetForm(){ inqShowResetConfirm(); }
 function inqShowResetConfirm(){
@@ -8164,7 +8197,7 @@ function inqTryOpenGeneric(suffix, action){
   var g=function(id){var el=document.getElementById(id+suffix);return el?el.value.trim():'';};
   var part=g('inqPart'), area=g('inqArea'), msg=g('inqMsg');
   if(!part || !area || !msg){
-    alert(window.__inqLang === 'en' ? 'Please fill in all fields.' : '모든 항목을 입력해주세요.');
+    __inqAlert('fillAll');
     return;
   }
   inqPendingActionMap[suffix] = action;
@@ -8188,8 +8221,8 @@ function inqConfirmSendGeneric(suffix){
     window.open('https://open.kakao.com/o/sv9FlUDi','_blank');
   } else if(action==='share'){
     if(navigator.share){navigator.share({text:t}).catch(function(){});}
-    else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t);alert('문의 내용이 복사되었습니다.');}
-    else{alert(t);}
+    else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t);__inqAlert('copied');}
+    else{__inqShowAlert(t);}
   }
   delete inqPendingActionMap[suffix];
 }
@@ -8266,7 +8299,7 @@ function inqTrySendMain(action){
   var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
   var part=g('inqPartMain'), area=g('inqAreaMain'), msg=g('inqMsgMain');
   if(!part || !area || !msg){
-    alert(window.__inqLang === 'en' ? 'Please fill in all fields.' : '모든 항목을 입력해주세요.');
+    __inqAlert('fillAll');
     return;
   }
   inqPendingActionMain = action;
@@ -8298,8 +8331,8 @@ function inqSendKakaoMain(){
 function inqShareMain(){
   var t=inqBuildTextMain();
   if(navigator.share){navigator.share({text:t}).catch(function(){});}
-  else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t);alert('문의 내용이 복사되었습니다.');}
-  else{alert(t);}
+  else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t);__inqAlert('copied');}
+  else{__inqShowAlert(t);}
 }
 function inqToggleFormMain(){
   var box = document.getElementById('inqCollapseMain');
