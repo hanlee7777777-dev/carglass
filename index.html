@@ -8132,7 +8132,7 @@ function jhOpenFormAt(suffix){
   var btn = document.getElementById(btnId);
   if(box && box.style.display !== 'block' && btn){ btn.click(); }
   setTimeout(function(){
-    var target = document.getElementById(boxId) || document.getElementById(btnId);
+    var target = document.getElementById(btnId) || document.getElementById(boxId);
     if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
   }, 50);
 }
