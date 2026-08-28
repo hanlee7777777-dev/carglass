@@ -4213,6 +4213,8 @@ body.subOpen main.mobile{display:none}
     <div id="inqCollapseMain" style="display:none;">
       <div class="formCard" id="inqFormCardMain" style="margin:0 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuickMain" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('Main')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrapMain">
         <label>파손 부위</label>
         <select id="inqPartMain">
           <option value="">선택해주세요</option>
@@ -4231,6 +4233,7 @@ body.subOpen main.mobile{display:none}
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetForm()" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTrySendMain('sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTrySendMain('kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -4439,8 +4442,8 @@ body.subOpen main.mobile{display:none}
 
 <nav class="bottom">
   <a class="bTel" href="tel:01050687232">전화 상담</a>
-  <a class="bKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-  <a class="bBlog" href="sms:01050687232">문자상담</a>
+  <a class="bKakao" href="javascript:void(0)" onclick="jhOpenFormAt('Main');return false;">카카오톡 상담</a>
+  <a class="bBlog" href="javascript:void(0)" onclick="jhOpenFormAt('Main');return false;">문자상담</a>
 </nav>
 
 </main>
@@ -4632,17 +4635,19 @@ document.addEventListener('DOMContentLoaded', function(){
       
   <div class="foot subFoot3">
     <a class="sTel" href="tel:01050687232">전화 상담</a>
-    <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-    <a class="sBlog" href="sms:01050687232">문자상담</a>
+    <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAt('_1');return false;">카카오톡 상담</a>
+    <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('_1');return false;">문자상담</a>
   </div>
       
             <div style="max-width:600px;margin:0 auto;padding:0 16px;">
 <button type="button" id="inqToggleBtnSub_1" onclick="inqToggleFormGeneric('_1')" style="width:100%;height:58px;border:2px solid #8fc9a3;border-radius:16px;background:#eaf7ee;color:#1c5e33;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;margin:16px 0 40px;">
-        <span>간편 문의 바로가기</span>
+        <span>간편 문의 바로가기 - 닫기</span>
       </button>
-      <div id="inqCollapseSub_1" style="display:none;">
+      <div id="inqCollapseSub_1" style="display:block;">
       <div class="formCard" id="inqFormCard_1" style="margin:0 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuick_1" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('_1')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrap_1">
         <label>파손 부위</label>
         <select id="inqPart_1">
           <option value="">선택해주세요</option>
@@ -4661,6 +4666,7 @@ document.addEventListener('DOMContentLoaded', function(){
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_1')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTryOpenGeneric('_1','sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTryOpenGeneric('_1','kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -4797,11 +4803,13 @@ document.addEventListener('DOMContentLoaded', function(){
     
       
             <button type="button" id="inqToggleBtnSub_2" onclick="inqToggleFormGeneric('_2')" style="width:100%;height:58px;border:2px solid #8fc9a3;border-radius:16px;background:#eaf7ee;color:#1c5e33;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;margin:32px 0 24px;">
-        <span>간편 문의 바로가기</span>
+        <span>간편 문의 바로가기 - 닫기</span>
       </button>
-      <div id="inqCollapseSub_2" style="display:none;">
+      <div id="inqCollapseSub_2" style="display:block;">
       <div class="formCard" id="inqFormCard_2" style="margin:0 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuick_2" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('_2')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrap_2">
         <label>파손 부위</label>
         <select id="inqPart_2">
           <option value="">선택해주세요</option>
@@ -4820,6 +4828,7 @@ document.addEventListener('DOMContentLoaded', function(){
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_2')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTryOpenGeneric('_2','sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTryOpenGeneric('_2','kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -4898,8 +4907,8 @@ document.addEventListener('DOMContentLoaded', function(){
   </main>
   <div class="foot subFoot3">
     <a class="sTel" href="tel:01050687232">전화 상담</a>
-    <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-    <a class="sBlog" href="sms:01050687232">문자상담</a>
+    <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAt('_2');return false;">카카오톡 상담</a>
+    <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('_2');return false;">문자상담</a>
   </div>
 
 <p style="text-align:center;color:#9aa3ad;font-size:12px;line-height:1.7;padding:40px 20px 0;margin:32px 0 4px;">카글라스 자동차유리복원<br>대표자: 이미숙 | 사업자등록번호: 780-11-00403<br>업종: 서비스 | 종목: 유리복원</p>
@@ -4967,11 +4976,13 @@ document.addEventListener('DOMContentLoaded', function(){
     
       
             <button type="button" id="inqToggleBtnSub_3" onclick="inqToggleFormGeneric('_3')" style="width:100%;height:58px;border:2px solid #8fc9a3;border-radius:16px;background:#eaf7ee;color:#1c5e33;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;margin:32px 0 24px;">
-        <span>간편 문의 바로가기</span>
+        <span>간편 문의 바로가기 - 닫기</span>
       </button>
-      <div id="inqCollapseSub_3" style="display:none;">
+      <div id="inqCollapseSub_3" style="display:block;">
       <div class="formCard" id="inqFormCard_3" style="margin:0 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuick_3" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('_3')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrap_3">
         <label>파손 부위</label>
         <select id="inqPart_3">
           <option value="">선택해주세요</option>
@@ -4990,6 +5001,7 @@ document.addEventListener('DOMContentLoaded', function(){
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_3')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTryOpenGeneric('_3','sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTryOpenGeneric('_3','kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -5068,8 +5080,8 @@ document.addEventListener('DOMContentLoaded', function(){
   </main>
   <div class="foot subFoot3">
     <a class="sTel" href="tel:01050687232">전화 상담</a>
-    <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-    <a class="sBlog" href="sms:01050687232">문자상담</a>
+    <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAt('_3');return false;">카카오톡 상담</a>
+    <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('_3');return false;">문자상담</a>
   </div>
 
 <p style="text-align:center;color:#9aa3ad;font-size:12px;line-height:1.7;padding:40px 20px 0;margin:32px 0 4px;">카글라스 자동차유리복원<br>대표자: 이미숙 | 사업자등록번호: 780-11-00403<br>업종: 서비스 | 종목: 유리복원</p>
@@ -5137,11 +5149,13 @@ document.addEventListener('DOMContentLoaded', function(){
     
       
             <button type="button" id="inqToggleBtnSub_4" onclick="inqToggleFormGeneric('_4')" style="width:100%;height:58px;border:2px solid #8fc9a3;border-radius:16px;background:#eaf7ee;color:#1c5e33;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;margin:32px 0 24px;">
-        <span>간편 문의 바로가기</span>
+        <span>간편 문의 바로가기 - 닫기</span>
       </button>
-      <div id="inqCollapseSub_4" style="display:none;">
+      <div id="inqCollapseSub_4" style="display:block;">
       <div class="formCard" id="inqFormCard_4" style="margin:0 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuick_4" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('_4')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrap_4">
         <label>파손 부위</label>
         <select id="inqPart_4">
           <option value="">선택해주세요</option>
@@ -5160,6 +5174,7 @@ document.addEventListener('DOMContentLoaded', function(){
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_4')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTryOpenGeneric('_4','sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTryOpenGeneric('_4','kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -5238,8 +5253,8 @@ document.addEventListener('DOMContentLoaded', function(){
   </main>
   <div class="foot subFoot3">
     <a class="sTel" href="tel:01050687232">전화 상담</a>
-    <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-    <a class="sBlog" href="sms:01050687232">문자상담</a>
+    <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAt('_4');return false;">카카오톡 상담</a>
+    <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('_4');return false;">문자상담</a>
   </div>
 
 <p style="text-align:center;color:#9aa3ad;font-size:12px;line-height:1.7;padding:40px 20px 0;margin:32px 0 4px;">카글라스 자동차유리복원<br>대표자: 이미숙 | 사업자등록번호: 780-11-00403<br>업종: 서비스 | 종목: 유리복원</p>
@@ -5307,11 +5322,13 @@ document.addEventListener('DOMContentLoaded', function(){
     
       
             <button type="button" id="inqToggleBtnSub_5" onclick="inqToggleFormGeneric('_5')" style="width:100%;height:58px;border:2px solid #8fc9a3;border-radius:16px;background:#eaf7ee;color:#1c5e33;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;margin:32px 0 24px;">
-        <span>간편 문의 바로가기</span>
+        <span>간편 문의 바로가기 - 닫기</span>
       </button>
-      <div id="inqCollapseSub_5" style="display:none;">
+      <div id="inqCollapseSub_5" style="display:block;">
       <div class="formCard" id="inqFormCard_5" style="margin:0 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuick_5" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('_5')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrap_5">
         <label>파손 부위</label>
         <select id="inqPart_5">
           <option value="">선택해주세요</option>
@@ -5330,6 +5347,7 @@ document.addEventListener('DOMContentLoaded', function(){
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_5')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTryOpenGeneric('_5','sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTryOpenGeneric('_5','kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -5408,8 +5426,8 @@ document.addEventListener('DOMContentLoaded', function(){
   </main>
   <div class="foot subFoot3">
     <a class="sTel" href="tel:01050687232">전화 상담</a>
-    <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-    <a class="sBlog" href="sms:01050687232">문자상담</a>
+    <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAt('_5');return false;">카카오톡 상담</a>
+    <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('_5');return false;">문자상담</a>
   </div>
 
 <p style="text-align:center;color:#9aa3ad;font-size:12px;line-height:1.7;padding:40px 20px 0;margin:32px 0 4px;">카글라스 자동차유리복원<br>대표자: 이미숙 | 사업자등록번호: 780-11-00403<br>업종: 서비스 | 종목: 유리복원</p>
@@ -5464,11 +5482,13 @@ document.addEventListener('DOMContentLoaded', function(){
     
       
             <button type="button" id="inqToggleBtnSub_6" onclick="inqToggleFormGeneric('_6')" style="width:100%;height:58px;border:2px solid #8fc9a3;border-radius:16px;background:#eaf7ee;color:#1c5e33;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;margin:32px 0 24px;">
-        <span>간편 문의 바로가기</span>
+        <span>간편 문의 바로가기 - 닫기</span>
       </button>
-      <div id="inqCollapseSub_6" style="display:none;">
+      <div id="inqCollapseSub_6" style="display:block;">
       <div class="formCard" id="inqFormCard_6" style="margin:0 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuick_6" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('_6')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrap_6">
         <label>파손 부위</label>
         <select id="inqPart_6">
           <option value="">선택해주세요</option>
@@ -5487,6 +5507,7 @@ document.addEventListener('DOMContentLoaded', function(){
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_6')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTryOpenGeneric('_6','sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTryOpenGeneric('_6','kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -5565,8 +5586,8 @@ document.addEventListener('DOMContentLoaded', function(){
   </main>
   <div class="foot subFoot3">
     <a class="sTel" href="tel:01050687232">전화 상담</a>
-    <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-    <a class="sBlog" href="sms:01050687232">문자상담</a>
+    <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAt('_6');return false;">카카오톡 상담</a>
+    <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('_6');return false;">문자상담</a>
   </div>
 
 <p style="text-align:center;color:#9aa3ad;font-size:12px;line-height:1.7;padding:40px 20px 0;margin:32px 0 4px;">카글라스 자동차유리복원<br>대표자: 이미숙 | 사업자등록번호: 780-11-00403<br>업종: 서비스 | 종목: 유리복원</p>
@@ -5652,17 +5673,19 @@ document.addEventListener('DOMContentLoaded', function(){
       
   <div class="foot subFoot3">
     <a class="sTel" href="tel:01050687232">전화 상담</a>
-    <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-    <a class="sBlog" href="sms:01050687232">문자상담</a>
+    <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAt('_7');return false;">카카오톡 상담</a>
+    <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('_7');return false;">문자상담</a>
   </div>
       
             <div style="max-width:600px;margin:0 auto;padding:0 16px;">
 <button type="button" id="inqToggleBtnSub_7" onclick="inqToggleFormGeneric('_7')" style="width:100%;height:58px;border:2px solid #8fc9a3;border-radius:16px;background:#eaf7ee;color:#1c5e33;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;margin:16px 0 40px;">
-        <span>간편 문의 바로가기</span>
+        <span>간편 문의 바로가기 - 닫기</span>
       </button>
-      <div id="inqCollapseSub_7" style="display:none;">
+      <div id="inqCollapseSub_7" style="display:block;">
       <div class="formCard" id="inqFormCard_7" style="margin:0 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuick_7" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('_7')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrap_7">
         <label>파손 부위</label>
         <select id="inqPart_7">
           <option value="">선택해주세요</option>
@@ -5681,6 +5704,7 @@ document.addEventListener('DOMContentLoaded', function(){
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_7')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTryOpenGeneric('_7','sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTryOpenGeneric('_7','kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -5840,17 +5864,19 @@ document.addEventListener('DOMContentLoaded', function(){
       
   <div class="foot subFoot3">
     <a class="sTel" href="tel:01050687232">전화 상담</a>
-    <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-    <a class="sBlog" href="sms:01050687232">문자상담</a>
+    <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAt('_8');return false;">카카오톡 상담</a>
+    <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('_8');return false;">문자상담</a>
   </div>
       
             <div style="max-width:600px;margin:0 auto;padding:0 16px;">
 <button type="button" id="inqToggleBtnSub_8" onclick="inqToggleFormGeneric('_8')" style="width:100%;height:58px;border:2px solid #8fc9a3;border-radius:16px;background:#eaf7ee;color:#1c5e33;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;margin:16px 0 40px;">
-        <span>간편 문의 바로가기</span>
+        <span>간편 문의 바로가기 - 닫기</span>
       </button>
-      <div id="inqCollapseSub_8" style="display:none;">
+      <div id="inqCollapseSub_8" style="display:block;">
       <div class="formCard" id="inqFormCard_8" style="margin:0 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuick_8" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('_8')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrap_8">
         <label>파손 부위</label>
         <select id="inqPart_8">
           <option value="">선택해주세요</option>
@@ -5869,6 +5895,7 @@ document.addEventListener('DOMContentLoaded', function(){
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_8')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTryOpenGeneric('_8','sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTryOpenGeneric('_8','kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -6023,17 +6050,19 @@ document.addEventListener('DOMContentLoaded', function(){
       
   <div class="foot subFoot3">
     <a class="sTel" href="tel:01050687232">전화 상담</a>
-    <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-    <a class="sBlog" href="sms:01050687232">문자상담</a>
+    <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAt('_9');return false;">카카오톡 상담</a>
+    <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('_9');return false;">문자상담</a>
   </div>
       
             <div style="max-width:600px;margin:0 auto;padding:0 16px;">
 <button type="button" id="inqToggleBtnSub_9" onclick="inqToggleFormGeneric('_9')" style="width:100%;height:58px;border:2px solid #8fc9a3;border-radius:16px;background:#eaf7ee;color:#1c5e33;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;margin:16px 0 40px;">
-        <span>간편 문의 바로가기</span>
+        <span>간편 문의 바로가기 - 닫기</span>
       </button>
-      <div id="inqCollapseSub_9" style="display:none;">
+      <div id="inqCollapseSub_9" style="display:block;">
       <div class="formCard" id="inqFormCard_9" style="margin:0 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuick_9" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('_9')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrap_9">
         <label>파손 부위</label>
         <select id="inqPart_9">
           <option value="">선택해주세요</option>
@@ -6052,6 +6081,7 @@ document.addEventListener('DOMContentLoaded', function(){
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_9')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTryOpenGeneric('_9','sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTryOpenGeneric('_9','kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -6214,17 +6244,19 @@ document.addEventListener('DOMContentLoaded', function(){
       
   <div class="foot subFoot3">
     <a class="sTel" href="tel:01050687232">전화 상담</a>
-    <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-    <a class="sBlog" href="sms:01050687232">문자상담</a>
+    <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAt('_10');return false;">카카오톡 상담</a>
+    <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('_10');return false;">문자상담</a>
   </div>
       
             <div style="max-width:600px;margin:0 auto;padding:0 16px;">
 <button type="button" id="inqToggleBtnSub_10" onclick="inqToggleFormGeneric('_10')" style="width:100%;height:58px;border:2px solid #8fc9a3;border-radius:16px;background:#eaf7ee;color:#1c5e33;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;margin:16px 0 40px;">
-        <span>간편 문의 바로가기</span>
+        <span>간편 문의 바로가기 - 닫기</span>
       </button>
-      <div id="inqCollapseSub_10" style="display:none;">
+      <div id="inqCollapseSub_10" style="display:block;">
       <div class="formCard" id="inqFormCard_10" style="margin:0 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuick_10" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('_10')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrap_10">
         <label>파손 부위</label>
         <select id="inqPart_10">
           <option value="">선택해주세요</option>
@@ -6243,6 +6275,7 @@ document.addEventListener('DOMContentLoaded', function(){
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_10')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTryOpenGeneric('_10','sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTryOpenGeneric('_10','kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -6396,17 +6429,19 @@ document.addEventListener('DOMContentLoaded', function(){
       
   <div class="foot subFoot3">
     <a class="sTel" href="tel:01050687232">전화 상담</a>
-    <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-    <a class="sBlog" href="sms:01050687232">문자상담</a>
+    <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAt('_11');return false;">카카오톡 상담</a>
+    <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('_11');return false;">문자상담</a>
   </div>
       
             <div style="max-width:600px;margin:0 auto;padding:0 16px;">
 <button type="button" id="inqToggleBtnSub_11" onclick="inqToggleFormGeneric('_11')" style="width:100%;height:58px;border:2px solid #8fc9a3;border-radius:16px;background:#eaf7ee;color:#1c5e33;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;margin:16px 0 40px;">
-        <span>간편 문의 바로가기</span>
+        <span>간편 문의 바로가기 - 닫기</span>
       </button>
-      <div id="inqCollapseSub_11" style="display:none;">
+      <div id="inqCollapseSub_11" style="display:block;">
       <div class="formCard" id="inqFormCard_11" style="margin:0 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuick_11" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('_11')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrap_11">
         <label>파손 부위</label>
         <select id="inqPart_11">
           <option value="">선택해주세요</option>
@@ -6425,6 +6460,7 @@ document.addEventListener('DOMContentLoaded', function(){
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_11')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTryOpenGeneric('_11','sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTryOpenGeneric('_11','kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -6565,17 +6601,19 @@ document.addEventListener('DOMContentLoaded', function(){
       
   <div class="foot subFoot3">
     <a class="sTel" href="tel:01050687232">전화 상담</a>
-    <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-    <a class="sBlog" href="sms:01050687232">문자상담</a>
+    <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAt('_13');return false;">카카오톡 상담</a>
+    <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('_13');return false;">문자상담</a>
   </div>
       
             <div style="max-width:600px;margin:0 auto;padding:0 16px;">
 <button type="button" id="inqToggleBtnSub_13" onclick="inqToggleFormGeneric('_13')" style="width:100%;height:58px;border:2px solid #8fc9a3;border-radius:16px;background:#eaf7ee;color:#1c5e33;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;margin:16px 0 40px;">
-        <span>간편 문의 바로가기</span>
+        <span>간편 문의 바로가기 - 닫기</span>
       </button>
-      <div id="inqCollapseSub_13" style="display:none;">
+      <div id="inqCollapseSub_13" style="display:block;">
       <div class="formCard" id="inqFormCard_13" style="margin:0 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuick_13" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('_13')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrap_13">
         <label>파손 부위</label>
         <select id="inqPart_13">
           <option value="">선택해주세요</option>
@@ -6594,6 +6632,7 @@ document.addEventListener('DOMContentLoaded', function(){
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_13')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTryOpenGeneric('_13','sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTryOpenGeneric('_13','kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -6737,17 +6776,19 @@ document.addEventListener('DOMContentLoaded', function(){
       
   <div class="foot subFoot3">
     <a class="sTel" href="tel:01050687232">전화 상담</a>
-    <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-    <a class="sBlog" href="sms:01050687232">문자상담</a>
+    <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAt('_14');return false;">카카오톡 상담</a>
+    <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('_14');return false;">문자상담</a>
   </div>
       
             <div style="max-width:600px;margin:0 auto;padding:0 16px;">
 <button type="button" id="inqToggleBtnSub_14" onclick="inqToggleFormGeneric('_14')" style="width:100%;height:58px;border:2px solid #8fc9a3;border-radius:16px;background:#eaf7ee;color:#1c5e33;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;margin:16px 0 40px;">
-        <span>간편 문의 바로가기</span>
+        <span>간편 문의 바로가기 - 닫기</span>
       </button>
-      <div id="inqCollapseSub_14" style="display:none;">
+      <div id="inqCollapseSub_14" style="display:block;">
       <div class="formCard" id="inqFormCard_14" style="margin:0 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuick_14" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('_14')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrap_14">
         <label>파손 부위</label>
         <select id="inqPart_14">
           <option value="">선택해주세요</option>
@@ -6766,6 +6807,7 @@ document.addEventListener('DOMContentLoaded', function(){
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_14')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTryOpenGeneric('_14','sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTryOpenGeneric('_14','kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -6907,11 +6949,13 @@ document.addEventListener('DOMContentLoaded', function(){
         <p>전화 상담을 하다 보면, 출장 방문 방식에 대해 신뢰가 가는지 걱정하시는 분들이 간혹 계십니다. 자동차유리복원은 지역별 수요가 제한적인 특성상, 출장 중심으로 운영되는 경우가 많습니다.<br><span style="display:block;margin-top:10px"></span><b>출장이라고 해서 품질이 달라지는 것은 아닙니다.</b> 오히려 <b>고객님의 시간과 이동 부담을 덜어드릴 수 있는 가장 효율적인 방식</b>이지요.<br><span style="display:block;margin-top:10px"></span>3만 대 이상의 시공 경험과 기술과 노하우로 고객님 계신 곳 어디든 직접 방문드려 시공해 드리오니, 카글라스 기술팀만큼은 안심하고 맡기셔도 됩니다.</p>
       </div>
     <button type="button" id="inqToggleBtnSub" onclick="inqToggleFormSub()" style="width:100%;height:58px;border:2px solid #8fc9a3;border-radius:16px;background:#eaf7ee;color:#1c5e33;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;margin:32px 0 40px;">
-        <span>간편 문의 바로가기</span>
+        <span>간편 문의 바로가기 - 닫기</span>
       </button>
-      <div id="inqCollapseSub" style="display:none;">
+      <div id="inqCollapseSub" style="display:block;">
       <div class="formCard" id="inqFormCard" style="margin:24px 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuick" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrap">
         <label>파손 부위</label>
         <select id="inqPart">
           <option value="">선택해주세요</option>
@@ -6930,6 +6974,7 @@ document.addEventListener('DOMContentLoaded', function(){
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetForm()" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTrySend('sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTrySend('kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -7013,8 +7058,8 @@ document.addEventListener('DOMContentLoaded', function(){
 <p style="text-align:center;color:#9aa3ad;font-size:12px;padding:16px 20px 20px;">Copyrightⓒ 카글라스자동차유리복원<br>All Right Reserved.</p>
   <div class="foot subFoot3">
     <a class="sTel" href="tel:01050687232">전화 상담</a>
-    <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-    <a class="sBlog" href="sms:01050687232">문자상담</a>
+    <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAt('');return false;">카카오톡 상담</a>
+    <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('');return false;">문자상담</a>
   </div>
 </div>
 
@@ -7064,11 +7109,13 @@ document.addEventListener('DOMContentLoaded', function(){
     
       
             <button type="button" id="inqToggleBtnSub_16" onclick="inqToggleFormGeneric('_16')" style="width:100%;height:58px;border:2px solid #8fc9a3;border-radius:16px;background:#eaf7ee;color:#1c5e33;font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);cursor:pointer;margin:32px 0 24px;">
-        <span>간편 문의 바로가기</span>
+        <span>간편 문의 바로가기 - 닫기</span>
       </button>
-      <div id="inqCollapseSub_16" style="display:none;">
+      <div id="inqCollapseSub_16" style="display:block;">
       <div class="formCard" id="inqFormCard_16" style="margin:0 0 28px;">
         <h2 style="margin:0 0 4px;font-size:20px;color:#0b1e33;text-align:center;">간편 문의하기</h2>
+        <label style="display:flex;align-items:center;gap:9px;margin:0 2px 14px;font-size:14.5px;font-weight:700;color:#3c4656;cursor:pointer;"><input type="checkbox" id="inqQuick_16" style="width:20px;height:20px;accent-color:#2f7d47;flex-shrink:0;" onchange="jhToggleQuick('_16')">문의 양식 작성없이 바로 상담하기</label>
+        <div id="inqFieldsWrap_16">
         <label>파손 부위</label>
         <select id="inqPart_16">
           <option value="">선택해주세요</option>
@@ -7087,6 +7134,7 @@ document.addEventListener('DOMContentLoaded', function(){
           추가로 전달할 사항 없어요
         </label>
         <button type="button" onclick="inqResetFormGeneric('_16')" style="background:#fff;color:#6b7684;border:1.5px solid #a9b3c1;box-shadow:none;margin-top:10px;">작성 문구 초기화</button>
+        </div>
         <div style="display:flex;gap:8px;margin-top:24px;">
           <button type="button" onclick="inqTryOpenGeneric('_16','sms')" style="flex:1;margin-top:0;background:#0869e8;border:1.5px solid #0552b8;box-shadow:0 4px 10px rgba(8,105,232,.35);">문자로 보내기</button>
           <button type="button" onclick="inqTryOpenGeneric('_16','kakao')" style="flex:1;margin-top:0;background:#f7d548;color:#3c2e0a;border:1.5px solid #d9b829;box-shadow:0 4px 10px rgba(247,213,72,.4);">카톡으로 보내기</button>
@@ -7166,7 +7214,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="foot subFoot3">
     <a class="sTel" href="tel:01062382335">전화 상담</a>
     <a class="sKakao" href="https://open.kakao.com/o/sR7HCqEi">카카오톡 상담</a>
-    <a class="sBlog" href="sms:01050687232">문자상담</a>
+    <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('_16');return false;">문자상담</a>
   </div>
 
 <p style="text-align:center;color:#9aa3ad;font-size:12px;line-height:1.7;padding:40px 20px 0;margin:32px 0 4px;">카글라스 자동차유리복원<br>대표자: 이미숙 | 사업자등록번호: 780-11-00403<br>업종: 서비스 | 종목: 유리복원</p>
@@ -7275,8 +7323,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <div class="subFoot3">
   <a class="sTel" href="tel:01050687232">전화 상담</a>
-  <a class="sKakao" href="https://open.kakao.com/o/sv9FlUDi">카카오톡 상담</a>
-  <a class="sBlog" href="sms:01050687232">문자상담</a>
+  <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAtCurrent('https://open.kakao.com/o/sv9FlUDi');return false;">카카오톡 상담</a>
+  <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAtCurrent('sms:01050687232');return false;">문자상담</a>
 </div>
 
 <div id="equipLightbox" onclick="closeEquipLightbox()">
@@ -8049,6 +8097,67 @@ var DICT_ZH_TW = {"스크래치·긁힘은 복원 대상이 아닙니다": "劃�
 <!-- /I18N -->
 <script>
 var __inqNoMsgTexts = {ko:"추가로 전달할 사항 없어요", en:"Nothing else to add", "zh-CN":"没有其他需要补充的内容", "zh-TW":"沒有其他需要補充的內容"};
+var jhQuickMsgs = {
+  ko: "[카글라스 문의]\n문의 양식 작성 없이 빠른 상담을 요청합니다. 사진과 함께 연락 부탁드립니다.",
+  en: "[Carglass Inquiry]\nRequesting a quick consultation without filling out the form. I'll send a photo — please get in touch.",
+  "zh-CN": "[Carglass咨询]\n未填写咨询表单,请求快速咨询。我会附上照片,请与我联系。",
+  "zh-TW": "[Carglass諮詢]\n未填寫諮詢表單,請求快速諮詢。我會附上照片,請與我聯絡。"
+};
+function jhQuickConsultMsg(){
+  var lang = window.__inqLang || 'ko';
+  return jhQuickMsgs[lang] || jhQuickMsgs.ko;
+}
+function jhIsQuickChecked(suffix){
+  var cb = document.getElementById('inqQuick'+suffix);
+  return !!(cb && cb.checked);
+}
+var __jhQuickSuffixes = ['Main', '', '_1','_2','_3','_4','_5','_6','_7','_8','_9','_10','_11','_13','_14','_16'];
+function jhSyncQuick(checked){
+  __jhQuickSuffixes.forEach(function(suf){
+    var cb = document.getElementById('inqQuick'+suf);
+    var wrap = document.getElementById('inqFieldsWrap'+suf);
+    if(cb) cb.checked = checked;
+    if(wrap) wrap.style.display = checked ? 'none' : 'block';
+  });
+}
+function jhToggleQuick(suffix){
+  jhSyncQuick(jhIsQuickChecked(suffix));
+}
+function jhOpenFormAt(suffix){
+  var boxId, btnId;
+  if(suffix === 'Main'){ boxId='inqCollapseMain'; btnId='inqToggleBtnMain'; }
+  else if(suffix === ''){ boxId='inqCollapseSub'; btnId='inqToggleBtnSub'; }
+  else { boxId='inqCollapseSub'+suffix; btnId='inqToggleBtnSub'+suffix; }
+  var box = document.getElementById(boxId);
+  var btn = document.getElementById(btnId);
+  if(box && box.style.display !== 'block' && btn){ btn.click(); }
+  setTimeout(function(){
+    var target = document.getElementById(boxId) || document.getElementById(btnId);
+    if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 50);
+}
+var __jhPageSuffixMap = {
+  'subPage': '_1', 'subPage2': '_2', 'subPage3': '_3', 'subPage4': '_4', 'subPage5': '_5',
+  'subPage6': '_6', 'subPage7': '_7', 'subPage8': '_8', 'subPage9': '_9', 'subPage10': '_10',
+  'subPage11': '_11', 'subPage12': '', 'subPage13': '_13', 'subPage14': '_14', 'subPage16': '_16'
+};
+function jhOpenFormAtCurrent(fallbackHref){
+  var ids = ['subPage','subPage2','subPage3','subPage4','subPage5','subPage6','subPage7','subPage8','subPage9','subPage10','subPage11','subPage12','subPage13','subPage14','subPage15','subPage16'];
+  var openId = null;
+  for(var i=0;i<ids.length;i++){
+    var el = document.getElementById(ids[i]);
+    if(el && getComputedStyle(el).display !== 'none'){ openId = ids[i]; break; }
+  }
+  if(!openId){
+    jhOpenFormAt('Main');
+    return;
+  }
+  if(!(openId in __jhPageSuffixMap)){
+    window.location.href = fallbackHref;
+    return;
+  }
+  jhOpenFormAt(__jhPageSuffixMap[openId]);
+}
 function __inqNoMsgText(){
   var lang = window.__inqLang || 'ko';
   return __inqNoMsgTexts[lang] || __inqNoMsgTexts.ko;
@@ -8087,6 +8196,7 @@ function __inqAlert(key){
   __inqShowAlert(msg);
 }
 function inqBuildText(){
+  if(jhIsQuickChecked('')) return jhQuickConsultMsg();
   var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
   var part=g('inqPart'), area=g('inqArea'), msg=g('inqMsg');
   var isEn = window.__inqLang === 'en';
@@ -8098,11 +8208,13 @@ function inqBuildText(){
 }
 var inqPendingAction = null;
 function inqTrySend(action){
-  var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
-  var part=g('inqPart'), area=g('inqArea'), msg=g('inqMsg');
-  if(!part || !area || !msg){
-    __inqAlert('fillAll');
-    return;
+  if(!jhIsQuickChecked('')){
+    var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
+    var part=g('inqPart'), area=g('inqArea'), msg=g('inqMsg');
+    if(!part || !area || !msg){
+      __inqAlert('fillAll');
+      return;
+    }
   }
   inqPendingAction = action;
   var overlay = document.getElementById('inqGuideOverlay');
@@ -8155,7 +8267,7 @@ function inqResetAllForms(){
     inqMsg:{ko:'궁금한 점을 자유롭게 남겨주세요', en:'Feel free to leave any questions'}
   };
   suffixes.forEach(function(suf){
-    ['inqPart','inqArea','inqMsg','inqNoMsg'].forEach(function(base){
+    ['inqPart','inqArea','inqMsg','inqNoMsg','inqQuick'].forEach(function(base){
       var el = document.getElementById(base+suf);
       if(!el) return;
       if(el.type === 'checkbox'){ el.checked = false; }
@@ -8163,6 +8275,7 @@ function inqResetAllForms(){
       if(phMap[base]) el.setAttribute('placeholder', isEn ? phMap[base].en : phMap[base].ko);
     });
   });
+  jhSyncQuick(false);
   ['inqSaved_phone','inqSaved_part','inqSaved_area','inqSaved_msg'].forEach(function(k){
     try{ localStorage.removeItem(k); }catch(e){}
   });
@@ -8205,6 +8318,7 @@ function inqStableScrollTo(btn){
 
 var inqPendingActionMap = {};
 function inqBuildTextGeneric(suffix){
+  if(jhIsQuickChecked(suffix)) return jhQuickConsultMsg();
   var g=function(id){var el=document.getElementById(id+suffix);return el?el.value.trim():'';};
   var part=g('inqPart'), area=g('inqArea'), msg=g('inqMsg');
   var isEn = window.__inqLang === 'en';
@@ -8215,11 +8329,13 @@ function inqBuildTextGeneric(suffix){
   return lines.join('\n');
 }
 function inqTryOpenGeneric(suffix, action){
-  var g=function(id){var el=document.getElementById(id+suffix);return el?el.value.trim():'';};
-  var part=g('inqPart'), area=g('inqArea'), msg=g('inqMsg');
-  if(!part || !area || !msg){
-    __inqAlert('fillAll');
-    return;
+  if(!jhIsQuickChecked(suffix)){
+    var g=function(id){var el=document.getElementById(id+suffix);return el?el.value.trim():'';};
+    var part=g('inqPart'), area=g('inqArea'), msg=g('inqMsg');
+    if(!part || !area || !msg){
+      __inqAlert('fillAll');
+      return;
+    }
   }
   inqPendingActionMap[suffix] = action;
   var overlay = document.getElementById('inqGuideOverlay'+suffix);
@@ -8306,6 +8422,7 @@ if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded
 else { inqAutoOpenFromHash(); }
 function inqResetFormGeneric(suffix){ inqShowResetConfirm(); }
 function inqBuildTextMain(){
+  if(jhIsQuickChecked('Main')) return jhQuickConsultMsg();
   var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
   var part=g('inqPartMain'), area=g('inqAreaMain'), msg=g('inqMsgMain');
   var isEn = window.__inqLang === 'en';
@@ -8317,11 +8434,13 @@ function inqBuildTextMain(){
 }
 var inqPendingActionMain = null;
 function inqTrySendMain(action){
-  var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
-  var part=g('inqPartMain'), area=g('inqAreaMain'), msg=g('inqMsgMain');
-  if(!part || !area || !msg){
-    __inqAlert('fillAll');
-    return;
+  if(!jhIsQuickChecked('Main')){
+    var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
+    var part=g('inqPartMain'), area=g('inqAreaMain'), msg=g('inqMsgMain');
+    if(!part || !area || !msg){
+      __inqAlert('fillAll');
+      return;
+    }
   }
   inqPendingActionMain = action;
   var overlay = document.getElementById('inqGuideOverlayMain');
