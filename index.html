@@ -4094,7 +4094,7 @@ body.subOpen main.mobile{display:none}
 </head>
 <body ontouchstart="">
 <main class="mobile">
-<header class="top">
+<header class="top" onclick="if(!event.target.closest('.langSwitch')&&!event.target.closest('.topCall')){window.scrollTo({top:0,behavior:'smooth'});}" style="cursor:pointer;">
   <div class="logo">
   
   <div class="logoText">
