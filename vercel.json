@@ -9,7 +9,7 @@
           "value": "(?<sub>.*)\\.vercel\\.app"
         }
       ],
-      "destination": "https://car700.co.kr/:path*",
+      "destination": "https://www.car700.co.kr/:path*",
       "permanent": true
     }
   ]
