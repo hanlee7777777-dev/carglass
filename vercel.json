@@ -2,6 +2,11 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/tesla",
+      "destination": "https://www.car700.co.kr/tesla-model3",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
