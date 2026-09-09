@@ -8922,9 +8922,11 @@ function inqToggleFormSub(){
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
-  if (window.__closeAllSub) { __closeAllSub(); }
-  if (window.openNotice8) { openNotice8(); }
   window.__goHome = function(){ window.location.href = 'https://www.car700.co.kr/'; };
+  if (!location.hash || location.hash.indexOf('#sub') !== 0) {
+    if (window.__closeAllSub) { __closeAllSub(); }
+    if (window.openNotice8) { openNotice8(); }
+  }
 });
 </script>
 </body>
