@@ -7967,6 +7967,10 @@ function __restartQBtnAnim(){
     });
   });
 }
+window.addEventListener('pageshow', function(e){
+  document.querySelectorAll('.baPairBtn, .qBtn').forEach(function(el){ el.style.transform=''; });
+  if (window.__restartQBtnAnim) { __restartQBtnAnim(); }
+});
 function __bindNoticeTriggers(){
   document.querySelectorAll('[data-open]').forEach(function(el){
     if(el.__bound) return; el.__bound=true;
