@@ -2,17 +2,53 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://car700.co.kr/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://www.car700.co.kr/</loc>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
     </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/ec53b4f024.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/57a5f61b9a.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/d591df5751.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/a6ebaca4ae.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/4c09c4d083.jpg</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://car700.co.kr/restoration</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://www.car700.co.kr/price</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/319dd48f14.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/5aa379e394.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/231dc6591d.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/bc1ac344de.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.car700.co.kr/glass-welding</loc>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -20,26 +56,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://car700.co.kr/tesla-model3</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://car700.co.kr/glass-welding</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://car700.co.kr/store</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://www.car700.co.kr/diy-repair-kit</loc>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -47,28 +65,79 @@
     </image:image>
   </url>
   <url>
-    <loc>https://car700.co.kr/price</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://www.car700.co.kr/tesla-model3</loc>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
     </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/1cef944e3c.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/547d8d8862.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/39a71cbb7b.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/653565db41.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/b8e3a47f76.jpg</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://car700.co.kr/diy-repair-kit</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://www.car700.co.kr/showcase</loc>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
     </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/80a462ae6f.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/014aef23eb.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/23e1ffe7d7.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/fa5f09d28a.jpg</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://car700.co.kr/showcase</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://www.car700.co.kr/store</loc>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/7a8fce4223.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/ca2f964808.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/b715c29400.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/84fe8e512f.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/11109bc3fd.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.car700.co.kr/restoration</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
     <image:image>
       <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
     </image:image>

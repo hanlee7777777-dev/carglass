@@ -15,6 +15,7 @@
 <meta property="og:image:width" content="800">
 <meta property="og:image:height" content="533">
 <meta property="og:url" content="https://www.car700.co.kr/restoration">
+<link rel="alternate" type="application/rss+xml" title="카글라스 자동차유리복원" href="https://www.car700.co.kr/rss.xml">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.car700.co.kr/og-image.jpg">
 <style>
@@ -40,7 +41,7 @@ header.top .brand{font-weight:800;font-size:15px;letter-spacing:.5px;}
 section{padding:40px 0;border-bottom:1px solid var(--line);}
 section:last-of-type{border-bottom:0;}
 .eyebrow-sm{font-size:12.5px;font-weight:800;color:var(--blue);letter-spacing:.4px;text-transform:uppercase;margin:0 0 8px;}
-h2{font-size:22px;font-weight:800;letter-spacing:-.4px;margin:0 0 14px;color:var(--navy);}
+h2{font-size:17px;font-weight:800;letter-spacing:-.4px;margin:0 0 14px;color:var(--navy);}
 h3{font-size:17px;font-weight:800;margin:22px 0 8px;color:var(--navy);}
 p{font-size:15.5px;color:var(--ink-2);margin:0 0 12px;}
 p b, li b{color:var(--navy);}
@@ -253,7 +254,7 @@ body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-se
     <div class="guideText">
       <p>돌빵일 경우 차 안에서 볼 때 더 잘 보이는 경우가 많습니다. <b>차 안에서 찍은 사진과 밖에서 찍은 사진</b>을 함께 보내주시면 정확한 진단에 도움이 됩니다.</p>
       <p>길게 금이 간 경우는 <b>처음 돌에 맞은 부분이 잘 보이도록 촬영</b>한 사진을 보내주시면 신속한 견적과 상담이 가능합니다.</p>
-      <p><b>최대한 선명하게, 촛점을 맞춰 찍어 보내주세요.</b></p>
+      <p><b>최대한 선명하게, 초점을 맞춰 찍어 보내주세요.</b></p>
     </div>
     <div class="overlayBtnRow">
       <button class="cancel" onclick="rCloseGuide()">취소</button>
@@ -330,11 +331,6 @@ document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
 document.addEventListener('copy', function(e){ e.preventDefault(); });
 document.addEventListener('dragstart', function(e){ e.preventDefault(); });
 
-// Click anywhere outside the form/overlays navigates to the main site
-document.addEventListener('click', function(e){
-  if(e.target.closest('.formCard') || e.target.closest('.overlay') || e.target.closest('a')) return;
-  window.location.href = 'https://www.car700.co.kr/';
-});
 </script>
 
 </body>
