@@ -7,8 +7,12 @@ var jhQuickMsgs = {
   "zh-TW": "[Carglass諮詢]\n未填寫諮詢表單,請求快速諮詢。我會附上照片,請與我聯絡。"
 };
 function jhQuickConsultMsg(){
-  var lang = window.__inqLang || 'ko';
-  return jhQuickMsgs[lang] || jhQuickMsgs.ko;
+  // 문자·카톡으로 보내는 문의 내용은 화면 언어와 관계없이 항상 한국어
+  return jhQuickMsgs.ko;
+}
+function __inqMsgToKo(msg){
+  for(var k in __inqNoMsgTexts){ if(msg === __inqNoMsgTexts[k]) return __inqNoMsgTexts.ko; }
+  return msg;
 }
 function jhIsQuickChecked(suffix){
   var cb = document.getElementById('inqQuick'+suffix);
@@ -102,12 +106,12 @@ function inqBuildText(){
   if(jhIsQuickChecked('')) return jhQuickConsultMsg();
   var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
   var part=g('inqPart'), area=g('inqArea'), carType=g('inqCarType'), msg=g('inqMsg');
-  var isEn = window.__inqLang === 'en';
-  var lines=[isEn ? '[Carglass Inquiry]' : '[카글라스 문의]'];
-  if(part) lines.push((isEn ? 'Damage: ' : '파손부위: ')+part);
-  if(area) lines.push((isEn ? 'Area: ' : '지역: ')+area);
-  if(carType) lines.push((isEn ? 'Vehicle Type: ' : '차종: ')+carType);
-  if(msg) lines.push((isEn ? 'Message: ' : '문의내용: ')+msg);
+  msg = __inqMsgToKo(msg);
+  var lines=['[카글라스 문의]'];
+  if(part) lines.push('파손부위: '+part);
+  if(area) lines.push('지역: '+area);
+  if(carType) lines.push('차종: '+carType);
+  if(msg) lines.push('문의내용: '+msg);
   return lines.join('\n');
 }
 var inqPendingAction = null;
@@ -167,8 +171,8 @@ function inqResetAllForms(){
   var isEn = window.__inqLang === 'en';
   var suffixes = ['', 'Main', '_1','_2','_3','_4','_5','_6','_7','_8','_9','_10','_11','_13','_14','_16'];
   var phMap = {
-    inqArea:{ko:'예: 영등포, 논현동, 마곡동 등 동네명 기입', en:'e.g. Yeongdeungpo, Nonhyeon-dong, Magok-dong, etc.'},
-    inqMsg:{ko:'궁금한 점을 자유롭게 남겨주세요', en:'Feel free to leave any questions'}
+    inqArea:{ko:'예: 영등포, 논현동, 마곡동 등 동네명 기입', en:'e.g. Yeongdeungpo, Nonhyeon-dong, Magok-dong, etc.', "zh-CN":'例如:永登浦、论岘洞、麻谷洞等地区名称', "zh-TW":'例如:永登浦、論峴洞、麻谷洞等地區名稱'},
+    inqMsg:{ko:'궁금한 점을 자유롭게 남겨주세요', en:'Feel free to leave any questions', "zh-CN":'请随意留下您想了解的问题', "zh-TW":'請隨意留下您想了解的問題'}
   };
   suffixes.forEach(function(suf){
     ['inqPart','inqArea','inqCarType','inqMsg','inqNoMsg','inqQuick'].forEach(function(base){
@@ -176,7 +180,7 @@ function inqResetAllForms(){
       if(!el) return;
       if(el.type === 'checkbox'){ el.checked = false; }
       else { el.value = ''; }
-      if(phMap[base]) el.setAttribute('placeholder', isEn ? phMap[base].en : phMap[base].ko);
+      if(phMap[base]) el.setAttribute('placeholder', phMap[base][window.__inqLang || 'ko'] || phMap[base].ko);
     });
   });
   jhSyncQuick(false);
@@ -225,12 +229,12 @@ function inqBuildTextGeneric(suffix){
   if(jhIsQuickChecked(suffix)) return jhQuickConsultMsg();
   var g=function(id){var el=document.getElementById(id+suffix);return el?el.value.trim():'';};
   var part=g('inqPart'), area=g('inqArea'), carType=g('inqCarType'), msg=g('inqMsg');
-  var isEn = window.__inqLang === 'en';
-  var lines=[isEn ? '[Carglass Inquiry]' : '[카글라스 문의]'];
-  if(part) lines.push((isEn ? 'Damage: ' : '파손부위: ')+part);
-  if(area) lines.push((isEn ? 'Area: ' : '지역: ')+area);
-  if(carType) lines.push((isEn ? 'Vehicle Type: ' : '차종: ')+carType);
-  if(msg) lines.push((isEn ? 'Message: ' : '문의내용: ')+msg);
+  msg = __inqMsgToKo(msg);
+  var lines=['[카글라스 문의]'];
+  if(part) lines.push('파손부위: '+part);
+  if(area) lines.push('지역: '+area);
+  if(carType) lines.push('차종: '+carType);
+  if(msg) lines.push('문의내용: '+msg);
   return lines.join('\n');
 }
 function inqTryOpenGeneric(suffix, action){
@@ -277,8 +281,8 @@ function inqToggleFormGeneric(suffix){
   if(btn){
     var span = btn.querySelector('span');
     if(span){
-      var __isEn = window.__inqLang === 'en';
-      span.textContent = isOpen ? (__isEn ? 'Quick Inquiry' : '간편 문의 바로가기') : (__isEn ? 'Quick Inquiry - Close' : '간편 문의 바로가기 - 닫기');
+      var __tt = {ko:['간편 문의 바로가기','간편 문의 바로가기 - 닫기'], en:['Quick Inquiry','Quick Inquiry - Close'], "zh-CN":['直达简便咨询','直达简便咨询 - 关闭'], "zh-TW":['直達簡便諮詢','直達簡便諮詢 - 關閉']}[window.__inqLang || 'ko'] || ['간편 문의 바로가기','간편 문의 바로가기 - 닫기'];
+      span.textContent = isOpen ? __tt[0] : __tt[1];
     }
   }
 }
@@ -330,12 +334,12 @@ function inqBuildTextMain(){
   if(jhIsQuickChecked('Main')) return jhQuickConsultMsg();
   var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
   var part=g('inqPartMain'), area=g('inqAreaMain'), carType=g('inqCarTypeMain'), msg=g('inqMsgMain');
-  var isEn = window.__inqLang === 'en';
-  var lines=[isEn ? '[Carglass Inquiry]' : '[카글라스 문의]'];
-  if(part) lines.push((isEn ? 'Damage: ' : '파손부위: ')+part);
-  if(area) lines.push((isEn ? 'Area: ' : '지역: ')+area);
-  if(carType) lines.push((isEn ? 'Vehicle Type: ' : '차종: ')+carType);
-  if(msg) lines.push((isEn ? 'Message: ' : '문의내용: ')+msg);
+  msg = __inqMsgToKo(msg);
+  var lines=['[카글라스 문의]'];
+  if(part) lines.push('파손부위: '+part);
+  if(area) lines.push('지역: '+area);
+  if(carType) lines.push('차종: '+carType);
+  if(msg) lines.push('문의내용: '+msg);
   return lines.join('\n');
 }
 var inqPendingActionMain = null;
@@ -391,8 +395,8 @@ function inqToggleFormMain(){
   if(btn){
     var span = btn.querySelector('span');
     if(span){
-      var __isEn = window.__inqLang === 'en';
-      span.textContent = isOpen ? (__isEn ? 'Quick Inquiry' : '간편 문의 바로가기') : (__isEn ? 'Quick Inquiry - Close' : '간편 문의 바로가기 - 닫기');
+      var __tt = {ko:['간편 문의 바로가기','간편 문의 바로가기 - 닫기'], en:['Quick Inquiry','Quick Inquiry - Close'], "zh-CN":['直达简便咨询','直达简便咨询 - 关闭'], "zh-TW":['直達簡便諮詢','直達簡便諮詢 - 關閉']}[window.__inqLang || 'ko'] || ['간편 문의 바로가기','간편 문의 바로가기 - 닫기'];
+      span.textContent = isOpen ? __tt[0] : __tt[1];
     }
   }
 }
@@ -405,8 +409,8 @@ function inqToggleFormSub(){
   if(btn){
     var span = btn.querySelector('span');
     if(span){
-      var __isEn = window.__inqLang === 'en';
-      span.textContent = isOpen ? (__isEn ? 'Quick Inquiry' : '간편 문의 바로가기') : (__isEn ? 'Quick Inquiry - Close' : '간편 문의 바로가기 - 닫기');
+      var __tt = {ko:['간편 문의 바로가기','간편 문의 바로가기 - 닫기'], en:['Quick Inquiry','Quick Inquiry - Close'], "zh-CN":['直达简便咨询','直达简便咨询 - 关闭'], "zh-TW":['直達簡便諮詢','直達簡便諮詢 - 關閉']}[window.__inqLang || 'ko'] || ['간편 문의 바로가기','간편 문의 바로가기 - 닫기'];
+      span.textContent = isOpen ? __tt[0] : __tt[1];
     }
   }
 }
