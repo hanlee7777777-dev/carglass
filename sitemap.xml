@@ -7,7 +7,7 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
+      <image:loc>https://www.car700.co.kr/images/og-main.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.car700.co.kr/images/ec53b4f024.jpg</image:loc>
@@ -31,7 +31,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
+      <image:loc>https://www.car700.co.kr/images/og-price.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.car700.co.kr/images/319dd48f14.jpg</image:loc>
@@ -52,7 +52,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
+      <image:loc>https://www.car700.co.kr/images/og-glass-welding.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -61,7 +61,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
+      <image:loc>https://www.car700.co.kr/images/og-diy-repair-kit.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -70,7 +70,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
+      <image:loc>https://www.car700.co.kr/images/og-tesla-model3.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.car700.co.kr/images/1cef944e3c.jpg</image:loc>
@@ -94,7 +94,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
+      <image:loc>https://www.car700.co.kr/images/og-showcase.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.car700.co.kr/images/80a462ae6f.jpg</image:loc>
@@ -115,7 +115,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
+      <image:loc>https://www.car700.co.kr/images/og-store.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.car700.co.kr/images/7a8fce4223.jpg</image:loc>
@@ -139,7 +139,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.car700.co.kr/og-image.jpg</image:loc>
+      <image:loc>https://www.car700.co.kr/images/og-restoration.jpg</image:loc>
     </image:image>
   </url>
 </urlset>
