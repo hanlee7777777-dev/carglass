@@ -135,11 +135,23 @@
   </url>
   <url>
     <loc>https://www.car700.co.kr/restoration</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://www.car700.co.kr/images/og-restoration.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/5b73338370.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/c702a6a0a5.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/2210fa64c4.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.car700.co.kr/images/9a6ca4da84.jpg</image:loc>
     </image:image>
   </url>
 </urlset>
