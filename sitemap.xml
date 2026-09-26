@@ -3,26 +3,11 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.car700.co.kr/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.car700.co.kr/images/og-main.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.car700.co.kr/images/ec53b4f024.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.car700.co.kr/images/57a5f61b9a.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.car700.co.kr/images/d591df5751.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.car700.co.kr/images/a6ebaca4ae.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.car700.co.kr/images/4c09c4d083.jpg</image:loc>
     </image:image>
   </url>
   <url>
