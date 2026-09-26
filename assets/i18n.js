@@ -27,7 +27,7 @@
   function __loadDict(lang, cb){
     if(__LANG_DICTS[lang]){ cb(__LANG_DICTS[lang]); return; }
     if(!__LANG_LOADING[lang]){
-      __LANG_LOADING[lang] = fetch("/i18n/" + lang + ".json?v=20260925").then(function(r){ return r.json(); })
+      __LANG_LOADING[lang] = fetch("/i18n/" + lang + ".json?v=20260926").then(function(r){ return r.json(); })
         .then(function(d){ __LANG_DICTS[lang] = d; return d; })
         .catch(function(){ __LANG_LOADING[lang] = null; return null; });
     }
