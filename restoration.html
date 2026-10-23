@@ -1626,16 +1626,16 @@ a:active,button:active{
   55%{left:125%}
   100%{left:125%}
 }
-.finalCta a[href="https://open.kakao.com/o/sv9FlUDi"],
-.heroBtns a[href="https://open.kakao.com/o/sv9FlUDi"]{
+.finalCta a[href="https://pf.kakao.com/_kawiX"],
+.heroBtns a[href="https://pf.kakao.com/_kawiX"]{
   position:relative !important;
   overflow:hidden !important;
   background:linear-gradient(135deg,#ffe45c,#ffd400) !important;
   color:#171100 !important;
   animation:none !important;
 }
-.finalCta a[href="https://open.kakao.com/o/sv9FlUDi"]::after,
-.heroBtns a[href="https://open.kakao.com/o/sv9FlUDi"]::after{
+.finalCta a[href="https://pf.kakao.com/_kawiX"]::after,
+.heroBtns a[href="https://pf.kakao.com/_kawiX"]::after{
   content:"";
   position:absolute;
   top:0;
@@ -7812,8 +7812,8 @@ document.addEventListener('DOMContentLoaded', function(){
         
   </main>
   <div class="foot subFoot3">
-    <a class="sTel" href="tel:01062382335">전화 상담</a>
-    <a class="sKakao" href="https://open.kakao.com/o/sR7HCqEi">카카오톡 상담</a>
+    <a class="sTel" href="tel:01050687232">전화 상담</a>
+    <a class="sKakao" href="https://pf.kakao.com/_kawiX">카카오톡 상담</a>
     <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAt('_16');return false;">문자상담</a>
   </div>
 
@@ -7941,7 +7941,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <div class="subFoot3">
   <a class="sTel" href="tel:01050687232">전화 상담</a>
-  <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAtCurrent('https://open.kakao.com/o/sv9FlUDi');return false;">카카오톡 상담</a>
+  <a class="sKakao" href="javascript:void(0)" onclick="jhOpenFormAtCurrent('https://pf.kakao.com/_kawiX');return false;">카카오톡 상담</a>
   <a class="sBlog" href="javascript:void(0)" onclick="jhOpenFormAtCurrent('sms:01050687232');return false;">문자상담</a>
 </div>
 
@@ -8863,7 +8863,7 @@ function inqSendSMS(){
 function inqSendKakao(){
   var t=inqBuildText();
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).catch(function(){});}
-  window.open('https://open.kakao.com/o/sv9FlUDi','_blank');
+  window.open('https://pf.kakao.com/_kawiX','_blank');
 }
 function inqShare(){
   var t=inqBuildText();
@@ -8979,7 +8979,7 @@ function inqConfirmSendGeneric(suffix){
     location.href='sms:01050687232?body='+encodeURIComponent(t);
   } else if(action==='kakao'){
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).catch(function(){});}
-    window.open('https://open.kakao.com/o/sv9FlUDi','_blank');
+    window.open('https://pf.kakao.com/_kawiX','_blank');
   } else if(action==='share'){
     if(navigator.share){navigator.share({text:t}).catch(function(){});}
     else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t);__inqAlert('copied');}
@@ -9091,7 +9091,7 @@ function inqSendSMSMain(){
 function inqSendKakaoMain(){
   var t=inqBuildTextMain();
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).catch(function(){});}
-  window.open('https://open.kakao.com/o/sv9FlUDi','_blank');
+  window.open('https://pf.kakao.com/_kawiX','_blank');
 }
 function inqShareMain(){
   var t=inqBuildTextMain();
