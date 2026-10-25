@@ -1,7 +1,49 @@
 <!doctype html>
 <html lang="ko">
 <head>
+
 <meta charset="utf-8">
+<script id="kgScrollRestore">
+(function(){
+  var root=document.documentElement;
+  function key(){ var s=''; try{ s=(history.state&&history.state.sub)||''; }catch(e){} return 'kgScroll:'+location.pathname+location.search+'|'+s; }
+  function save(){ try{ sessionStorage.setItem(key(), String(Math.round(window.pageYOffset||root.scrollTop||0))); }catch(e){} }
+  window.addEventListener('pagehide',save);
+  window.addEventListener('beforeunload',save);
+  document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='hidden') save(); });
+  var isReload=false;
+  try{
+    var nav=performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    if(nav) isReload=(nav.type==='reload');
+    else if(performance.navigation) isReload=(performance.navigation.type===1);
+  }catch(e){}
+  if(!isReload) return;
+  var y=0; try{ y=parseFloat(sessionStorage.getItem(key()))||0; }catch(e){}
+  if(y<=0) return;
+  try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }catch(e){}
+  root.style.visibility='hidden';
+  var prevSB=root.style.scrollBehavior; root.style.scrollBehavior='auto';
+  var origTo=window.scrollTo, origScroll=window.scroll||window.scrollTo;
+  var restoring=true, blocking=true, shown=false, frames=0, loaded=false;
+  var blockUntil=Date.now()+4000;
+  function isTopCall(a){ var t=(a[0]&&typeof a[0]==='object')?a[0].top:a[1]; return t!==undefined && Number(t)===0; }
+  function blocked(a){ return blocking && Date.now()<blockUntil && isTopCall(a); }
+  window.scrollTo=function(){ if(blocked(arguments)) return; return origTo.apply(window,arguments); };
+  window.scroll=function(){ if(blocked(arguments)) return; return origScroll.apply(window,arguments); };
+  function go(){ if(!restoring) return; try{ origTo.call(window,{top:y,left:0,behavior:'instant'}); }catch(e){ origTo.call(window,0,y); } }
+  function show(){ if(shown) return; shown=true; root.style.visibility=''; }
+  function finish(){ restoring=false; root.style.scrollBehavior=prevSB; }
+  function stopAll(){ restoring=false; blocking=false; show(); root.style.scrollBehavior=prevSB; detach(); }
+  var evs=['wheel','touchstart','keydown','mousedown'];
+  function detach(){ evs.forEach(function(t){ window.removeEventListener(t,stopAll,true); }); }
+  evs.forEach(function(t){ window.addEventListener(t,stopAll,{capture:true,passive:true}); });
+  setTimeout(function(){ go(); show(); },1200);
+  setTimeout(function(){ blocking=false; detach(); },4000);
+  function loop(){ if(!restoring) return; go(); frames++; if(frames<90) requestAnimationFrame(loop); else if(loaded) finish(); }
+  document.addEventListener('DOMContentLoaded',function(){ go(); show(); requestAnimationFrame(loop); });
+  window.addEventListener('load',function(){ loaded=true; go(); if(frames>=90) finish(); });
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>전문가용 유리복원 장비, 레진, UV경화기, 드릴비트</title>
 <link rel="icon" href="/favicon.ico" sizes="any">
