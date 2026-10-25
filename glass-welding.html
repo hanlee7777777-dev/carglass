@@ -7926,7 +7926,7 @@ function closeNotice(){
   s.classList.remove('open'); s.setAttribute('aria-hidden','true');
   document.body.classList.remove('subOpen');
   _qScrollTo();
-  if(location.hash.indexOf('#sub')===0){history.back();}
+  if(history.state && history.state.sub){history.back();}
 }
 function openNotice2(){
   var s=document.getElementById('subPage2');
@@ -8012,7 +8012,7 @@ function closeNotice7(){
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   _qScrollTo();
   document.body.classList.remove('subOpen');
-  if(location.hash.indexOf('#sub')===0){history.back();}
+  if(history.state && history.state.sub){history.back();}
 }
 function openNotice8(){
   var s=document.getElementById('subPage8');
@@ -8028,7 +8028,7 @@ function closeNotice8(){
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   _qScrollTo();
   document.body.classList.remove('subOpen');
-  if(location.hash.indexOf('#sub')===0){history.back();}
+  if(history.state && history.state.sub){history.back();}
 }
 function openNotice9(){
   var s=document.getElementById('subPage9');
@@ -8044,7 +8044,7 @@ function closeNotice9(){
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   _qScrollTo();
   document.body.classList.remove('subOpen');
-  if(location.hash.indexOf('#sub')===0){history.back();}
+  if(history.state && history.state.sub){history.back();}
 }
 function openNotice10(){
   var s=document.getElementById('subPage10');
@@ -8060,7 +8060,7 @@ function closeNotice10(){
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   _qScrollTo();
   document.body.classList.remove('subOpen');
-  if(location.hash.indexOf('#sub')===0){history.back();}
+  if(history.state && history.state.sub){history.back();}
 }
 function openNotice11(){
   var s=document.getElementById('subPage11');
@@ -8076,7 +8076,7 @@ function closeNotice11(){
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   _qScrollTo();
   document.body.classList.remove('subOpen');
-  if(location.hash.indexOf('#sub')===0){history.back();}
+  if(history.state && history.state.sub){history.back();}
 }
 function openNotice12(){
   var s=document.getElementById('subPage12');
@@ -8092,7 +8092,7 @@ function closeNotice12(){
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   _qScrollTo();
   document.body.classList.remove('subOpen');
-  if(location.hash.indexOf('#sub')===0){history.back();}
+  if(history.state && history.state.sub){history.back();}
 }
 function openNotice13(){
   var s=document.getElementById('subPage13');
@@ -8108,7 +8108,7 @@ function closeNotice13(){
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   _qScrollTo();
   document.body.classList.remove('subOpen');
-  if(location.hash.indexOf('#sub')===0){history.back();}
+  if(history.state && history.state.sub){history.back();}
 }
 function openNotice14(){
   var s=document.getElementById('subPage14');
@@ -8124,7 +8124,7 @@ function closeNotice14(){
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   _qScrollTo();
   document.body.classList.remove('subOpen');
-  if(location.hash.indexOf('#sub')===0){history.back();}
+  if(history.state && history.state.sub){history.back();}
 }
 
 
@@ -8143,7 +8143,7 @@ function openEquipLightbox(src){
   if(!lb||!img) return;
   img.src=src;
   lb.classList.add('open');
-  try{ history.pushState({lightbox:true}, '', location.hash || location.pathname); }catch(e){}
+  try{ history.pushState({lightbox:true, sub:(history.state && history.state.sub) || null}, '', location.pathname+location.search); }catch(e){}
 }
 function closeEquipLightbox(fromPopstate){
   var lb=document.getElementById('equipLightbox');
@@ -8187,7 +8187,7 @@ function closeNotice15(){
   s.style.display='none'; s.setAttribute('aria-hidden','true');
   _qScrollTo();
   document.body.classList.remove('subOpen');
-  if(location.hash.indexOf('#sub')===0){history.back();}
+  if(history.state && history.state.sub){history.back();}
 }
 
 var __openFns={'1':openNotice,'2':openNotice2,'3':openNotice3,'4':openNotice4,'5':openNotice5,'6':openNotice6,'7':openNotice7,'8':openNotice8,'9':openNotice9,'10':openNotice10,'11':openNotice11,'12':openNotice12,'13':openNotice13,'14':openNotice14,'15':openNotice15,'16':openNotice16};
@@ -8212,7 +8212,7 @@ function __jumpTo(n){
 function __goHome(){
   __closeAllSub();
   window.scrollTo({top:0,left:0,behavior:'instant'});
-  if(location.hash){ try{ history.pushState({sub:null}, '', location.pathname+location.search); }catch(e){} }
+  if(location.hash || (history.state && history.state.sub)){ try{ history.pushState({sub:null}, '', location.pathname+location.search); }catch(e){} }
 }
 (function(){
   var __subPageIds = ['subPage','subPage2','subPage3','subPage4','subPage5','subPage6','subPage7','subPage8','subPage9','subPage10','subPage11','subPage12','subPage13','subPage14','subPage15','subPage16'];
@@ -8333,14 +8333,18 @@ document.addEventListener('selectstart', function(e){
 if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
 
 function __pushSubState(n){
-  try{ history.pushState({sub:n}, '', '#sub'+n); }catch(e){}
+  try{ history.pushState({sub:n}, '', location.pathname+location.search); }catch(e){}
+}
+function __curSub(){
+  var st=history.state; if(st && st.sub) return String(st.sub);
+  var h=location.hash; if(h && h.indexOf('#sub')===0) return h.slice(4);
+  return null;
 }
 
 function __showSubFromHash(){
   __closeAllSub();
-  var h = location.hash;
-  if(h && h.indexOf('#sub')===0){
-    var n = h.slice(4);
+  var n = __curSub();
+  if(n){
     var id = (n==='1') ? 'subPage' : 'subPage'+n;
     var s = document.getElementById(id);
     if(s){
@@ -8364,8 +8368,9 @@ window.addEventListener('popstate', function(){
 });
 
 // 새로고침 시에도 현재 서브페이지 상태 복원
-if(location.hash && location.hash.indexOf('#sub')===0){
+if(__curSub()){
   __showSubFromHash();
+  if(location.hash.indexOf('#sub')===0){ try{ history.replaceState({sub:__curSub()}, '', location.pathname+location.search); }catch(e){} }
 }
 
 document.addEventListener('click', function(e){
@@ -9215,7 +9220,7 @@ function inqToggleFormSub(){
 <script>
 document.addEventListener('DOMContentLoaded', function(){
   window.__goHome = function(){ window.location.href = 'https://www.car700.co.kr/'; };
-  if (!location.hash || location.hash.indexOf('#sub') !== 0) {
+  if (!(window.__curSub && __curSub())) {
     if (window.__closeAllSub) { __closeAllSub(); }
     if (window.openNotice11) { openNotice11(); }
   }
