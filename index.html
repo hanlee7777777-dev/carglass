@@ -9455,8 +9455,10 @@ html.kgBarHide body.subOpen .nav{transform:translateY(calc(-1 * var(--kgTopH)))!
 </script>
 <script id="kgOpenParam">
 document.addEventListener('DOMContentLoaded',function(){var m=location.search.match(/[?&]p=(\d+)/);if(!m)return;
-try{history.replaceState(null,'','/');}catch(e){}
-setTimeout(function(){if(window.__openFns&&__openFns[m[1]])__openFns[m[1]]();},0);});
+setTimeout(function(){var f=window.__openFns&&__openFns[m[1]];
+if(!f){try{history.replaceState(null,'','/');}catch(e){}return;}
+var pp=window.__pushSubState;window.__pushSubState=function(k){try{history.replaceState({sub:k},'','/');}catch(e){}};
+try{f();}finally{window.__pushSubState=pp;}},0);});
 </script>
 </body>
 </html>

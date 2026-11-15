@@ -6458,5 +6458,17 @@ var n=a.getAttribute('data-open')||a.getAttribute('data-jump');if(!n)return;
 if(document.getElementById(n==='1'?'subPage':'subPage'+n))return;
 e.preventDefault();e.stopImmediatePropagation();location.href=MAP[n]||('/?p='+n);},true);})();
 </script>
+<script id="kgFaqKeep">
+(function(){
+  var KEY='kgFaqOpen:'+location.pathname;
+  function items(){return Array.prototype.slice.call(document.querySelectorAll('details.faqItem'));}
+  function save(){try{var a=[];items().forEach(function(d,i){if(d.open)a.push(i);});sessionStorage.setItem(KEY,JSON.stringify(a));}catch(e){}}
+  document.addEventListener('toggle',function(e){var t=e.target;if(t&&t.classList&&t.classList.contains('faqItem'))save();},true);
+  try{var a=JSON.parse(sessionStorage.getItem(KEY)||'[]');var it=items();a.forEach(function(i){if(it[i])it[i].open=true;});
+    var all=it.length&&it.every(function(d){return d.open;});
+    Array.prototype.forEach.call(document.querySelectorAll('.faqExpandBtn'),function(b){b.classList.toggle('on',!!all);b.setAttribute('aria-expanded',all?'true':'false');});
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
