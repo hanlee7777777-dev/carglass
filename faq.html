@@ -4655,7 +4655,8 @@ html[lang="en"] .premiumCard,html[lang="zh-CN"] .premiumCard,html[lang="zh-TW"] 
 html[lang="ja"] .premiumCard strong{font-size:14px!important;letter-spacing:-.8px!important;white-space:nowrap!important;line-height:1.25!important;}
 html[lang="ja"] .premiumCard p{font-size:12px!important;}
 </style>
-<style id="priceWrapLang">html:not([lang="ko"]) #subPage11 .priceTable{width:100%;table-layout:fixed;font-size:13px;}html:not([lang="ko"]) #subPage11 .priceTable th,html:not([lang="ko"]) #subPage11 .priceTable td{white-space:normal!important;word-break:keep-all;padding:9px 3px;line-height:1.35;}html:not([lang="ko"]) #subPage11 .priceTable th:nth-child(1),html:not([lang="ko"]) #subPage11 .priceTable td:nth-child(1){width:29%;}html:not([lang="ko"]) #subPage11 .priceTable td:nth-child(1){font-size:12px;letter-spacing:-.3px;}html:not([lang="ko"]) #subPage11 .priceTable th:nth-child(2),html:not([lang="ko"]) #subPage11 .priceTable td:nth-child(2){width:40%;}html:not([lang="ko"]) #subPage11 .priceTable td:nth-child(2){font-size:11.5px;letter-spacing:-.3px;}html:not([lang="ko"]) #subPage11 .priceTable th:nth-child(3),html:not([lang="ko"]) #subPage11 .priceTable td:nth-child(3){width:31%;}html[lang="ja"] #subPage11 .priceTable td,html[lang="ja"] #subPage11 .priceTable th{word-break:normal!important;}</style><style id="kgHeroSubW">.hero .sub{max-width:100%!important;}</style></head>
+<style id="priceWrapLang">html:not([lang="ko"]) #subPage11 .priceTable{width:100%;table-layout:fixed;font-size:13px;}html:not([lang="ko"]) #subPage11 .priceTable th,html:not([lang="ko"]) #subPage11 .priceTable td{white-space:normal!important;word-break:keep-all;padding:9px 3px;line-height:1.35;}html:not([lang="ko"]) #subPage11 .priceTable th:nth-child(1),html:not([lang="ko"]) #subPage11 .priceTable td:nth-child(1){width:29%;}html:not([lang="ko"]) #subPage11 .priceTable td:nth-child(1){font-size:12px;letter-spacing:-.3px;}html:not([lang="ko"]) #subPage11 .priceTable th:nth-child(2),html:not([lang="ko"]) #subPage11 .priceTable td:nth-child(2){width:40%;}html:not([lang="ko"]) #subPage11 .priceTable td:nth-child(2){font-size:11.5px;letter-spacing:-.3px;}html:not([lang="ko"]) #subPage11 .priceTable th:nth-child(3),html:not([lang="ko"]) #subPage11 .priceTable td:nth-child(3){width:31%;}html[lang="ja"] #subPage11 .priceTable td,html[lang="ja"] #subPage11 .priceTable th{word-break:normal!important;}</style><style id="kgHeroSubW">.hero .sub{max-width:100%!important;}</style><style id="kgEquipCss">.kgEquipPic{margin:6px 0 26px;position:relative;z-index:2}.kgEquipTop{margin:4px 0 28px}.kgEquipPic img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 6px 20px rgba(15,30,58,.18);transition:transform .2s ease;transform-origin:center;cursor:zoom-in;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;-webkit-user-drag:none}.kgEquipPic img:active{transform:scale(1.12)}main.wrap>.kgEquipTop{margin-top:-40px}</style>
+</head>
 <body ontouchstart="">
 <header class="top" onclick="if(!event.target.closest('.langSwitch')&&!event.target.closest('.topCall')){ if(document.body.classList.contains('subOpen') && window.__goHome){ window.__goHome(); } else { window.scrollTo({top:0,behavior:'smooth'}); } }" style="cursor:pointer;">
   <div class="logo">
@@ -4836,6 +4837,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </div>
 <main>
   <div class="wrap">
+    <div class="kgEquipPic kgEquipTop"><img class="kgEquipImg" src="/kgimg-equip-ko.jpg" alt="카글라스 테라크 인젝터 - 직접 연구 개발 제작한 자동차 유리복원 장비" decoding="async" width="900" height="1500"></div>
     <button type="button" class="faqExpandBtn" onclick="faqToggleAll(this)" aria-expanded="false"><span class="faqExpOpen">전체 펼쳐서 보기</span><span class="faqExpClose">전체 접기</span></button>
         <section class="sect" id="faq-trust">
       <div class="sect-h"><span class="idx">01</span><span class="t">믿고 맡길 수 있을까요?</span><span class="rule"></span></div>
@@ -6470,6 +6472,13 @@ e.preventDefault();e.stopImmediatePropagation();location.href=MAP[n]||('/?p='+n)
     Array.prototype.forEach.call(document.querySelectorAll('.faqExpandBtn'),function(b){b.classList.toggle('on',!!all);b.setAttribute('aria-expanded',all?'true':'false');});
   }catch(e){}
 })();
+</script>
+<script id="kgEquipLang">
+(function(){var K=['en','zh-CN','zh-TW','vi','th','ja'];
+function set(){var l=document.documentElement.lang||'ko';var k=K.indexOf(l)>=0?l:'ko';var src='/kgimg-equip-'+k+'.jpg';
+Array.prototype.forEach.call(document.querySelectorAll('img.kgEquipImg'),function(i){if(i.getAttribute('src')!==src)i.setAttribute('src',src);});}
+set();try{new MutationObserver(set).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});}catch(e){}
+document.addEventListener('DOMContentLoaded',set);})();
 </script>
 </body>
 </html>
